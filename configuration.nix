@@ -81,6 +81,20 @@
     enable = true;
   };
 
+  # Enable redshift for night light
+  services.redshift = {
+    enable = true;
+  #  brightness = {
+  #    day = "1";
+  #    night = "1";
+  #  };
+  #  temperature = {
+  #    night = 25000;
+  #  };
+  };
+
+  location.provider = "geoclue2";
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -136,8 +150,6 @@
     vscode-with-extensions
     rofi
     lunarvim
-    geoclue2
-    redshift
   ];
 
   # Shells
@@ -179,4 +191,6 @@
   system.stateVersion = "23.11"; # Did you read the comment?
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
 }
