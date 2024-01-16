@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #./modules/use_kde.nix
+      ./modules/use_qtile.nix
     ];
 
   # Bootloader.
@@ -65,13 +67,8 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
+  # Enable the SDDM display and login manager.
   services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
-
-  # Enable qtile
-  services.xserver.windowManager.qtile.enable = true;
-  services.picom.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
