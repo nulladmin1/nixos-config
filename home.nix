@@ -90,8 +90,8 @@
   };
 
   # Rofi
-  programs.rofi = {
-    enable = true;
-  };
+  # programs.rofi = {
+  #   enable = true;
+  # };
 }
 
