@@ -136,6 +136,8 @@
     vscode-with-extensions
     rofi
     lunarvim
+    geoclue2
+    redshift
   ];
 
   # Shells
