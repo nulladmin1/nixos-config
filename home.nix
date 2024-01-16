@@ -88,10 +88,5 @@
   programs.neovim = {
     enable = true;
   };
-
-  # Rofi
-  # programs.rofi = {
-  #   enable = true;
-  # };
 }
 
