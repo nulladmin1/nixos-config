@@ -93,7 +93,12 @@
   #  };
   };
 
-  location.provider = "geoclue2";
+  # Enable location manually
+  location.provider = "manual";
+
+  # Manually set latitude and longtitude (not my actual lat/long)
+  location.latitude = 40.0;
+  location.longitude = -77.0;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -150,6 +155,7 @@
     vscode-with-extensions
     rofi
     lunarvim
+    vscode
   ];
 
   # Shells
