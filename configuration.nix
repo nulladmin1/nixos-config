@@ -152,10 +152,9 @@
     efibootmgr
     ffmpeg-full
     jetbrains.pycharm-community
-    vscode-with-extensions
     rofi
     lunarvim
-    vscode
+    vscode.fhs
   ];
 
   # Shells

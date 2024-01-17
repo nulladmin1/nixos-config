@@ -88,5 +88,6 @@
   programs.neovim = {
     enable = true;
   };
+
 }
 
