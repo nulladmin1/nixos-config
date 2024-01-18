@@ -159,7 +159,7 @@
     jetbrains.pycharm-community
     rofi
     lunarvim
-    vscodium
+    vscode
   ];
 
   # Shells
