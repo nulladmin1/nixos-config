@@ -4,7 +4,7 @@
   # Qtile
   home.file.".config/qtile/autostart.sh".text = ''
 #!/bin/sh
-picom & disown --experimental-backends --vsync #should prevent screen tearing on most setups if needed
+picom & disown #should prevent screen tearing on most setups if needed
 
 # Low battery notifier
 ~/.config/qtile/scripts/check_battery.sh & disown

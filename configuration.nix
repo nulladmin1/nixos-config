@@ -160,6 +160,7 @@
     rofi
     lunarvim
     vscode
+    brightnessctl
   ];
 
   # Shells
