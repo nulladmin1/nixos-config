@@ -8,25 +8,29 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Which desktop to use?:
       #./modules/use_kde.nix
       ./modules/use_qtile.nix
+
+
     ];
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-    };
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-    };
-  };
+  #boot.loader = {
+  #  efi = {
+  #    canTouchEfiVariables = true;
+  #  };
+  #  grub = {
+  #    enable = true;
+  #    efiSupport = true;
+  #    device = "nodev";
+  #    useOSProber = true;
+  #  };
+  #};
   
   
 
@@ -82,8 +86,8 @@
   };
 
   # Enable redshift for night light
-  services.redshift = {
-    enable = true;
+  #services.redshift = {
+  #  enable = true;
   #  brightness = {
   #    day = "1";
   #    night = "1";
@@ -91,7 +95,7 @@
   #  temperature = {
   #    night = 25000;
   #  };
-  };
+  #};
 
   # Enable location manually
   location.provider = "manual";
@@ -120,6 +124,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = _: true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shreyd = {
     isNormalUser = true;
@@ -131,10 +139,7 @@
     #  thunderbird
     ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
+  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -154,7 +159,7 @@
     jetbrains.pycharm-community
     rofi
     lunarvim
-    vscode.fhs
+    vscodium
   ];
 
   # Shells

@@ -4,7 +4,7 @@
   imports = [
     ./modules/qtile_confs.nix
   ];
-
+  
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shreyd";
@@ -76,7 +76,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  
+
   # Bash:
   programs.bash = {
     shellAliases = {
@@ -89,5 +89,14 @@
     enable = true;
   };
 
+  # Vscode
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+    extensions = with pkgs.vscode-extensions; [
+      ms-vsliveshare.vsliveshare
+      eamodio.gitlens
+    ];
+  };
 }
 
