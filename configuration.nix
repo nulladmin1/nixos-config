@@ -145,22 +145,25 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    neovim
-    git
     alacritty
     wget
     brave
-    go
     unzip
-    nodejs
-    python3
     efibootmgr
     ffmpeg-full
-    jetbrains.pycharm-community
     rofi
-    lunarvim
-    vscode
     brightnessctl
+
+    # Dev
+    git
+    go
+    jetbrains.pycharm-community
+    lunarvim
+    neovim
+    nodejs
+    python3
+    rustup
+    vscode
   ];
 
   # Shells
