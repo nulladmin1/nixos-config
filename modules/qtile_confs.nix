@@ -224,7 +224,7 @@ shape_fontsize = 18
 screens = [
     Screen(
         # wallpaper='/home/shreyd/Pictures/endy_vector_eos-plant_catppuccinified.png',
-        wallpaper="/home/shreyd/Pictures/linus_xp.jpg",
+        wallpaper="/home/shreyd/Pictures/Wallpapers/wallpapers/misc/windows-error.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
