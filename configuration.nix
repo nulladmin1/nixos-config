@@ -163,6 +163,7 @@
     nodejs
     python3
     rustup
+    tmux
     vscode
   ];
 
