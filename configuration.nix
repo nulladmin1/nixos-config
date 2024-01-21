@@ -11,7 +11,8 @@
 
       # Which desktop to use?:
       #./modules/use_kde.nix
-      ./modules/use_qtile.nix
+      #./modules/use_qtile.nix
+      ./modules/use_hyperland.nix
 
 
     ];
