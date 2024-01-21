@@ -153,6 +153,7 @@
     ffmpeg-full
     rofi
     brightnessctl
+    cinnamon.nemo-with-extensions
 
     # Dev
     git

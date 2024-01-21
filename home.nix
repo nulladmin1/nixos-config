@@ -98,5 +98,10 @@
       eamodio.gitlens
     ];
   };
+
+  # Defaul Applications
+  xdg.mimeApps.defaultApplications = {
+    "inode/directory" = "nemo.desktop";
+  };
 }
 

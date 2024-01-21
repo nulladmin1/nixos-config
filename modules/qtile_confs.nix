@@ -224,7 +224,7 @@ shape_fontsize = 18
 screens = [
     Screen(
         # wallpaper='/home/shreyd/Pictures/endy_vector_eos-plant_catppuccinified.png',
-        #wallpaper="/home/shreyd/Pictures/Wallpapers/wallpapers/os/nix-magenta-blue-1920x1080.png"
+        wallpaper="/home/shreyd/Pictures/Wallpapers/wallpapers/os/nix-magenta-blue-1920x1080.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -416,8 +416,8 @@ screens = [
                 ),
             ],
             20,  # height in px
-            #background=catpuccin["base"],  # background color
-            background="#00000000"
+            background=catpuccin["base"],  # background color
+            #background="#00000000"
         ),
     ),
 ]
