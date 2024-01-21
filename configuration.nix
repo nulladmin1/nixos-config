@@ -123,6 +123,16 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  
+  # Enable flatpak
+  services.flatpak.enable = true;
+
+  # Enable XDG Portal (needed for flatpak)
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
