@@ -224,7 +224,7 @@ shape_fontsize = 18
 screens = [
     Screen(
         # wallpaper='/home/shreyd/Pictures/endy_vector_eos-plant_catppuccinified.png',
-        wallpaper="/home/shreyd/Pictures/Wallpapers/wallpapers/misc/comfy-home.png",
+        wallpaper="/home/shreyd/Pictures/Wallpapers/wallpapers/misc/Upscaled/comfy-home_upscayl_16x_realesrgan-x4plus-anime.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -327,6 +327,12 @@ screens = [
                     length=5,
                     background=catpuccin["green"],
                 ),
+                widget.Systray(
+                    icon_size=20,
+                    background=catpuccin["green"],
+                    foreground=catpuccin["crust"],
+                ),
+
                 widget.TextBox(
                     text="󰕾",
                     foreground=catpuccin["crust"],
@@ -348,24 +354,11 @@ screens = [
                     background=catpuccin["green"],
                     foreground=catpuccin["blue"],
                 ),
-                widget.Systray(
-                    icon_size=20,
+                widget.Clock(
+                    format="  %a %m - %d - %Y %I:%M %p",
                     background=catpuccin["blue"],
                     foreground=catpuccin["crust"],
                 ),
-                widget.Spacer(
-                    length=8,
-                    background=catpuccin["blue"],
-                ),
-
-                widget.OpenWeather(
-                    app_key='c8c4b2254111dd7ef103e74827703b5e',
-                    background=catpuccin['blue'],
-                    location='Mechanicsburg',
-                    foreground=catpuccin['crust'],
-                    format='{location_city}: {main_temp}°{units_temperature} | {weather_details}'
-                ),
-
                 widget.Spacer(
                     length=5,
                     background=catpuccin["blue"],
@@ -377,24 +370,8 @@ screens = [
                     background=catpuccin["blue"],
                     foreground=catpuccin["mauve"],
                 ),
-                widget.Clock(
-                    format="  %a %m - %d - %Y %I:%M %p",
-                    background=catpuccin["mauve"],
-                    foreground=catpuccin["crust"],
-                ),
-                widget.Spacer(
-                    length=5,
-                    background=catpuccin["mauve"],
-                ),
-                widget.TextBox(
-                    text="",
-                    padding=0,
-                    fontsize=shape_fontsize,
-                    background=catpuccin["mauve"],
-                    foreground=catpuccin["lavender"],
-                ),
                  widget.QuickExit(
-                    background=catpuccin["lavender"],
+                    background=catpuccin["mauve"],
                     foreground=catpuccin["crust"],
                     default_text = "",
                     countdown_format = "[{}]",
@@ -412,12 +389,12 @@ screens = [
                 #),
                 widget.Spacer(
                     length=15,
-                    background=catpuccin["lavender"],
+                    background=catpuccin["mauve"],
                 ),
             ],
             20,  # height in px
-            background=catpuccin["base"],  # background color
-            #background="#00000000"
+            #background=catpuccin["base"],  # background color
+            background="#00000000",
         ),
     ),
 ]

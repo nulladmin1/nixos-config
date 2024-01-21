@@ -10,8 +10,8 @@
       0.1
     ];
     opacityRules = [
-      "90:class_g = 'Alacritty' && focused"
-      "80:class_g = 'Alacritty' && !focused"
+      "80:class_g = 'Alacritty' && focused"
+      "70:class_g = 'Alacritty' && !focused"
     ];
     inactiveOpacity = 0.9;
     settings = {
