@@ -15,9 +15,17 @@
       pkgs = import nixpkgs { inherit system ; config = { allowUnfree = true;}; };
     in {
     nixosConfigurations = {
-      main_config = lib.nixosSystem {
+      kde = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./configuration.nix ./modules/use_kde.nix ];
+      };
+      hyprland = lib.nixosSystem {
+        inherit system;
+        modules = [ ./configuration.nix ./modules/use_hyperland.nix ];
+      };
+      qtile = lib.nixosSystem {
+        inherit system;
+        modules = [ ./configuration.nix ./modules/use_qtile.nix ];
       };
     };
     homeConfigurations = {

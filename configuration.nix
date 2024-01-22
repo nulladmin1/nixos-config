@@ -8,13 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # Which desktop to use?:
-      #./modules/use_kde.nix
-      #./modules/use_qtile.nix
-      ./modules/use_hyperland.nix
-
-
     ];
 
   # Bootloader.
@@ -171,6 +164,7 @@
     go
     jetbrains.pycharm-community
     lunarvim
+    neofetch
     neovim
     nodejs
     python3
@@ -187,6 +181,7 @@
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     fira-code
     fira-code-symbols
+    font-awesome
   ];
 
   programs.kdeconnect.enable = true;

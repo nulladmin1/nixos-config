@@ -5,6 +5,14 @@
   programs.hyprland = {
     enable = true;
   };
+
+  # Install hyprpaper
+  environment.systemPackages = with pkgs; [ 
+    hyprpaper
+    wofi
+    wofi-emoji
+    waybar
+  ];
   
   # Enable Waybar
   programs.waybar.enable = true;
