@@ -90,14 +90,14 @@
   };
 
   # Vscode
-  programs.vscode = {
-    enable = true;
-    # package = pkgs.vscodium; # Only if using VSCodium
-    extensions = with pkgs.vscode-extensions; [
-      ms-vsliveshare.vsliveshare
-      eamodio.gitlens
-    ];
-  };
+  #programs.vscode = {
+  #  enable = true;
+  #  # package = pkgs.vscodium; # Only if using VSCodium
+  #  extensions = with pkgs.vscode-extensions; [
+  #    ms-vsliveshare.vsliveshare
+  #    eamodio.gitlens
+  #  ];
+  #};
 
   # Defaul Applications
   xdg.mimeApps.defaultApplications = {

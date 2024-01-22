@@ -158,7 +158,9 @@
     rofi
     brightnessctl
     cinnamon.nemo-with-extensions
-
+    obs-studio
+    obs-studio-plugins.wlrobs
+    pywal
     # Dev
     git
     go
@@ -170,7 +172,7 @@
     python3
     rustup
     tmux
-    vscode
+    #vscode
   ];
 
   # Shells
