@@ -160,7 +160,9 @@
     cinnamon.nemo-with-extensions
     obs-studio
     obs-studio-plugins.wlrobs
-    pywal
+    spotify
+    spicetify-cli
+
     # Dev
     git
     go
