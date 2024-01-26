@@ -5,6 +5,31 @@
     #./modules/qtile_confs.nix
   ];
   
+  # GTK Stuff
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Biba-Modern-Classic";
+    };
+    theme = {
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        size = "standard";
+        tweaks = [ "rimless" ];
+        variant = "macchiato";
+      };
+      name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
+    };
+
+  };
+
+  # QT stuff
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "gtk";
+  }; 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shreyd";

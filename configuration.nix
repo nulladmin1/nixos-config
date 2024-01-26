@@ -174,6 +174,7 @@
     python3
     rustup
     tmux
+    virtualenv
     #vscode
   ];
 
