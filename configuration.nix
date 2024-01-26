@@ -63,10 +63,15 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the SDDM display and login manager.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager = {
+    sddm = {
+      enable = true;
+      theme = "${import ./modules/sddm-theme.nix {inherit pkgs; }}";
+      };
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
