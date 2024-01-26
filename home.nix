@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  candy-icons = import ./candy-icons.nix { inherit pkgs; };
+in
 {
   imports = [
     #./modules/qtile_confs.nix
@@ -20,6 +23,12 @@
         variant = "macchiato";
       };
       name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
+    };
+    iconTheme = {
+    #  package = pkgs.numix-icon-theme-circle;
+    #  name = "Numix-Circle";
+      package = candy-icons;
+      name = "Candy";
     };
 
   };
