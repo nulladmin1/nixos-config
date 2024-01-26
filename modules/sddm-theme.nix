@@ -5,12 +5,12 @@ let
 
   image = pkgs.fetchurl {
     url = imgLink;
-    sha256 = "HUH";
+    sha256 = "0ajir9496i4fsl1gib3na305xg1qqwcgzkmwwq77mjih5abz5q1c";
   };
 in
 pkgs.stdenv.mkDerivation {
   name = "sddm-theme";
-  src = pkgs.fetchFromGithub {
+  src = pkgs.fetchFromGitHub {
     owner = "MariamArlt";
     repo = "sddm-sugar-dark";
     rev = "ceb2c455663429be03ba62d9f898c571650ef7fe";
