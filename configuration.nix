@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/use_sddm.nix
+#      ./modules/use_sddm.nix
     ];
 
   # Bootloader.
@@ -67,9 +67,9 @@
   services.xserver = {
     enable = true;
     displayManager = {
-    sddm = {
-      enable = true;
-#      theme = "${import ./modules/sddm-theme.nix {inherit pkgs; }}";
+      sddm = {
+        enable = true;
+#       theme = "${import ./modules/sddm-theme.nix {inherit pkgs; }}";
       };
     };
   };
@@ -168,6 +168,7 @@
     obs-studio-plugins.wlrobs
     spotify
     spicetify-cli
+    starship
 
     # Dev
     git
