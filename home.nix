@@ -48,6 +48,7 @@
     brightnessctl
     cinnamon.nemo-with-extensions
     obs-studio
+    obs-studio-plugins.wlrobs
     rofi
     spotify
     spicetify-cli
