@@ -113,6 +113,7 @@
 
   # Bash:
   programs.bash = {
+    enable = true;
     shellAliases = {
       ".." = "cd ..";
     };
@@ -136,6 +137,34 @@
   # Defaul Applications
   xdg.mimeApps.defaultApplications = {
     "inode/directory" = "nemo.desktop";
+  };
+
+  # Starship
+  programs.starship = 
+    let
+      flavor = "macchiato";
+    in
+    {
+    enable = true;
+    enableBashIntegration = true;
+    settings = {
+      format = "$all";
+      pallete = "catpuccin_${flavor}";
+    } // builtins.fromTOML (builtins.readFile
+      (pkgs.fetchFromGithub
+        {
+          owner = "catppuccin";
+          repo = "starship";
+          rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
+          sha256 = "";
+        } + /palletes/${flavor}.toml));
+  };
+
+  # Git
+  programs.git = {
+    enable = true;
+    userName = "nulladmin1";
+    userEmail = "shrey.deogade@protonmail.com";
   };
 }
 
