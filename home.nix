@@ -7,38 +7,7 @@
   imports = [
     #./modules/qtile_confs.nix
   ];
-  
-  # GTK Stuff
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Biba-Modern-Classic";
-    };
-    theme = {
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "standard";
-        tweaks = [ "rimless" ];
-        variant = "macchiato";
-      };
-      name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
-    };
-    iconTheme = {
-      package = pkgs.numix-icon-theme-circle;
-      name = "Numix-Circle";
- #     package = candy-icons;
- #     name = "Candy";
-    };
 
-  };
-
-  # QT stuff
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-    style.name = "gtk";
-  }; 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shreyd";
@@ -55,10 +24,10 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
+    hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -72,6 +41,24 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    alacritty
+    bleachbit
+    brave
+    brightnessctl
+    cinnamon.nemo-with-extensions
+    obs-studio
+    rofi
+    spotify
+    spicetify-cli
+
+    # Dev
+    jetbrains.pycharm-community
+    lunarvim
+    neofetch
+    nodejs
+    tmux
+    virtualenv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -111,6 +98,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # KDEConnect
+  services.kdeconnect.enable = true;
+
   # Bash:
   programs.bash = {
     enable = true;
@@ -142,23 +132,23 @@
   # Starship
   programs.starship = 
     let
-      flavor = "macchiato";
+      flavour = "macchiato";
     in
     {
-    enable = true;
-    enableBashIntegration = true;
-    settings = {
-      format = "$all";
-      pallete = "catpuccin_${flavor}";
-    } // builtins.fromTOML (builtins.readFile
-      (pkgs.fetchFromGithub
-        {
-          owner = "catppuccin";
-          repo = "starship";
-          rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
-          sha256 = "";
-        } + /palletes/${flavor}.toml));
-  };
+      enable = true;
+      settings = {
+        # Other config here
+        format = "$all"; # Remove this line to disable the default prompt format
+        palette = "catppuccin_${flavour}";
+      } // builtins.fromTOML (builtins.readFile
+        (pkgs.fetchFromGitHub
+          {
+            owner = "catppuccin";
+            repo = "starship";
+            rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f"; # Replace with the latest commit hash
+            sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
+          } + /palettes/${flavour}.toml));
+    };
 
   # Git
   programs.git = {
@@ -166,5 +156,37 @@
     userName = "nulladmin1";
     userEmail = "shrey.deogade@protonmail.com";
   };
+  
+  # GTK Stuff
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Biba-Modern-Classic";
+    };
+    theme = {
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        size = "standard";
+        tweaks = [ "rimless" ];
+        variant = "macchiato";
+      };
+      name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
+    };
+    iconTheme = {
+      package = pkgs.numix-icon-theme-circle;
+      name = "Numix-Circle";
+ #     package = candy-icons;
+ #     name = "Candy";
+    };
+
+  };
+
+  # QT stuff
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "gtk";
+  }; 
 }
 

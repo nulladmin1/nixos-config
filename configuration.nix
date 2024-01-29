@@ -155,33 +155,15 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    alacritty
-    wget
-    brave
     unzip
     efibootmgr
     ffmpeg-full
-    rofi
-    brightnessctl
-    cinnamon.nemo-with-extensions
-    obs-studio
-    obs-studio-plugins.wlrobs
-    spotify
-    spicetify-cli
-    starship
-
+    
     # Dev
     git
     go
-    jetbrains.pycharm-community
-    lunarvim
-    neofetch
-    neovim
-    nodejs
     python3
     rustup
-    tmux
-    virtualenv
     #vscode
   ];
 
@@ -195,8 +177,6 @@
     fira-code-symbols
     font-awesome
   ];
-
-  programs.kdeconnect.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -225,6 +205,5 @@
   system.stateVersion = "23.11"; # Did you read the comment?
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 
 }
