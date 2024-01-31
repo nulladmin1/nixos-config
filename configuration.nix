@@ -27,7 +27,8 @@
   #  };
   #};
   
-  
+  # Enable all firmware
+  hardware.enableAllFirmware = true;
 
   networking.hostName = "shrey-neo16-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
