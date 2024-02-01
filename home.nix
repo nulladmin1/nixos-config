@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
-#let
-#  candy-icons = import ./modules/candy-icons.nix { inherit pkgs; };
-#in
 {
   imports = [
-    #./modules/qtile_confs.nix
   ];
-
+  
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shreyd";
@@ -25,10 +21,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    hello
-
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -139,7 +131,7 @@
       enable = true;
       settings = {
         # Other config here
-        format = "$all"; # Remove this line to disable the default prompt format
+#        format = "$all"; # Remove this line to disable the default prompt format
         palette = "catppuccin_${flavour}";
       } // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub

@@ -13,19 +13,21 @@
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system ; config = { allowUnfree = true;}; };
+
+      
     in {
     nixosConfigurations = {
       kde = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ./modules/use_kde.nix ];
+        modules = [ ./configuration.nix ./modules/wm/kde/use_kde.nix ];
       };
       hyprland = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ./modules/use_hyperland.nix ];
+        modules = [ ./configuration.nix ./modules/wm/hyprland/use_hyprland.nix ];
       };
       qtile = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ./modules/use_qtile.nix ];
+        modules = [ ./configuration.nix ./modules/wm/qtile/use_qtile.nix ];
       };
     };
     homeConfigurations = {
