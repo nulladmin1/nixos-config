@@ -56,6 +56,7 @@
     nodejs
     tmux
     virtualenv
+    zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -153,6 +154,11 @@
     userName = "nulladmin1";
     userEmail = "shrey.deogade@protonmail.com";
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
   
   # GTK Stuff
   gtk = {
@@ -177,13 +183,13 @@
  #     name = "Candy";
     };
 
-  };
+    };
 
-  # QT stuff
-  qt = {
-    enable = true;
-    platformTheme = "gtk";
-    style.name = "gtk";
-  }; 
+    # QT stuff
+    qt = {
+      enable = true;
+      platformTheme = "gtk";
+      style.name = "gtk";
+    }; 
 }
 
