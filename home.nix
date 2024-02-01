@@ -38,7 +38,9 @@
     bleachbit
     brave
     brightnessctl
+    btop
     cinnamon.nemo-with-extensions
+    htop
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
