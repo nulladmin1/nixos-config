@@ -145,12 +145,7 @@
   users.users.shreyd = {
     isNormalUser = true;
     description = "Shrey Deogade";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
-    ];
+    extraGroups = [ "networkmanager" "wheel" "audio" ];
   };
   
   # List packages installed in system profile. To search, run:

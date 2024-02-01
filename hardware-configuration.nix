@@ -10,8 +10,12 @@
 
   boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd-intel=dspcfg dsp_driver = 1
+  '';
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/cc87c606-7d65-4dce-8b03-57dbe388e624";
