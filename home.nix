@@ -40,12 +40,14 @@
     brightnessctl
     btop
     cinnamon.nemo-with-extensions
+    fzf
     htop
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
     spotify
     spicetify-cli
+    tldr
 
     # Dev
     jetbrains.pycharm-community
