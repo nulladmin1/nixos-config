@@ -51,12 +51,15 @@
 
     # Dev
     jetbrains.pycharm-community
+    lazygit
     lunarvim
     neofetch
     nodejs
-    tmux
+    scc # Count lines of code by each language
+    thefuck # Auto-correct miss-typed commands
+    tmux # Terminal multiplexer
     virtualenv
-    zoxide
+    zoxide # Better cd
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -156,6 +159,11 @@
   };
 
   programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
+  programs.thefuck = {
     enable = true;
     enableBashIntegration = true;
   };
