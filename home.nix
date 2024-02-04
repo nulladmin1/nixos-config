@@ -107,6 +107,8 @@
     enable = true;
     shellAliases = {
       ".." = "cd ..";
+      "showcursor"="printf '\033[?25l'";
+      "hidecursor"="printf '\033[?25h'";
     };
   };
 
@@ -194,10 +196,10 @@
     };
 
     # QT stuff
-    qt = {
-      enable = true;
-      platformTheme = "gtk3";
-      style.name = "gtk2";
-    }; 
+  qt = {
+    enable = true;
+    platformTheme = "gtk3";
+    style.name = "gtk2";
+  }; 
 }
 
