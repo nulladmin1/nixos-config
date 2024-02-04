@@ -108,8 +108,11 @@
     shellAliases = {
       ".." = "cd ..";
       cd = "z";
-      showcursor = "printf '\033[?25l'";
-      hidecursor = "printf '\033[?25h'";
+      push = "git push";
+      pull = "git pull";
+      commit = "git commit -a";
+      # showcursor = "printf '\033[?25l'";
+      # hidecursor = "printf '\033[?25h'";
     };
   };
 
