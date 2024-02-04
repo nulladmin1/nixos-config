@@ -22,13 +22,13 @@
     btop
     cinnamon.nemo-with-extensions
     fzf
+    gnote
     htop
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
     spicetify-cli
     spotify
-    standardnotes
     tldr
 
     # Dev
