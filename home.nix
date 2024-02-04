@@ -107,8 +107,9 @@
     enable = true;
     shellAliases = {
       ".." = "cd ..";
-      "showcursor"="printf '\033[?25l'";
-      "hidecursor"="printf '\033[?25h'";
+      cd = "z";
+      showcursor = "printf '\033[?25l'";
+      hidecursor = "printf '\033[?25h'";
     };
   };
 
