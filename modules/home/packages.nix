@@ -15,6 +15,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
+    anki
     alacritty
     bleachbit
     brave
@@ -23,10 +24,12 @@
     cinnamon.nemo-with-extensions
     fzf
     gnote
+    grim
     htop
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
+    slurp
     spicetify-cli
     spotify
     tldr
