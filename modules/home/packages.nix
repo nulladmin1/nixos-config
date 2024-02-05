@@ -22,6 +22,8 @@
     brightnessctl
     btop
     cinnamon.nemo-with-extensions
+    ciscoPacketTracer8
+    dunst
     fzf
     gnote
     grim
@@ -30,8 +32,6 @@
     obs-studio-plugins.wlrobs
     rofi
     slurp
-    spicetify-cli
-    spotify
     tldr
 
     # Dev
