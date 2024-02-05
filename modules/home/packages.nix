@@ -28,6 +28,7 @@
     gnote
     grim
     htop
+    libnotify
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
