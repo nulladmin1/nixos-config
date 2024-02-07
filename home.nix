@@ -70,7 +70,9 @@
       cd = "z";
       push = "git push";
       pull = "git pull";
-      commit = "git commit -a";
+      commit = "git commit -am";
+      edithome = "cd ~/nixos-config/ && lvim home.nix modules/home/packages.nix";
+      editsysconf = "cd ~/nixos-config/ && lvim configuration.nix";
       # showcursor = "printf '\033[?25l'";
       # hidecursor = "printf '\033[?25h'";
     };
