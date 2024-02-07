@@ -25,9 +25,9 @@
     ciscoPacketTracer8
     dunst
     fzf
-    gnote
     grim
     htop
+    libsForQt5.kate
     libnotify
     obs-studio
     obs-studio-plugins.wlrobs
