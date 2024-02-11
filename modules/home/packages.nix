@@ -37,6 +37,7 @@
 
     # Dev
     jetbrains.pycharm-community
+    jetbrains-toolbox
     lazygit
     lunarvim
     neofetch
