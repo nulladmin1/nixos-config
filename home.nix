@@ -73,7 +73,7 @@
       commit = "git commit -am";
       edithome = "cd ~/nixos-config/ && lvim home.nix modules/home/packages.nix";
       editsysconf = "cd ~/nixos-config/ && lvim configuration.nix";
-      screenshot = "./modules/shell/screenshot.sh"; 
+      screenshot = "bash $HOME/nixos-config/modules/shell/screenshot.sh"; 
       # showcursor = "printf '\033[?25l'";
       # hidecursor = "printf '\033[?25h'";
     };

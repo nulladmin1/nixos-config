@@ -37,6 +37,7 @@
 
     # Dev
     jetbrains.pycharm-community
+    jetbrains.rust-rover
     jetbrains-toolbox
     lazygit
     lunarvim
