@@ -89,6 +89,13 @@
     enable = true;
   };
 
+  # Avahi for printing
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Enable redshift for night light
   #services.redshift = {
   #  enable = true;
