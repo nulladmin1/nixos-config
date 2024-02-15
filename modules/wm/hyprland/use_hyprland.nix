@@ -8,8 +8,7 @@
 
   # Install hyprpaper
   environment.systemPackages = with pkgs; [ 
-    cava
-    hyprpaper
+    swaybg
     swaynotificationcenter
     wofi
     wofi-emoji
