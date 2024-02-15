@@ -33,8 +33,7 @@
     obs-studio-plugins.wlrobs
     rofi
     slurp
-    tldr 
-    ]))
+    tldr
 
     # Dev
     jetbrains.pycharm-community
