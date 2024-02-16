@@ -166,6 +166,7 @@
     unzip
     efibootmgr
     ffmpeg-full
+    libsForQt5.qt5.qtgraphicaleffects
     
     # Dev
     git
