@@ -18,8 +18,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable virtualisation
   virtualisation.libvirtd.enable = true;
 
+  # Enable TLP
+  services.tlp.enable = true;
+ 
   #boot.loader = {
   #  efi = {
   #    canTouchEfiVariables = true;
