@@ -25,6 +25,7 @@
     ciscoPacketTracer8
     dunst
     eww-wayland
+    feh
     fzf
     ghostwriter
     grim
@@ -36,6 +37,7 @@
     rofi
     slurp
     tldr
+    quickemu
 
     # Dev
     jetbrains.pycharm-community
