@@ -30,6 +30,7 @@
     grim
     htop
     libnotify
+    notion-app-enhanced
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
