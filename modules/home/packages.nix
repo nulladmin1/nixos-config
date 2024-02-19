@@ -31,6 +31,7 @@
     grim
     htop
     libnotify
+    lunar-client
     notion-app-enhanced
     obs-studio
     obs-studio-plugins.wlrobs
