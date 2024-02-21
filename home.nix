@@ -67,7 +67,17 @@
     enable = true;
     shellAliases = {
       ".." = "cd ..";
+      "..." = "cd ../..";
+      "...." = "cd ../../..";
+      "....." = "cd ../../../..";
+      h = "history | fzf";
+      ":q" = "exit";
+      meow = "cat";
+      vc = "python -m virtualenv venv";
+      va = "source ./venv/bin/activate";
       cd = "z";
+      please = "sudo ";
+      g = "git";
       push = "git push";
       pull = "git pull";
       commit = "git commit -am";
