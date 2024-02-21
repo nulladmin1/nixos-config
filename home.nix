@@ -136,6 +136,8 @@
     enable = true;
     enableBashIntegration = true;
   };
+
+  services.swayosd.enable = true;
   
   # GTK Stuff
   gtk = {

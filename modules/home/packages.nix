@@ -28,6 +28,7 @@
     feh
     fzf
     ghostwriter
+    gimp-with-plugins
     grim
     htop
     libnotify
