@@ -31,6 +31,7 @@
     gimp-with-plugins
     grim
     htop
+    inkscape-with-extensions
     libnotify
     lunar-client
     notion-app-enhanced
