@@ -14,6 +14,12 @@
   # ZRAM Swap
   zramSwap.enable = true;
 
+  # Swap
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024;
+  } ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
