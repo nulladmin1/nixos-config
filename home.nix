@@ -73,7 +73,7 @@
       h = "history | fzf";
       ":q" = "exit";
       meow = "cat";
-      vc = "python -m virtualenv venv";
+      vc = "virtualenv venv";
       va = "source ./venv/bin/activate";
       cd = "z";
       please = "sudo ";
