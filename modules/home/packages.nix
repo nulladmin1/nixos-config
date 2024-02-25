@@ -33,6 +33,7 @@
     htop
     inkscape-with-extensions
     libnotify
+    libreoffice-qt
     lunar-client
     notion-app-enhanced
     obs-studio
