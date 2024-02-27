@@ -36,6 +36,7 @@
     libreoffice-qt
     lunar-client
     notion-app-enhanced
+    obsidian
     obs-studio
     obs-studio-plugins.wlrobs
     rofi
