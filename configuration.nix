@@ -191,7 +191,6 @@
     go
     python3
     rustup
-    #vscode
   ];
 
   # Shells
