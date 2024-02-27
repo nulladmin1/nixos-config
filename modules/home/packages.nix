@@ -16,6 +16,7 @@
     # '')
 
     anki
+    atuin
     alacritty
     bleachbit
     brave

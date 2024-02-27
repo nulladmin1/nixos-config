@@ -89,6 +89,9 @@
     };
   };
 
+  # Atuin
+  programs.atuin.enable = true;
+
   # Neovim:
   programs.neovim = {
     enable = true;
