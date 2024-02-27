@@ -54,6 +54,7 @@
     scc # Count lines of code by each language
     thefuck # Auto-correct miss-typed commands
     tmux # Terminal multiplexer
+    twine
     virtualenv
     zoxide # Better cd
   ];
