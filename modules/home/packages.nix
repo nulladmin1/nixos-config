@@ -24,7 +24,7 @@
     cinnamon.nemo-with-extensions
     ciscoPacketTracer8
     dunst
-    eww-wayland
+    eww
     feh
     fzf
     ghostwriter
