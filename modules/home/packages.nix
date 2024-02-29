@@ -52,6 +52,8 @@
     lunarvim
     neofetch
     nodejs
+    python311Packages.dbus-python
+    python311Packages.pygobject3
     scc # Count lines of code by each language
     thefuck # Auto-correct miss-typed commands
     tmux # Terminal multiplexer
