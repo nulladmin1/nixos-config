@@ -94,14 +94,10 @@
   };
 
   # Vscode
-  #programs.vscode = {
-  #  enable = true;
-  #  # package = pkgs.vscodium; # Only if using VSCodium
-  #  extensions = with pkgs.vscode-extensions; [
-  #    ms-vsliveshare.vsliveshare
-  #    eamodio.gitlens
-  #  ];
-  #};
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup ]);
+  };
 
   # Defaul Applications
   xdg.mimeApps.defaultApplications = {
