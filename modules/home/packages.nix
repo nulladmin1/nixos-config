@@ -52,7 +52,7 @@
     lunarvim
     neofetch
     nodejs
-    pkgs-config
+    pkg-config
     python311Packages.dbus-python
     python311Packages.pygobject3
     scc # Count lines of code by each language
