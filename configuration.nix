@@ -30,6 +30,9 @@
   # Enable virtualisation
   virtualisation.libvirtd.enable = true;
 
+  # Enable WayDroid
+  virtualisation.waydroid.enable = true;
+
   # Enable TLP
   services.tlp = {
     enable = true;
