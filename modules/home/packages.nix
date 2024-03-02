@@ -61,5 +61,9 @@
     twine
     virtualenv
     zoxide # Better cd
+
+    # Gaming
+    lutris
+    xonotic
   ];
 }
