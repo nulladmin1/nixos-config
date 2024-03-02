@@ -119,6 +119,12 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+  
+  # Enable OpenGL
+  hardware.opengl = {
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
   # Enable redshift for night light
   #services.redshift = {
@@ -209,6 +215,13 @@
     fira-code-symbols
     font-awesome
   ];
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
