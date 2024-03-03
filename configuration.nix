@@ -210,7 +210,7 @@
   users.defaultUserShell = pkgs.bash;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    nerdfonts
     fira-code
     fira-code-symbols
     font-awesome
