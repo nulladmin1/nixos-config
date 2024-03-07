@@ -203,6 +203,7 @@
     go
     python3
     rustup
+    wireshark
   ];
 
   # Shells
