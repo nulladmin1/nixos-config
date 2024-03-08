@@ -102,6 +102,7 @@
   # Defaul Applications
   xdg.mimeApps.defaultApplications = {
     "inode/directory" = "nemo.desktop";
+    "text/plain" = "brave.desktop";
   };
 
   # Starship
