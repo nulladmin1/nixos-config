@@ -21,6 +21,7 @@
     brave
     brightnessctl
     btop
+    burpsuite
     cinnamon.nemo-with-extensions
     ciscoPacketTracer8
     dunst
