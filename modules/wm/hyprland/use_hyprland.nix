@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ../../programs/tlp.nix
+  ];
+
   # Enable hyprland and other settings
   programs.hyprland = {
     enable = true;
