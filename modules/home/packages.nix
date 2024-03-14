@@ -29,7 +29,7 @@
     feh
     fzf
     ghostwriter
-    gimp-with-plugins
+    gimp
     grim
     htop
     inkscape-with-extensions
