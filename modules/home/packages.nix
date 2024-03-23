@@ -23,7 +23,7 @@
     btop
     burpsuite
     cinnamon.nemo-with-extensions
-    ciscoPacketTracer8
+    # ciscoPacketTracer8
     dunst
     eww
     feh
