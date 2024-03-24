@@ -17,6 +17,7 @@
 
     anki
     alacritty
+    bat
     bleachbit
     brave
     brightnessctl
