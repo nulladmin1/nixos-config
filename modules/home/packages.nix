@@ -31,6 +31,7 @@
     fzf
     ghostwriter
     gimp
+    glaxnimate
     grim
     htop
     inkscape-with-extensions
