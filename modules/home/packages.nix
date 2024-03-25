@@ -34,6 +34,7 @@
     grim
     htop
     inkscape-with-extensions
+    libsForQt5.kdenlive
     libnotify
     libreoffice-qt
     lunar-client
