@@ -42,7 +42,9 @@
     obsidian
     obs-studio
     obs-studio-plugins.wlrobs
+    openshot-qt
     rofi
+    shotcut
     slurp
     tldr
     quickemu
