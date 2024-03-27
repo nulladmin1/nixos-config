@@ -20,6 +20,9 @@
     size = 16*1024;
   } ];
 
+  # NTFS Support
+  boot.supportedFilesystems = [ "ntfs" ];
+
   # Bootloader.
   boot.loader.systemd-boot = {
     enable = true;
