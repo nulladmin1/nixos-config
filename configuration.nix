@@ -196,6 +196,7 @@
     efibootmgr
     ffmpeg-full
     libsForQt5.qt5.qtgraphicaleffects
+    comma
     
     # Dev
     git
