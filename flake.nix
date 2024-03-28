@@ -1,6 +1,6 @@
 {
 
-  description = "Main flake";
+  description = "Main system flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
