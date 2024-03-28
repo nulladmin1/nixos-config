@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-  ./modules/home/packages.nix
+    ./modules/home/packages.nix
   ];
-  
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "shreyd";
@@ -21,7 +23,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -83,7 +85,7 @@
       commit = "git commit -am";
       edithome = "cd ~/nixos-config/ && lvim home.nix modules/home/packages.nix";
       editsysconf = "cd ~/nixos-config/ && lvim configuration.nix";
-      screenshot = "bash $HOME/nixos-config/modules/shell/screenshot.sh"; 
+      screenshot = "bash $HOME/nixos-config/modules/shell/screenshot.sh";
       # showcursor = "printf '\033[?25l'";
       # hidecursor = "printf '\033[?25h'";
     };
@@ -96,30 +98,32 @@
   # VScode
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      adpyke.codesnap
-      catppuccin.catppuccin-vsc
-      catppuccin.catppuccin-vsc-icons
-      dbaeumer.vscode-eslint
-      eamodio.gitlens
-      esbenp.prettier-vscode
-      ms-python.python
-      ms-python.vscode-pylance
-      ms-vscode-remote.remote-containers
-      ms-vscode-remote.remote-ssh
-      ms-vsliveshare.vsliveshare
-      rust-lang.rust-analyzer
-      serayuzgur.crates
-      tamasfe.even-better-toml
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "yuck";
-        publisher = "eww-yuck";
-        version = "0.0.3";
-        sha256 = "sha256-DITgLedaO0Ifrttu+ZXkiaVA7Ua5RXc4jXQHPYLqrcM=";
-      }
-    ];
-    # package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup ]); 
+    extensions = with pkgs.vscode-extensions;
+      [
+        adpyke.codesnap
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
+        dbaeumer.vscode-eslint
+        eamodio.gitlens
+        esbenp.prettier-vscode
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-vscode-remote.remote-containers
+        ms-vscode-remote.remote-ssh
+        ms-vsliveshare.vsliveshare
+        rust-lang.rust-analyzer
+        serayuzgur.crates
+        tamasfe.even-better-toml
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "yuck";
+          publisher = "eww-yuck";
+          version = "0.0.3";
+          sha256 = "sha256-DITgLedaO0Ifrttu+ZXkiaVA7Ua5RXc4jXQHPYLqrcM=";
+        }
+      ];
+    # package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup ]);
   };
 
   # Defaul Applications
@@ -129,25 +133,26 @@
   };
 
   # Starship
-  programs.starship = 
-    let
-      flavour = "macchiato";
-    in
-    {
-      enable = true;
-      settings = {
+  programs.starship = let
+    flavour = "macchiato";
+  in {
+    enable = true;
+    settings =
+      {
         # Other config here
-#        format = "$all"; # Remove this line to disable the default prompt format
+        #        format = "$all"; # Remove this line to disable the default prompt format
         palette = "catppuccin_${flavour}";
-      } // builtins.fromTOML (builtins.readFile
+      }
+      // builtins.fromTOML (builtins.readFile
         (pkgs.fetchFromGitHub
           {
             owner = "catppuccin";
             repo = "starship";
             rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f"; # Replace with the latest commit hash
             sha256 = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-          } + /palettes/${flavour}.toml));
-    };
+          }
+          + /palettes/${flavour}.toml));
+  };
 
   # Git
   programs.git = {
@@ -167,7 +172,7 @@
   };
 
   services.swayosd.enable = true;
-  
+
   # GTK Stuff
   gtk = {
     enable = true;
@@ -177,9 +182,9 @@
     };
     theme = {
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
+        accents = ["mauve"];
         size = "standard";
-        tweaks = [ "rimless" ];
+        tweaks = ["rimless"];
         variant = "macchiato";
       };
       name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
@@ -187,17 +192,15 @@
     iconTheme = {
       package = pkgs.numix-icon-theme-circle;
       name = "Numix-Circle";
- #     package = candy-icons;
- #     name = "Candy";
+      #     package = candy-icons;
+      #     name = "Candy";
     };
+  };
 
-    };
-
-    # QT stuff
+  # QT stuff
   qt = {
     enable = true;
     platformTheme = "gtk3";
     style.name = "gtk2";
-  }; 
+  };
 }
-

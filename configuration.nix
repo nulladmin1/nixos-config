@@ -1,38 +1,39 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./cachix.nix
-      (builtins.fetchTarball {
-        url = "https://github.com/nix-community/nixos-vscode-server/tarball/master";
-        sha256 = "sha256:1mrc6a1qjixaqkv1zqphgnjjcz9jpsdfs1vq45l1pszs9lbiqfvd";
-      })
-    ];
-
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./cachix.nix
+    (builtins.fetchTarball {
+      url = "https://github.com/nix-community/nixos-vscode-server/tarball/master";
+      sha256 = "sha256:1mrc6a1qjixaqkv1zqphgnjjcz9jpsdfs1vq45l1pszs9lbiqfvd";
+    })
+  ];
 
   # Hyprland
   programs.hyprland = {
     enable = true;
   };
 
-
   # ZRAM Swap
   zramSwap.enable = true;
 
   # Swap
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 16*1024;
-  } ];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
 
   # NTFS Support
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
   # Bootloader.
   boot.loader.systemd-boot = {
@@ -47,7 +48,6 @@
   # Enable WayDroid
   virtualisation.waydroid.enable = true;
 
- 
   #boot.loader = {
   #  efi = {
   #    canTouchEfiVariables = true;
@@ -59,7 +59,7 @@
   #    useOSProber = true;
   #  };
   #};
-  
+
   # Enable all firmware
   hardware.enableAllFirmware = true;
 
@@ -103,7 +103,7 @@
     displayManager = {
       sddm = {
         enable = true;
-       theme = "${import ./modules/sddm-theme.nix {inherit pkgs; }}";
+        theme = "${import ./modules/sddm-theme.nix {inherit pkgs;}}";
       };
     };
   };
@@ -125,7 +125,7 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-  
+
   # Enable OpenGL
   hardware.opengl = {
     driSupport = true;
@@ -172,7 +172,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # Enable flatpak
   #services.flatpak.enable = true;
 
@@ -191,9 +191,9 @@
   users.users.shreyd = {
     isNormalUser = true;
     description = "Shrey Deogade";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = ["networkmanager" "wheel" "audio"];
   };
-  
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -204,7 +204,7 @@
     ffmpeg-full
     libsForQt5.qt5.qtgraphicaleffects
     comma
-    
+
     # Dev
     git
     go
@@ -219,11 +219,10 @@
     wofi
     wofi-emoji
     waybar
-
   ];
 
   # Shells
-  environment.shells = with pkgs; [ bash zsh fish ];
+  environment.shells = with pkgs; [bash zsh fish];
   users.defaultUserShell = pkgs.bash;
 
   programs.bash.interactiveShellInit = ''
@@ -283,7 +282,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-  
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }
