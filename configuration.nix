@@ -15,6 +15,13 @@
       })
     ];
 
+
+  # Hyprland
+  programs.hyprland = {
+    enable = true;
+  };
+
+
   # ZRAM Swap
   zramSwap.enable = true;
 
@@ -204,11 +211,24 @@
     python3
     rustup
     wireshark
+
+    # Hyprland stuff
+    swaybg
+    swaynotificationcenter
+    swww
+    wofi
+    wofi-emoji
+    waybar
+
   ];
 
   # Shells
   environment.shells = with pkgs; [ bash zsh fish ];
   users.defaultUserShell = pkgs.bash;
+
+  programs.bash.interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
 
   fonts.packages = with pkgs; [
     nerdfonts
@@ -247,6 +267,8 @@
   services.vscode-server = {
     enable = true;
   };
+
+  programs.command-not-found.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
