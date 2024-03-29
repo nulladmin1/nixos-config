@@ -20,19 +20,20 @@
     home-manager,
     nix-index-database,
     ...
-  }: let
+  }: 
+  let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = {allowUnfree = true;};
+      config.allowUnfree = true;
     };
   in {
     nixosConfigurations = {
       shrey-neo16-nixos = lib.nixosSystem {
         inherit system;
         modules = [
-          ./configuration.nix
+          ./system
           nix-index-database.nixosModules.nix-index
           {programs.nix-index-database.comma.enable = true;}
         ];
@@ -41,7 +42,7 @@
     homeConfigurations = {
       shreyd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [./home.nix];
+        modules = [ ./home-manager ];
       };
     };
   };
