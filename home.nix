@@ -95,7 +95,7 @@
     enable = true;
   };
 
-  # VScode
+  # VSCode
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions;
@@ -106,6 +106,8 @@
         dbaeumer.vscode-eslint
         eamodio.gitlens
         esbenp.prettier-vscode
+        jnoortheen.nix-ide
+        kamadorueda.alejandra
         ms-python.python
         ms-python.vscode-pylance
         ms-vscode-remote.remote-containers
