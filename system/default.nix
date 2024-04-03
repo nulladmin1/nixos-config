@@ -1,3 +1,5 @@
+{ locale, ... }:
+
 {
   imports = [
     ./configuration.nix

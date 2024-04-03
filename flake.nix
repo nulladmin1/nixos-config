@@ -37,6 +37,9 @@
           nix-index-database.nixosModules.nix-index
           {programs.nix-index-database.comma.enable = true;}
         ];
+        specialArgs = {
+          locale = "en_US.UTF-8";
+        };
       };
     };
     homeConfigurations = {
