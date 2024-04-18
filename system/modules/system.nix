@@ -61,13 +61,13 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
+  # Enable SDDM
+  services = {
     displayManager = {
       sddm = {
         enable = true;
         theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
+        wayland.enable = true;
       };
     };
   };
