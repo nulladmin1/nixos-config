@@ -50,6 +50,9 @@
     quickemu
 
     # Dev
+    android-studio
+    flutter
+    jetbrains.idea-community-bin
     jetbrains.pycharm-community
     jetbrains.rust-rover
     jetbrains-toolbox
