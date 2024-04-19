@@ -5,7 +5,7 @@
     libvirtd = {
       enable = true;
       qemu = {
-        packages = pkgs.qemu_kvm;
+        package = pkgs.qemu_kvm;
         swtpm.enable = true;
         ovmf = {
           enable = true;
