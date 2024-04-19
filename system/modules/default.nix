@@ -6,5 +6,6 @@
     ./system.nix
     ./services.nix
     ./tlp.nix
+    ./virtualization.nix
   ];
 }

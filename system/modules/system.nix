@@ -27,12 +27,6 @@
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable virtualisation
-  virtualisation.libvirtd.enable = true;
-
-  # Enable WayDroid
-  virtualisation.waydroid.enable = true;
-
   #boot.loader = {
   #  efi = {
   #    canTouchEfiVariables = true;
