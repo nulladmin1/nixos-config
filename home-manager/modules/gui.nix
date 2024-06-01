@@ -28,7 +28,7 @@
   # QT stuff
   qt = {
     enable = true;
-    platformTheme = "gtk3";
+    platformTheme.name = "gtk3";
     style.name = "gtk2";
   };
 }
