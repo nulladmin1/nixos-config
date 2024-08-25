@@ -2,11 +2,16 @@
   description = "For use only with home-manager; not with NixOS";
 
   inputs = {
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nix Index Database
     nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -27,7 +32,7 @@
     homeConfigurations = {
       shreyd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./. ];
+        modules = [ ./. nix-index-database.hmModules.nix-index ];
       };
     };
   };
