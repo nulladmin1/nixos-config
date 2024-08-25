@@ -32,7 +32,7 @@
     homeConfigurations = {
       shreyd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./. nix-index-database.hmModules.nix-index ];
+        modules = [ ./. nix-index-database.hmModules.nix-index ./home-only-extras.nix ];
       };
     };
   };
