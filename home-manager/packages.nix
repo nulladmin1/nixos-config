@@ -23,8 +23,8 @@
     brightnessctl
     btop
     burpsuite
-    cinnamon.nemo-with-extensions
-    ciscoPacketTracer8
+    pkgs.nemo-with-extensions
+    #ciscoPacketTracer8
     dunst
     eww
     feh
@@ -61,10 +61,7 @@
     neofetch
     nodejs
     pkg-config
-    python311Packages.dbus-python
-    python311Packages.pygobject3
     scc # Count lines of code by each language
-    silicon # Generate images of source code
     thefuck # Auto-correct miss-typed commands
     tmux # Terminal multiplexer
     twine
