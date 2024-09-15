@@ -42,6 +42,9 @@
     openFirewall = true;
   };
 
+  # Nix-ld
+  programs.nix-ld.enable = true;
+
   programs.gamemode.enable = true;
 
 
