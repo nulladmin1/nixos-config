@@ -56,6 +56,7 @@
     nodejs
     pkg-config
     scc # Count lines of code by each language
+    temurin-bin-17
     thefuck # Auto-correct miss-typed commands
     tmux # Terminal multiplexer
     virtualenv
