@@ -8,10 +8,6 @@
   ...
 }: {
   imports = [
-    (builtins.fetchTarball {
-      url = "https://github.com/nix-community/nixos-vscode-server/tarball/master";
-      sha256 = "sha256:1mrc6a1qjixaqkv1zqphgnjjcz9jpsdfs1vq45l1pszs9lbiqfvd";
-    })
   ];
 
   # Allow unfree packages
@@ -33,15 +29,14 @@
     unzip
     efibootmgr
     ffmpeg-full
-    libsForQt5.qt5.qtgraphicaleffects
     comma
+    alacritty
 
     # Dev
     git
     go
     python3
     rustup
-    wireshark
 
     # Hyprland stuff
     swaybg
