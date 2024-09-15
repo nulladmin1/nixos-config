@@ -8,5 +8,6 @@
     ./system.nix
     ./services.nix
     ./virtualization.nix
+    ./nix-ld.nix
   ];
 }
