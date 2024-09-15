@@ -6,6 +6,10 @@
     enable = true;
   };
 
+  # KDE Plasma 6
+  services.xserver.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
   # ZRAM Swap
   zramSwap.enable = true;
 
@@ -60,20 +64,13 @@
     displayManager = {
       sddm = {
         enable = true;
-        theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
+#        theme = "${import ./sddm-theme.nix {inherit pkgs;}}";
         wayland.enable = true;
       };
     };
   };
 
-   # Enable OpenGL
-  hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
    # Enable sound with pipewire.
-  sound.enable = false;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
