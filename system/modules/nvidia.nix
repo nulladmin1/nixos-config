@@ -26,7 +26,12 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:01:0:0";
     
-      sync.enable = true;
+    #  sync.enable = true;
+
+      offload = {
+			  enable = true;
+			  enableOffloadCmd = true;
+		  };
     }; 
   };
 }
