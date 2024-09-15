@@ -2,10 +2,10 @@
 
 {
     # Steam
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
+#  programs.steam = {
+#    enable = true;
+#    gamescopeSession.enable = true;
+#  };
 
   # Enable WireShark
   programs.wireshark.enable = true;
@@ -26,10 +26,6 @@
     settings = {
       PasswordAuthentication = true;
     };
-  };
-
-  services.vscode-server = {
-    enable = true;
   };
 
   programs.command-not-found.enable = false;
