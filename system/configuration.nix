@@ -64,6 +64,7 @@
     fira-code-symbols
     font-awesome
   ];
+  fonts.fontDir.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
