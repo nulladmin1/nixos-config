@@ -22,9 +22,9 @@
     brave
     brightnessctl
     btop
-    pkgs.nemo-with-extensions
+    davinci-resolve
+    nemo-with-extensions
     #ciscoPacketTracer8
-    dunst
     feh
     fzf
     ghostwriter
@@ -32,6 +32,7 @@
     grim
     htop
     inkscape-with-extensions
+    kdePackages.kdenlive
     libreoffice-qt
     obsidian
     obs-studio
@@ -64,6 +65,7 @@
 
     # Gaming
     lutris
+    retroarchFull
     xonotic
   ];
 }
