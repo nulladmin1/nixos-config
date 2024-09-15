@@ -2,10 +2,11 @@
 
 {
   imports = [
+    ./kernel.nix
     ./locales.nix
+    ./nvidia.nix
     ./system.nix
     ./services.nix
-    ./tlp.nix
     ./virtualization.nix
   ];
 }
