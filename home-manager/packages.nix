@@ -22,23 +22,17 @@
     brave
     brightnessctl
     btop
-    burpsuite
     pkgs.nemo-with-extensions
     #ciscoPacketTracer8
     dunst
-    eww
     feh
     fzf
     ghostwriter
     gimp
-    glaxnimate
     grim
     htop
     inkscape-with-extensions
-    libsForQt5.kdenlive
-    libnotify
     libreoffice-qt
-    lunar-client
     obsidian
     obs-studio
     obs-studio-plugins.wlrobs
@@ -53,7 +47,7 @@
     android-studio
     flutter
     jetbrains.idea-community-bin
-    jetbrains.pycharm-community
+    jetbrains.pycharm-community-bin
     jetbrains.rust-rover
     jetbrains-toolbox
     lazygit
@@ -64,7 +58,6 @@
     scc # Count lines of code by each language
     thefuck # Auto-correct miss-typed commands
     tmux # Terminal multiplexer
-    twine
     virtualenv
     zoxide # Better cd
 
