@@ -42,6 +42,9 @@
     openFirewall = true;
   };
 
+  programs.gamemode.enable = true;
+
+
   # Enable redshift for night light
   #services.redshift = {
   #  enable = true;
