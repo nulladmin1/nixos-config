@@ -30,6 +30,8 @@
     ...
   }: 
   let
+    hostname = "shrey-neo16-nixos";
+    
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
