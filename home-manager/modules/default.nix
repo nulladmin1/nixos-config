@@ -3,6 +3,6 @@
     ./bash.nix
    # ./gui.nix
     ./starship.nix
-   # ./vscode.nix
+    ./vscode.nix
   ];
 }
