@@ -64,7 +64,9 @@
     zoxide # Better cd
 
     # Gaming
+    ferium
     lutris
+    modrinth-app
     retroarchFull
     xonotic
   ];
