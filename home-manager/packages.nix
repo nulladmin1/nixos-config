@@ -33,6 +33,7 @@
     htop
     inkscape-with-extensions
     kdePackages.kdenlive
+    kdePackages.kdevelop
     libreoffice-qt
     obsidian
     obs-studio
