@@ -19,6 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    # NUR
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = {
@@ -27,6 +30,7 @@
     home-manager,
     nix-index-database,
     plasma-manager,
+    nur,
     ...
   }: 
   let
@@ -45,6 +49,7 @@
         modules = [
           ./system
           nix-index-database.nixosModules.nix-index
+          nur.nixosModules.nur
           {programs.nix-index-database.comma.enable = true;}
         ];
         specialArgs = {
@@ -58,6 +63,7 @@
         modules = [ 
           ./home-manager
           plasma-manager.homeManagerModules.plasma-manager
+          nur.hmModules.nur
         ];
       };
     };
