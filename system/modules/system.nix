@@ -27,13 +27,8 @@
   # ZRAM Swap
   zramSwap.enable = true;
 
-  # Swap
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024;
-    }
-  ];
+  # ADB
+  programs.adb.enable = true;
 
   # NTFS Support
   boot.supportedFilesystems = ["ntfs"];

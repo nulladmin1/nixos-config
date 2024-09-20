@@ -21,7 +21,7 @@
   users.users.shreyd = {
     isNormalUser = true;
     description = "Shrey Deogade";
-    extraGroups = ["networkmanager" "wheel" "audio"];
+    extraGroups = ["networkmanager" "wheel" "audio" "adbusers"];
   };
 
   # List packages installed in system profile. To search, run:
