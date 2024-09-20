@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
@@ -70,5 +70,8 @@
     modrinth-app
     retroarchFull
     xonotic
+  ] ++ [
+    config.nur.repos.shadowrz.klassy-qt6
+
   ];
 }
