@@ -28,6 +28,8 @@
     };
   };
 
+  services.fwupd.enable = true;
+
   programs.command-not-found.enable = false;
 
     # Enable CUPS to print documents.
