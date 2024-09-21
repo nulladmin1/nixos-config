@@ -13,7 +13,7 @@
   # Catppuccin
   catppuccin = {
     enable = true;
-    flavor = "macchiato";
+    flavor = "mocha";
   };
 
   # Enable NTFS and ExFAT Support
