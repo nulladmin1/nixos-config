@@ -22,6 +22,9 @@
 
     # NUR
     nur.url = "github:nix-community/NUR";
+
+    # Catppuccin
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -31,6 +34,7 @@
     nix-index-database,
     plasma-manager,
     nur,
+    catppuccin,
     ...
   }: 
   let
@@ -51,6 +55,7 @@
           nix-index-database.nixosModules.nix-index
           nur.nixosModules.nur
           {programs.nix-index-database.comma.enable = true;}
+          catppuccin.nixosModules.catppuccin
         ];
         specialArgs = {
           locale = "en_US.UTF-8";
@@ -64,6 +69,7 @@
           ./home-manager
           plasma-manager.homeManagerModules.plasma-manager
           nur.hmModules.nur
+          catppuccin.homeManagerModules.catppuccin
         ];
       };
     };
