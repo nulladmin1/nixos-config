@@ -4,9 +4,6 @@
   # ZRAM Swap
   zramSwap.enable = true;
 
-  # ADB
-  programs.adb.enable = true;
-
   # NTFS Support
   boot.supportedFilesystems = ["ntfs"];
 
@@ -44,27 +41,6 @@
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-
-  # Enable SDDM
-  services = {
-    displayManager = {
-      sddm = {
-        enable = true;
-        wayland.enable = true;
-        catppuccin = {
-          background = let
-            catppuccin_wallpapers = pkgs.fetchFromGitHub {
-              owner = "Gingeh";
-              repo = "wallpapers";
-              rev = "2530dba028589bda0ef6743d7960bd8a5b016679";
-              hash = "sha256-FiilS+t6QszTsnaIFVRRC8pQ6oTcv6qvKMf9cD5AoBQ=";
-            };
-            in "${catppuccin_wallpapers}/misc/virus.png";
-          font = "JetBrainsMono Nerd Font";
-        };
-      };
-    };
-  };
 
    # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;

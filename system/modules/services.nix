@@ -46,6 +46,9 @@
 
   programs.gamemode.enable = true;
 
+  # ADB
+  programs.adb.enable = true;
+
 
   # Enable redshift for night light
   #services.redshift = {
