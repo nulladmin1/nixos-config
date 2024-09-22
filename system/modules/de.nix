@@ -7,14 +7,14 @@
   };
 
   # WayFire
-  programs.wayfire = {
-    enable = true;
-    plugins = with pkgs.wayfirePlugins; [
-      wcm
-      wf-shell
-      wayfire-plugins-extra
-    ];
-  };
+  #programs.wayfire = {
+  #  enable = true;
+  #  plugins = with pkgs.wayfirePlugins; [
+  #    wcm
+  #    wf-shell
+  #    wayfire-plugins-extra
+  #  ];
+  #};
 
   # KDE Plasma 6
   services.xserver.enable = true;
