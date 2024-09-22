@@ -9,6 +9,6 @@
     ./services.nix
     ./virtualization.nix
     ./nix-ld.nix
-    ./default.nix
+    ./de.nix
   ];
 }
