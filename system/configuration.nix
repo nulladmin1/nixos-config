@@ -40,6 +40,7 @@
     ffmpeg-full
     comma
     alacritty
+    papirus-icon-theme
 
     # Dev
     git
