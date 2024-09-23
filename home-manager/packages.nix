@@ -16,7 +16,6 @@
     # '')
 
     anki
-    alacritty
     bat
     bleachbit
     brave
