@@ -1,6 +1,5 @@
 # For Home-Manager
-{ pkgs }:
-
+{pkgs}:
 pkgs.stdenv.mkDerivation {
   name = "candy-icons";
 

@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-    # Steam
+  config,
+  pkgs,
+  ...
+}: {
+  # Steam
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
@@ -32,7 +34,7 @@
 
   programs.command-not-found.enable = false;
 
-    # Enable CUPS to print documents.
+  # Enable CUPS to print documents.
   services.printing = {
     enable = true;
   };
@@ -49,7 +51,6 @@
   # ADB
   programs.adb.enable = true;
 
-
   # Enable redshift for night light
   #services.redshift = {
   #  enable = true;
@@ -61,5 +62,4 @@
   #    night = 25000;
   #  };
   #};
-
 }

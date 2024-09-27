@@ -1,6 +1,9 @@
-{ config, pkgs, locale, ... }:
-
 {
+  config,
+  pkgs,
+  locale,
+  ...
+}: {
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -34,5 +37,4 @@
     layout = "us";
     variant = "";
   };
- 
 }

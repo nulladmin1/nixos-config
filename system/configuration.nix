@@ -17,7 +17,7 @@
   };
 
   # Enable NTFS and ExFAT Support
-  boot.supportedFilesystems = [ "ntfs" "exfat" ];
+  boot.supportedFilesystems = ["ntfs" "exfat"];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

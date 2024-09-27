@@ -1,7 +1,7 @@
 {
   imports = [
     ./bash.nix
-   # ./gui.nix
+    # ./gui.nix
     ./starship.nix
     ./vscode.nix
   ];

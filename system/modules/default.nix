@@ -1,6 +1,4 @@
-{ locale, ... }:
-
-{
+{locale, ...}: {
   imports = [
     ./kernel.nix
     ./locales.nix

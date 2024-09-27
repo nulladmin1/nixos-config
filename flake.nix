@@ -12,7 +12,7 @@
     # Nix Index Database
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    
+
     # Plasma-Manager
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
@@ -36,10 +36,9 @@
     nur,
     catppuccin,
     ...
-  }: 
-  let
+  }: let
     hostname = "shrey-neo16-nixos";
-    
+
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -65,7 +64,7 @@
     homeConfigurations = {
       shreyd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ 
+        modules = [
           ./home-manager
           plasma-manager.homeManagerModules.plasma-manager
           nur.hmModules.nur

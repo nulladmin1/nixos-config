@@ -20,8 +20,7 @@
     home-manager,
     nix-index-database,
     ...
-  }: 
-  let
+  }: let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -32,7 +31,7 @@
     homeConfigurations = {
       shreyd = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./. nix-index-database.hmModules.nix-index ./home_only_extras.nix ];
+        modules = [./. nix-index-database.hmModules.nix-index ./home_only_extras.nix];
       };
     };
   };

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # VSCode
   programs.vscode = {
     enable = true;
@@ -31,7 +33,6 @@
     #      sha256 = "sha256-DITgLedaO0Ifrttu+ZXkiaVA7Ua5RXc4jXQHPYLqrcM=";
     #    }
     #  ];
-    package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup ]);
-
+    package = pkgs.vscode.fhsWithPackages (ps: with ps; [rustup]);
   };
 }
