@@ -41,6 +41,7 @@
     comma
     alacritty
     papirus-icon-theme
+    vlc
 
     # Dev
     git
