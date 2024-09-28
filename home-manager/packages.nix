@@ -20,9 +20,7 @@
 
       anki
       bat
-      bleachbit
       brave
-      brightnessctl
       btop
       davinci-resolve
       nemo-with-extensions
@@ -36,7 +34,6 @@
       inkscape-with-extensions
       kdePackages.kdenlive
       kdePackages.kdevelop
-      libreoffice-qt
       obsidian
       obs-studio
       obs-studio-plugins.wlrobs
