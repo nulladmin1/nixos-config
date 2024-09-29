@@ -5,6 +5,7 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }: {
   imports = [
@@ -24,7 +25,7 @@
   nixpkgs.config.allowUnfreePredicate = _: true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.shreyd = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Shrey Deogade";
     extraGroups = ["networkmanager" "wheel" "audio" "adbusers"];
