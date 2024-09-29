@@ -8,5 +8,6 @@
     ./virtualization.nix
     ./nix-ld.nix
     ./de.nix
+    ./nh.nix
   ];
 }
