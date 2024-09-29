@@ -36,17 +36,17 @@
       };
     };
   };
-  specialisation = {
-    sync-enable.configuration = {
-      hardware.nvidia = {
-        prime = {
-          sync.enable = lib.mkForce true;
-          offload = {
-            enable = lib.mkForce false;
-            enableOffloadCmd = lib.mkForce false;
-          };
-        };
-      };
-    };
-  };
+  #specialisation = {
+  #  sync-enable.configuration = {
+  #    hardware.nvidia = {
+  #      prime = {
+  #        sync.enable = lib.mkForce true;
+  #        offload = {
+  #          enable = lib.mkForce false;
+  #          enableOffloadCmd = lib.mkForce false;
+  #        };
+  #      };
+  #    };
+  #  };
+  #};
 }
