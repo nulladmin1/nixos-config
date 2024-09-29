@@ -69,7 +69,7 @@
       retroarchFull
       xonotic
     ]
-    ++( with config.nur.repos; [
+    ++ (with config.nur.repos; [
       shadowrz.klassy-qt6
     ]);
 }
