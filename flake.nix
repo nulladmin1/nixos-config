@@ -76,6 +76,10 @@
           nur.hmModules.nur
           catppuccin.homeManagerModules.catppuccin
         ];
+        extraSpecialArgs = {
+          inherit username;
+          inherit hostname;
+        };
       };
     };
   };
