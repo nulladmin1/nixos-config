@@ -43,6 +43,7 @@
     alacritty
     papirus-icon-theme
     vlc
+    protonup
 
     # Dev
     git
