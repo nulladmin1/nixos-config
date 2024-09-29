@@ -48,6 +48,7 @@
     go
     python3
     rustup
+    alejandra
 
     # Hyprland stuff
     swaybg
