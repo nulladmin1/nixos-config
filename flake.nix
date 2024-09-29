@@ -37,7 +37,10 @@
     catppuccin,
     ...
   }: let
+    username = "shreyd";
     hostname = "shrey-neo16-nixos";
+    flake = "/home/${username}/nixos-config/";
+    locale = "en_US.UTF-8";
 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -57,7 +60,10 @@
           catppuccin.nixosModules.catppuccin
         ];
         specialArgs = {
-          locale = "en_US.UTF-8";
+          inherit username;
+          inherit hostname;
+          inherit flake;
+          inherit locale;
         };
       };
     };
