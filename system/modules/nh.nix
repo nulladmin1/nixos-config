@@ -5,6 +5,6 @@
       enable = true;
       extraArgs = "--keep-since 7d";
     };
-    inherit flake;
+    flake = flake;
   };
 }
