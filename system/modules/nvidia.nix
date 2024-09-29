@@ -34,6 +34,17 @@
         enable = true;
         enableOffloadCmd = true;
       };
+      specialisation = {
+        sync-enable.configuration = {
+          hardware.nvidia = {
+            prime.sync.enable = lib.mkForce true;
+            prime.offload = {
+              enable = lib.mkForce false;
+              enableOffloadCmd = lib.mkForce false;
+            };
+          };
+        };
+      };
     };
   };
 }
