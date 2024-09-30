@@ -8,5 +8,6 @@
     xorg.libXext
     xorg.libXrender
     xorg.libXtst
+    xorg.libXi
   ];
 }
