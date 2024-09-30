@@ -81,7 +81,7 @@
   programs.home-manager.enable = true;
 
   # KDEConnect
-  services.kdeconnect.enable = true;
+  # services.kdeconnect.enable = true;
 
   # Neovim:
   programs.neovim = {

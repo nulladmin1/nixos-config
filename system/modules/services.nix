@@ -8,6 +8,9 @@
     enable = true;
     gamescopeSession.enable = true;
   };
+  
+  # KDE Connect
+  programs.kdeconnect.enable = true;
 
   # Enable WireShark
   programs.wireshark.enable = true;
