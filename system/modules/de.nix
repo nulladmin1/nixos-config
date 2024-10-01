@@ -24,7 +24,7 @@
   programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
 
   # Gnome
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
   # Enable SDDM
   services = {
