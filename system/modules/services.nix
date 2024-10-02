@@ -4,10 +4,10 @@
   ...
 }: {
   # Steam
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
+  # programs.steam = {
+  #  enable = true;
+  #  gamescopeSession.enable = true;
+  #};
 
   # KDE Connect
   programs.kdeconnect.enable = true;
@@ -40,7 +40,7 @@
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [ hplipWithPlugin ];
+    drivers = with pkgs; [hplipWithPlugin];
   };
 
   # Avahi for printing
