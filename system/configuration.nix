@@ -44,6 +44,7 @@
     papirus-icon-theme
     vlc
     protonup
+    sbctl
 
     # Dev
     git
