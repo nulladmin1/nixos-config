@@ -20,6 +20,12 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # Lanzaboote
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # NUR
     nur.url = "github:nix-community/NUR";
 
@@ -35,6 +41,7 @@
     plasma-manager,
     nur,
     catppuccin,
+    lanzaboote,
     ...
   }: let
     username = "shreyd";
@@ -58,6 +65,7 @@
           nur.nixosModules.nur
           {programs.nix-index-database.comma.enable = true;}
           catppuccin.nixosModules.catppuccin
+          lanzaboote.nixosModules.lanzaboote
         ];
         specialArgs = {
           inherit username;

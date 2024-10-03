@@ -6,11 +6,16 @@
   boot.supportedFilesystems = ["ntfs"];
 
   # Bootloader.
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 5;
-  };
+#  boot.loader.systemd-boot = {
+#    enable = true;
+#    configurationLimit = 5;
+#  };
   boot.loader.efi.canTouchEfiVariables = true;
+  
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot/";
+  };
 
   #boot.loader = {
   #  efi = {
