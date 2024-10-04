@@ -9,6 +9,12 @@
   #  gamescopeSession.enable = true;
   #};
 
+  # SANE
+  hardware.sane = {
+    enable = true;
+    extraBackends = [pkgs.hplipWithPlugin];
+  };
+
   # KDE Connect
   programs.kdeconnect.enable = true;
 

@@ -28,7 +28,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "Shrey Deogade";
-    extraGroups = ["networkmanager" "wheel" "audio" "adbusers"];
+    extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "lp"];
   };
 
   # List packages installed in system profile. To search, run:
