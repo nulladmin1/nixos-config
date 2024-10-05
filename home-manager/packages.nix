@@ -61,6 +61,7 @@
       thefuck # Auto-correct miss-typed commands
       tmux # Terminal multiplexer
       virtualenv
+      warp-terminal
       zoxide # Better cd
 
       # Gaming
