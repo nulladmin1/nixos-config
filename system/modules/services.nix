@@ -4,10 +4,10 @@
   ...
 }: {
   # Steam
-  # programs.steam = {
-  #  enable = true;
-  #  gamescopeSession.enable = true;
-  #};
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
 
   # SANE
   hardware.sane = {
