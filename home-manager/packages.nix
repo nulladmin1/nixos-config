@@ -47,9 +47,11 @@
       # Dev
       android-studio
       flutter
-      jetbrains.idea-community-bin
-      jetbrains.pycharm-community-bin
+      jetbrains.idea-ultimate
+      jetbrains.clion
+      jetbrains.pycharm-professional
       jetbrains.rust-rover
+      jetbrains.webstorm
       jetbrains-toolbox
       lazygit
       lunarvim
