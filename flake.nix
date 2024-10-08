@@ -50,6 +50,10 @@
   }: let
     username = "shreyd";
     hostname = "shrey-neo16-nixos";
+    name = "Shrey Deogade";
+    email = "shrey.deogade@protonmail.com";
+    git_username = "nulladmin1";
+    git_email = "shrey.deogade@protonmail.com";
     flake = "/home/${username}/nixos-config/";
     locale = "en_US.UTF-8";
 
@@ -76,6 +80,7 @@
         inherit hostname;
         inherit flake;
         inherit locale;
+        inherit name;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -90,6 +95,8 @@
       extraSpecialArgs = {
         inherit username;
         inherit hostname;
+        inherit git_email;
+        inherit git_username;
       };
     };
   };
