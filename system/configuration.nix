@@ -52,6 +52,7 @@
     python3
     rustup
     alejandra
+    nil
 
     # Hyprland stuff
     swaybg
