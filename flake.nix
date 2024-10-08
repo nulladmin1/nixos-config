@@ -60,40 +60,36 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations = {
-      shrey-neo16-nixos = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./system
-          nix-index-database.nixosModules.nix-index
-          nur.nixosModules.nur
-          {programs.nix-index-database.comma.enable = true;}
-          catppuccin.nixosModules.catppuccin
-          lanzaboote.nixosModules.lanzaboote
-          stylix.nixosModules.stylix
-        ];
-        specialArgs = {
-          inherit username;
-          inherit hostname;
-          inherit flake;
-          inherit locale;
-        };
+    nixosConfigurations.shrey-neo16-nixos = lib.nixosSystem {
+      inherit system;
+      modules = [
+        ./system
+        nix-index-database.nixosModules.nix-index
+        nur.nixosModules.nur
+        {programs.nix-index-database.comma.enable = true;}
+        catppuccin.nixosModules.catppuccin
+        lanzaboote.nixosModules.lanzaboote
+        stylix.nixosModules.stylix
+      ];
+      specialArgs = {
+        inherit username;
+        inherit hostname;
+        inherit flake;
+        inherit locale;
       };
     };
-    homeConfigurations = {
-      shreyd = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home-manager
-          plasma-manager.homeManagerModules.plasma-manager
-          nur.hmModules.nur
-          catppuccin.homeManagerModules.catppuccin
-          stylix.homeManagerModules.stylix
-        ];
-        extraSpecialArgs = {
-          inherit username;
-          inherit hostname;
-        };
+    homeConfigurations.shreyd = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home-manager
+        plasma-manager.homeManagerModules.plasma-manager
+        nur.hmModules.nur
+        catppuccin.homeManagerModules.catppuccin
+        stylix.homeManagerModules.stylix
+      ];
+      extraSpecialArgs = {
+        inherit username;
+        inherit hostname;
       };
     };
   };
