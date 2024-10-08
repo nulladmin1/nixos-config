@@ -31,6 +31,9 @@
 
     # Catppuccin
     catppuccin.url = "github:catppuccin/nix";
+
+    # Stylix
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -42,6 +45,7 @@
     nur,
     catppuccin,
     lanzaboote,
+    stylix,
     ...
   }: let
     username = "shreyd";
@@ -66,6 +70,7 @@
           {programs.nix-index-database.comma.enable = true;}
           catppuccin.nixosModules.catppuccin
           lanzaboote.nixosModules.lanzaboote
+          stylix.nixosModules.stylix
         ];
         specialArgs = {
           inherit username;
@@ -83,6 +88,7 @@
           plasma-manager.homeManagerModules.plasma-manager
           nur.hmModules.nur
           catppuccin.homeManagerModules.catppuccin
+          stylix.homeManagerModules.stylix
         ];
         extraSpecialArgs = {
           inherit username;
