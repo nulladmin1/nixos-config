@@ -22,7 +22,6 @@
       bat
       brave
       btop
-      davinci-resolve
       nemo-with-extensions
       #ciscoPacketTracer8
       feh
@@ -31,15 +30,10 @@
       gimp
       grim
       htop
-      inkscape-with-extensions
-      kdePackages.kdenlive
-      kdePackages.kdevelop
       obsidian
       obs-studio
       obs-studio-plugins.wlrobs
-      openshot-qt
       rofi
-      shotcut
       slurp
       tldr
       quickemu
@@ -63,7 +57,6 @@
       thefuck # Auto-correct miss-typed commands
       tmux # Terminal multiplexer
       virtualenv
-      warp-terminal
       zoxide # Better cd
 
       # Gaming
