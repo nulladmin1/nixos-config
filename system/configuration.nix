@@ -6,6 +6,7 @@
   pkgs,
   lib,
   username,
+  name,
   ...
 }: {
   imports = [
@@ -27,7 +28,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    description = "Shrey Deogade";
+    description = name;
     extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "lp"];
   };
 
