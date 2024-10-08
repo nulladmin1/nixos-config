@@ -2,6 +2,8 @@
   config,
   pkgs,
   username,
+  git_username,
+  git_email,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
@@ -97,8 +99,8 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "nulladmin1";
-    userEmail = "shrey.deogade@protonmail.com";
+    userName = git_username;
+    userEmail = git_email;
   };
 
   programs.zoxide = {
