@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, hostname, ...}: {
   # ZRAM Swap
   zramSwap.enable = true;
 
@@ -32,7 +32,7 @@
   # Enable all firmware
   hardware.enableAllFirmware = true;
 
-  networking.hostName = "shrey-neo16-nixos"; # Define your hostname.
+  networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
