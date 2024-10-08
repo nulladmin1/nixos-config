@@ -60,7 +60,7 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations.shrey-neo16-nixos = lib.nixosSystem {
+    nixosConfigurations.${hostname} = lib.nixosSystem {
       inherit system;
       modules = [
         ./system
@@ -78,7 +78,7 @@
         inherit locale;
       };
     };
-    homeConfigurations.shreyd = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
         ./home-manager
