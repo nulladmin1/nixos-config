@@ -15,5 +15,5 @@
 
   # Docker
   virtualisation.docker.enable = true;
-  users.users.${username}.extraGroups = [ "docker" ];
+  users.users.${username}.extraGroups = ["docker"];
 }
