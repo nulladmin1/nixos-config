@@ -48,6 +48,14 @@
     stylix,
     ...
   }: let
+    
+    lib = nixpkgs.lib;
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     username = "shreyd";
     hostname = "shrey-neo16-nixos";
     name = "Shrey Deogade";
@@ -66,14 +74,9 @@
       rev = "b7c163951f52d29ad242ff535ce0ea4aa85175f5";
       hash = "sha256-wQSGBcQHBpvtULgYLFE4uEsYCJ9E9iZ+njvbseJjte4=";
     };
-    wallpaper = "${wallpaperDir}/Catppuccinified/nixos-declarative.jpg"; 
+    wallpaper = "${wallpaperDir}/Catppuccinified/nixos-declarative.jpg";
+    font = "JetBrainsMono Nerd Font";
 
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in {
     nixosConfigurations.${hostname} = lib.nixosSystem {
       inherit system;
@@ -93,6 +96,7 @@
         inherit locale;
         inherit name;
         inherit wallpaper;
+        inherit font;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
