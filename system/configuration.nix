@@ -11,13 +11,6 @@
 }: {
   imports = [
   ];
-
-  # Catppuccin
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-  };
-
   # Enable NTFS and ExFAT Support
   boot.supportedFilesystems = ["ntfs" "exfat"];
 
