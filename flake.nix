@@ -52,10 +52,21 @@
     hostname = "shrey-neo16-nixos";
     name = "Shrey Deogade";
     email = "shrey.deogade@protonmail.com";
+    
     git_username = "nulladmin1";
     git_email = "shrey.deogade@protonmail.com";
+    
     flake = "/home/${username}/nixos-config/";
+    
     locale = "en_US.UTF-8";
+    
+    wallpaperDir = pkgs.fetchFromGithub {
+      owner = "nulladmin1";
+      repo = "wallpapers";
+      rev = "b7c163951f52d29ad242ff535ce0ea4aa85175f5";
+      hash = "sha256-wQSGBcQHBpvtULgYLFE4uEsYCJ9E9iZ+njvbseJjte4=";
+    };
+    wallpaper = "${wallpaperDir}/Catppuccinified/nixos-declarative.jpg"; 
 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -81,6 +92,7 @@
         inherit flake;
         inherit locale;
         inherit name;
+        inherit wallpaper;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
