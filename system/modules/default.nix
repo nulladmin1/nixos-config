@@ -9,5 +9,6 @@
     ./nix-ld.nix
     ./de.nix
     ./nh.nix
+    ./theming.nix
   ];
 }
