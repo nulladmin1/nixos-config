@@ -48,7 +48,6 @@
     stylix,
     ...
   }: let
-    
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -60,15 +59,15 @@
     hostname = "shrey-neo16-nixos";
     name = "Shrey Deogade";
     email = "shrey.deogade@protonmail.com";
-    
+
     git_username = "nulladmin1";
     git_email = "shrey.deogade@protonmail.com";
-    
+
     flake = "/home/${username}/nixos-config/";
-    
+
     locale = "en_US.UTF-8";
-    
-    wallpaperDir = pkgs.fetchFromGithub {
+
+    wallpaperDir = pkgs.fetchFromGitHub {
       owner = "nulladmin1";
       repo = "wallpapers";
       rev = "b7c163951f52d29ad242ff535ce0ea4aa85175f5";
@@ -76,7 +75,6 @@
     };
     wallpaper = "${wallpaperDir}/Catppuccinified/nixos-declarative.jpg";
     font = "JetBrainsMono Nerd Font";
-
   in {
     nixosConfigurations.${hostname} = lib.nixosSystem {
       inherit system;
