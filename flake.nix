@@ -80,6 +80,7 @@
       inherit system;
       modules = [
         ./system
+        ./shared
         nix-index-database.nixosModules.nix-index
         nur.nixosModules.nur
         {programs.nix-index-database.comma.enable = true;}
@@ -101,6 +102,7 @@
       inherit pkgs;
       modules = [
         ./home-manager
+        ./shared
         plasma-manager.homeManagerModules.plasma-manager
         nur.hmModules.nur
         catppuccin.homeManagerModules.catppuccin
