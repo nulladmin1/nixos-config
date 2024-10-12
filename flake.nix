@@ -73,7 +73,7 @@
       rev = "b7c163951f52d29ad242ff535ce0ea4aa85175f5";
       hash = "sha256-wQSGBcQHBpvtULgYLFE4uEsYCJ9E9iZ+njvbseJjte4=";
     };
-    wallpaper = "${wallpaperDir}/Catppuccinified/nixos-declarative.jpg";
+    wallpaper = "${wallpaperDir}/current-wallpaper.jpg";
     font = "JetBrainsMono Nerd Font";
   in {
     nixosConfigurations.${hostname} = lib.nixosSystem {
