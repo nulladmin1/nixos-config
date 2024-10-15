@@ -34,6 +34,12 @@
 
     # Stylix
     stylix.url = "github:danth/stylix";
+
+    # My Custom Wallpapers
+    wallpapers = {
+      url = "github:nulladmin1/wallpapers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -46,6 +52,7 @@
     catppuccin,
     lanzaboote,
     stylix,
+    wallpapers,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -67,13 +74,7 @@
 
     locale = "en_US.UTF-8";
 
-    wallpaperDir = pkgs.fetchFromGitHub {
-      owner = "nulladmin1";
-      repo = "wallpapers";
-      rev = "b7c163951f52d29ad242ff535ce0ea4aa85175f5";
-      hash = "sha256-wQSGBcQHBpvtULgYLFE4uEsYCJ9E9iZ+njvbseJjte4=";
-    };
-    wallpaper = "${wallpaperDir}/current-wallpaper.jpg";
+    wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
   in {
     nixosConfigurations.${hostname} = lib.nixosSystem {
