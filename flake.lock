@@ -459,7 +459,8 @@
         "nixpkgs": "nixpkgs",
         "nur": "nur",
         "plasma-manager": "plasma-manager",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "wallpapers": "wallpapers"
       }
     },
     "rust-overlay": {
@@ -593,6 +594,26 @@
       "original": {
         "owner": "tinted-theming",
         "repo": "tinted-tmux",
+        "type": "github"
+      }
+    },
+    "wallpapers": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1729032026,
+        "narHash": "sha256-Xwq7v597sB7a7U4wIYbWqAR2CVLACcdSpIDAWwrH0uE=",
+        "owner": "nulladmin1",
+        "repo": "wallpapers",
+        "rev": "bad6c4caa61850ff753cfb696329b14f517c5060",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nulladmin1",
+        "repo": "wallpapers",
         "type": "github"
       }
     }
