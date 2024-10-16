@@ -30,23 +30,17 @@
       gimp
       grim
       htop
-      obsidian
       obs-studio
       obs-studio-plugins.wlrobs
       rofi
       slurp
       tldr
-      quickemu
 
       # Dev
       android-studio
       blender
       flutter
       jetbrains.idea-ultimate
-      jetbrains.clion
-      jetbrains.pycharm-professional
-      jetbrains.rust-rover
-      jetbrains.webstorm
       jetbrains-toolbox
       lazygit
       lunarvim
@@ -63,7 +57,7 @@
       # Gaming
       ferium
       lutris
-      retroarchFull
+      retroarch
       xonotic
     ]
     ++ (with config.nur.repos; [
