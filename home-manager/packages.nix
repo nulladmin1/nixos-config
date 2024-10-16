@@ -37,7 +37,6 @@
       tldr
 
       # Dev
-      android-studio
       blender
       flutter
       jetbrains.idea-ultimate
