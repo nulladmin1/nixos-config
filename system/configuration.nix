@@ -49,12 +49,12 @@
     nil
 
     # Hyprland stuff
-    swaybg
-    swaynotificationcenter
-    swww
-    wofi
-    wofi-emoji
-    waybar
+    # swaybg
+    # swaynotificationcenter
+    # swww
+    # wofi
+    # wofi-emoji
+    # waybar
   ];
 
   environment.sessionVariables = {
