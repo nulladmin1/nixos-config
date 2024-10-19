@@ -40,6 +40,12 @@
       url = "github:nulladmin1/wallpapers";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Disko
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";	
+    };
   };
 
   outputs = {
@@ -53,6 +59,7 @@
     lanzaboote,
     stylix,
     wallpapers,
+    disko,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -88,6 +95,7 @@
         catppuccin.nixosModules.catppuccin
         lanzaboote.nixosModules.lanzaboote
         stylix.nixosModules.stylix
+        disko.nixosModules.disko
       ];
       specialArgs = {
         inherit username;
