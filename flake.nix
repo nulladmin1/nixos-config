@@ -40,11 +40,11 @@
       url = "github:nulladmin1/wallpapers";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # Disko
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";	
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -84,6 +84,7 @@
     wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
   in {
+    formatter.${system} = pkgs.alejandra;
     nixosConfigurations.${hostname} = lib.nixosSystem {
       inherit system;
       modules = [
