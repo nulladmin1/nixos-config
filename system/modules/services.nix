@@ -30,15 +30,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = true;
-    };
-  };
-
   services.fwupd.enable = true;
 
   programs.command-not-found.enable = false;
