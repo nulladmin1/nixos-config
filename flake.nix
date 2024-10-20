@@ -46,6 +46,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # SOPS-Nix
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -60,6 +66,7 @@
     stylix,
     wallpapers,
     disko,
+    sops-nix,
     ...
   }: let
     lib = nixpkgs.lib;
