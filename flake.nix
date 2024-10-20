@@ -56,6 +56,7 @@
     # My PRIVATE Secrets Repository
     secrets = {
       url = "git+ssh://git@github.com:nulladmin1/secrets.git?ref=main&shallow=1";
+      flake = false;
     };
   };
 
@@ -71,7 +72,7 @@
     stylix,
     wallpapers,
     disko,
-    sops-nix,
+    secrets,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -95,6 +96,8 @@
 
     wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
+    
+    secretsPath = builtins.toString secrets;
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.${hostname} = lib.nixosSystem {
@@ -119,6 +122,7 @@
         inherit name;
         inherit wallpaper;
         inherit font;
+        inherit secretsPath;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
