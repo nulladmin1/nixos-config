@@ -52,6 +52,11 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # My PRIVATE Secrets Repository
+    secrets = {
+      url = "git+ssh://git@github.com:nulladmin1/secrets.git?ref=main&shallow=1";
+    };
   };
 
   outputs = {
