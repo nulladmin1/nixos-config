@@ -69,6 +69,13 @@
     source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
   '';
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    loadInNixShell = true;
+    nix-direnv.enable = true;
+  };
+
   fonts.packages = with pkgs; [
     nerdfonts
     fira-code
