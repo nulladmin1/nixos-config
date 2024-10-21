@@ -30,6 +30,7 @@
       gimp
       grim
       htop
+      kolourpaint
       obs-studio
       obs-studio-plugins.wlrobs
       rofi
