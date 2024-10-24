@@ -41,6 +41,7 @@
       blender
       flutter
       jetbrains.idea-ultimate
+      jetbrains.clion
       jetbrains-toolbox
       lazygit
       lunarvim
