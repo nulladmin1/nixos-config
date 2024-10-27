@@ -22,7 +22,6 @@
       bat
       brave
       btop
-      nemo-with-extensions
       #ciscoPacketTracer8
       feh
       fzf
