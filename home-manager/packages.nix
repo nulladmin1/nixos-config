@@ -59,6 +59,12 @@
       lutris
       retroarch
       xonotic
+
+      # Themes
+      (catppuccin-kde.override {
+        flavour = ["mocha"];
+        accents = ["mauve"];
+      })
     ]
     ++ (with config.nur.repos; [
       shadowrz.klassy-qt6
