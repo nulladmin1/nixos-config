@@ -41,6 +41,7 @@
       flutter
       jetbrains.idea-ultimate
       jetbrains.clion
+      jetbrains.rust-rover
       jetbrains-toolbox
       lazygit
       lunarvim
