@@ -53,7 +53,6 @@
       thefuck # Auto-correct miss-typed commands
       tmux # Terminal multiplexer
       virtualenv
-      zellij
       zoxide # Better cd
 
       # Gaming
