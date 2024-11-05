@@ -77,7 +77,7 @@
   #  /etc/profiles/per-user/shreyd/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "lvim";
   };
 
   # Let Home Manager install and manage itself.
