@@ -1,4 +1,4 @@
-{ ... }:
+{ wallpaper, ... }:
 {
   programs.wofi = {
     enable = true;

@@ -5,6 +5,6 @@
     ./starship.nix
     ./vscode.nix
     #./plasma-auto.nix
-    ./hypr.nix
+    ./hyprland.nix
   ];
 }
