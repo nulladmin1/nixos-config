@@ -97,4 +97,6 @@
     experimental-features = ["nix-command" "flakes"];
     auto-optimise-store = true;
   };
+
+  boot.tmp.cleanOnBoot = true;
 }
