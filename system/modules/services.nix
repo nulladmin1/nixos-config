@@ -9,6 +9,11 @@
     gamescopeSession.enable = true;
   };
 
+  security = {
+    polkit.enable = true;
+    pam.services.hyprlock = {};
+  };
+
   # SANE
   hardware.sane = {
     enable = true;
