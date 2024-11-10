@@ -4,6 +4,10 @@
     enable = true;
   };
 
+  programs.yazi = {
+    enable = true;
+  };
+
   programs.hyprlock = {
     enable = true;
   };
@@ -12,7 +16,7 @@
     enable = true;
     settings = {
       "$terminal" = "alacritty";
-      "$filemanager" = "dolphin";
+      "$filemanager" = "yazi";
       "$menu" = "rofi -show drun";
       
       "monitor" = "eDP-1,1920x1200@165.00,auto,1";
