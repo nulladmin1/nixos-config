@@ -47,12 +47,6 @@
     rustup
     alejandra
     nil
-
-    # Hyprland stuff
-    swaybg
-    swaynotificationcenter
-    swww
-    wofi-emoji
   ];
 
   environment.sessionVariables = {

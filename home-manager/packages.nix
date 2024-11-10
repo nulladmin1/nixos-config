@@ -27,7 +27,7 @@
       fzf
       ghostwriter
       gimp
-      grim
+      hyprshot
       htop
       kolourpaint
       obs-studio
