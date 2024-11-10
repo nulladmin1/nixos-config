@@ -24,6 +24,9 @@
     description = name;
     extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "lp"];
   };
+  
+  # KWallet login every reboot
+  security.pam.services.${username}.kwallet.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
