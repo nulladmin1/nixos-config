@@ -1,5 +1,9 @@
 { wallpaper, ... }:
 {
+  services.swaync = {
+    enable = true;
+  };
+
   programs.rofi = {
     enable = true;
   };
@@ -120,12 +124,14 @@
         "$mainMod, Return, exec, $terminal"
         "$mainMod, W, killactive,"
         "$mainMod CTRL, Q, exit,"
-        "$mainMod, E, exec, $fileManager"
+        "$mainMod, E, exec, $terminal -e $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, F, fullscreen"
+        ", Print, exec, hyprshot -m region"
+        "$mainMod, Print, exec, hyprshot -m output"
 
 # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
