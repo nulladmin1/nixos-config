@@ -129,7 +129,7 @@
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, F, fullscreen"
+        "$mainMod, F, fullscreen, 1"
         ", Print, exec, hyprshot -m region"
         "$mainMod, Print, exec, hyprshot -m output"
 
