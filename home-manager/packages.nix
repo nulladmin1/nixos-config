@@ -35,6 +35,7 @@
       obs-studio-plugins.wlrobs
       rofi
       slurp
+      swaybg
       tldr
 
       # Dev
