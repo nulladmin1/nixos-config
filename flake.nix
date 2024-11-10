@@ -125,6 +125,7 @@
         inherit hostname;
         inherit git_email;
         inherit git_username;
+        inherit wallpaper;
       };
     };
   };
