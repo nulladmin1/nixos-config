@@ -37,6 +37,7 @@
       slurp
       swaybg
       tldr
+      wlsunset
 
       # Dev
       blender

@@ -50,7 +50,7 @@
       "$menu" = "rofi -show drun";
       
       "monitor" = "eDP-1,1920x1200@165.00,auto,1";
-      "exec-once" = "$terminal & waybar & swaybg -i ${wallpaper}";
+      "exec-once" = "$terminal & waybar & swaybg -i ${wallpaper} & wlsunset -S 5:30 -s 18:30";
       
       "env" = [
         "XCURSOR_SIZE,24"
