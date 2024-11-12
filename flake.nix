@@ -46,6 +46,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -60,6 +66,7 @@
     stylix,
     wallpapers,
     disko,
+    nixvim,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -119,6 +126,7 @@
         nur.hmModules.nur
         catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
+        nixvim.homeManagerModules.nixvim
       ];
       extraSpecialArgs = {
         inherit username;
