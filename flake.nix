@@ -47,9 +47,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nixvim
+    # My Custom Nixvim Configuration
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nulladmin1/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -126,7 +126,6 @@
         nur.hmModules.nur
         catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
-        nixvim.homeManagerModules.nixvim
       ];
       extraSpecialArgs = {
         inherit username;
@@ -134,6 +133,7 @@
         inherit git_email;
         inherit git_username;
         inherit wallpaper;
+        inherit nixvim;
       };
     };
   };

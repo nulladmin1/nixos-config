@@ -6,6 +6,5 @@
     ./vscode.nix
     #./plasma-auto.nix
     ./hyprland.nix
-    ./nvim.nix
   ];
 }

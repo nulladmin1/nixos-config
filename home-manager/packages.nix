@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  nixvim,
   ...
 }: {
   home.packages = with pkgs;
@@ -17,7 +18,11 @@
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
+      
+      # My nixvim config
+      nixvim.packages.${pkgs.system}.default
 
+      # Stuff
       anki
       bat
       brave
