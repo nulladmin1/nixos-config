@@ -42,6 +42,7 @@
       slurp
       swaybg
       tldr
+      wl-clipboard
       wlsunset
 
       # Dev
