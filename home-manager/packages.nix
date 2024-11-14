@@ -35,9 +35,13 @@
       gimp
       hyprshot
       htop
+      inkscape
+      kdePackages.kdenlive
       kolourpaint
+      libreoffice-qt6-fresh
       obs-studio
       obs-studio-plugins.wlrobs
+      okular
       rofi
       slurp
       swaybg
@@ -46,7 +50,6 @@
       wlsunset
 
       # Dev
-      blender
       flutter
       jetbrains.idea-ultimate
       jetbrains.clion
@@ -66,7 +69,6 @@
 
       # Gaming
       ferium
-      lutris
       retroarch
       xonotic
 
