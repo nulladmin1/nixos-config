@@ -52,9 +52,6 @@
 
       # Dev
       flutter
-      jetbrains.idea-ultimate
-      jetbrains.clion
-      jetbrains.rust-rover
       jetbrains-toolbox
       lazygit
       lunarvim
@@ -81,5 +78,9 @@
     ]
     ++ (with config.nur.repos; [
       shadowrz.klassy-qt6
+    ]) ++ (with pkgs.jetbrains; [
+      idea-ultimate
+      clion
+      rust-rover
     ]);
 }
