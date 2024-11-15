@@ -99,6 +99,8 @@
 
     locale = "en_US.UTF-8";
 
+    editor = "lvim";
+
     wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
   in {
@@ -128,6 +130,7 @@
         inherit system;
         inherit hyprland;
         inherit hyprland-plugins;
+        inherit editor;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -150,6 +153,7 @@
         inherit system;
         inherit hyprland;
         inherit hyprland-plugins;
+        inherit editor;
       };
     };
   };

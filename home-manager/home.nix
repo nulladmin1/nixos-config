@@ -4,6 +4,7 @@
   username,
   git_username,
   git_email,
+  editor,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
@@ -77,7 +78,7 @@
   #  /etc/profiles/per-user/shreyd/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "lvim";
+    EDITOR = "${editor}";
   };
 
   # Let Home Manager install and manage itself.
