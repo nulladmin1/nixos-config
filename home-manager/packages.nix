@@ -39,6 +39,7 @@
       kdePackages.kdenlive
       kolourpaint
       libreoffice-qt6-fresh
+      nerdfetch
       obs-studio
       obs-studio-plugins.wlrobs
       okular

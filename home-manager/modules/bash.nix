@@ -33,5 +33,8 @@
       # showcursor = "printf '\033[?25l'";
       # hidecursor = "printf '\033[?25h'";
     };
+    bashrcExtra = ''
+    nerdfetch
+    '';
   };
 }

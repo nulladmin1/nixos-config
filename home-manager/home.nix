@@ -123,4 +123,8 @@
     settings = {
     };
   };
+
+  programs.fastfetch = {
+    enable = true;
+  };
 }
