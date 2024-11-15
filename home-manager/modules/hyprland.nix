@@ -25,13 +25,13 @@
         monitor = "";
         size = "80px, 60px";
         outline_thickness = 3;
-        inner_color = "rgba(0, 0, 0, 0.0)";
+        inner_color = "$base";
         
-        outer_color = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        check_color = "rgba(00ff99ee) rgba(ff6633ee) 120deg";
-        fail_color = "rgba(ff6633ee) rgba(ff0066ee) 40deg";
+        outer_color = "$accent";
+        check_color = "$accent";
+        fail_color = "$red";
 
-        font_color = "rgb(143, 143, 143)";
+        font_color = "$text";
         fade_on_empty = false;
         rounding = 15;
 
