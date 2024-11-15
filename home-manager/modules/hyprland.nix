@@ -1,6 +1,7 @@
 {
   wallpaper,
   hyprland,
+  hyprland-plugins,
   system,
   ...
 }: {
@@ -49,6 +50,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland.packages.${system}.hyprland;
+    plugins = [
+      hyprland-plugins.packages.${system}.hyprtrails
+    ];
     settings = {
       "$terminal" = "alacritty";
       "$filemanager" = "yazi";
@@ -143,6 +147,12 @@
       device = {
         name = "epic-mouse-v1";
         sensitivity = -0.5;
+      };
+
+      plugin = {
+        hyprtrails = {
+          color = "$accent";
+        };
       };
 
       "$mainMod" = "SUPER";

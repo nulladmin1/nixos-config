@@ -149,6 +149,7 @@
         inherit nixvim;
         inherit system;
         inherit hyprland;
+        inherit hyprland-plugins;
       };
     };
   };
