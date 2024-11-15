@@ -27,7 +27,6 @@
       bat
       brave
       brightnessctl
-      btop
       #ciscoPacketTracer8
       feh
       fzf

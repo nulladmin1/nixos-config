@@ -127,4 +127,8 @@
   programs.fastfetch = {
     enable = true;
   };
+
+  programs.btop = {
+    enable = true;
+  };
 }
