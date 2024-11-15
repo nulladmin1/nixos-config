@@ -270,7 +270,12 @@
 
       window#waybar {
         background-color: rgba(0, 0, 0, 0);
-        border-radius: 10px;
+      }
+
+      #waybar > box {
+        margin: 10px 15px 0px;
+        background-color: @base;
+        border: 2px solid @mauve;
       }
 
       #workspaces,
@@ -283,31 +288,21 @@
       #battery,
       #clock,
       #power-profiles-daemon,
-      #tray {
-        background-color: @base;
-        border-radius: 16px;
+      #tray,
+      #waybar > box {
+        border-radius: 12px;
       }
 
       #workspaces * {
         color: @red;
       }
 
-      #window * {
-        padding: 0 8px;
-        color: @mauve;
+      #idle_inhibitor {
+        color: @peach;
       }
 
-      #idle_inhibitor,
-      #wireplumber,
-      #network,
-      #cpu,
-      #memory,
-      #battery,
-      #clock,
-      #power-profiles-daemon,
-      #tray {
-        color: @peach;
-        padding: 0 5px;
+      #window * {
+        color: @mauve;
       }
 
       #wireplumber {
@@ -342,9 +337,16 @@
         color: @text;
       }
 
-      #waybar > box {
-        margin: 10px;
-        margin-bottom: 0px;
+      #idle_inhibitor,
+      #wireplumber,
+      #network,
+      #cpu,
+      #memory,
+      #battery,
+      #clock,
+      #power-profiles-daemon,
+      #tray {
+        padding: 0 5px;
       }
     '';
 
