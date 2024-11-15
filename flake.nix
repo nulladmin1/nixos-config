@@ -52,6 +52,15 @@
       url = "github:nulladmin1/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    # Hyprland Plugins
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs = {
@@ -67,6 +76,8 @@
     wallpapers,
     disko,
     nixvim,
+    hyprland,
+    hyprland-plugins,
     ...
   }: let
     lib = nixpkgs.lib;
@@ -90,7 +101,6 @@
 
     wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
-    
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.${hostname} = lib.nixosSystem {
@@ -115,6 +125,9 @@
         inherit name;
         inherit wallpaper;
         inherit font;
+        inherit system;
+        inherit hyprland;
+        inherit hyprland-plugins;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -134,6 +147,8 @@
         inherit git_username;
         inherit wallpaper;
         inherit nixvim;
+        inherit system;
+        inherit hyprland;
       };
     };
   };
