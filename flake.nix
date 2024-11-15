@@ -79,7 +79,7 @@
     hyprland,
     hyprland-plugins,
     ...
-  }: let
+  } @ inputs: let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
