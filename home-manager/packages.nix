@@ -36,7 +36,6 @@
       hyprshot
       htop
       inkscape
-      kdePackages.kdenlive
       kolourpaint
       libreoffice-qt6-fresh
       nerdfetch
@@ -82,5 +81,8 @@
       idea-ultimate
       clion
       rust-rover
+    ]) ++ (with pkgs.kdePackages; [
+      kdenlive
+      qt6ct
     ]);
 }
