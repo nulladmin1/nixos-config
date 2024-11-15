@@ -256,7 +256,7 @@
       }
 
       window#waybar {
-        background-color: alpha(@base, 0.7);
+        background-color: rgba(0, 0, 0, 0);
         border-radius: 10px;
       }
       
@@ -271,7 +271,7 @@
       #clock,
       #power-profiles-daemon,
       #tray {
-        background-color: @surface0;
+        background-color: @base;
         border-radius: 16px;
       }
 
@@ -330,8 +330,8 @@
       }
 
       #waybar > box {
-        border: 4px solid @base;
-        border-radius: 10px;
+        margin: 10px;
+        margin-bottom: 0px;
       }
     '';
 
