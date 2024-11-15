@@ -1,5 +1,9 @@
-{ wallpaper, ... }:
 {
+  wallpaper,
+  hyprland,
+  system,
+  ...
+}: {
   services.swaync = {
     enable = true;
   };
@@ -26,7 +30,7 @@
         size = "80px, 60px";
         outline_thickness = 3;
         inner_color = "$base";
-        
+
         outer_color = "$accent";
         check_color = "$accent";
         fail_color = "$red";
@@ -44,14 +48,15 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = hyprland.packages.${system}.hyprland;
     settings = {
       "$terminal" = "alacritty";
       "$filemanager" = "yazi";
       "$menu" = "rofi -show drun";
-      
+
       "monitor" = "eDP-1,1920x1200@165.00,auto,1";
       "exec-once" = "$terminal & waybar & swaybg -i ${wallpaper} & wlsunset -S 5:30 -s 18:30";
-      
+
       "env" = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
@@ -79,8 +84,7 @@
 
         shadow.range = 4;
         shadow.render_power = 3;
-      
-    
+
         blur = {
           enabled = true;
           size = 3;
@@ -94,7 +98,7 @@
         enabled = true;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
 
-        animation = [ 
+        animation = [
           "windows, 1, 7, myBezier"
           "windowsOut, 1, 7, default, popin 80%"
           "border, 1, 10, default"
@@ -143,8 +147,7 @@
 
       "$mainMod" = "SUPER";
 
-
-      bind = [ 
+      bind = [
         "$mainMod, Return, exec, $terminal"
         "$mainMod, W, killactive,"
         "$mainMod CTRL, Q, exit,"
@@ -159,13 +162,13 @@
 
         "$mainMod, L, exec, hyprlock"
 
-# Move focus with mainMod + arrow keys
+        # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
 
-# Switch workspaces with mainMod + [0-9]
+        # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -177,7 +180,7 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-# Move active window to a workspace with mainMod + SHIFT + [0-9]
+        # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -189,21 +192,21 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-# Example special workspace (scratchpad)
+        # Example special workspace (scratchpad)
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-# Scroll through existing workspaces with mainMod + scroll
+        # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
-  
-      bindm =[
+
+      bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
 
-# Laptop multimedia keys for volume and LCD brightness
+      # Laptop multimedia keys for volume and LCD brightness
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -212,7 +215,7 @@
         ",XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
       ];
-# Requires playerctl
+      # Requires playerctl
       bindl = [
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
@@ -244,7 +247,7 @@
       };
     };
   };
-  
+
   programs.waybar = {
     enable = true;
     style = ''
@@ -259,7 +262,7 @@
         background-color: rgba(0, 0, 0, 0);
         border-radius: 10px;
       }
-      
+
       #workspaces,
       #window,
       #idle_inhibitor,
@@ -308,7 +311,7 @@
       #power-profiles-daemon {
         color: @teal;
       }
-      
+
       #cpu {
         color: @sky;
       }
@@ -364,9 +367,9 @@
           warp-on-scroll = false;
           format = "{name}: {icon}";
           format-icons = {
-              "urgent" = "";
-              "active" = "";
-              "default" = "";
+            "urgent" = "";
+            "active" = "";
+            "default" = "";
           };
         };
 
@@ -389,12 +392,12 @@
 
         wireplumber = {
           format = "Volume: {icon}  {volume}% ";
-          format-icons = [ "" "" "" ];
+          format-icons = ["" "" ""];
           format-muted = "Muted ";
         };
 
         clock = {
-          format = "  {:%H:%M}"; 
+          format = "  {:%H:%M}";
         };
 
         network = {

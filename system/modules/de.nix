@@ -1,12 +1,16 @@
 {
   pkgs,
   lib,
+  hyprland,
+  system,
   ...
 }: {
   # Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = hyprland.packages.${system}.hyprland;
+    portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # WayFire
