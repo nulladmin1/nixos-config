@@ -53,6 +53,7 @@
     plugins = with hyprland-plugins.packages.${system}; [
       hyprtrails
       csgo-vulkan-fix
+      hyprwinwrap
     ];
     settings = {
       "$terminal" = "alacritty";
@@ -159,6 +160,9 @@
       plugin = {
         hyprtrails = {
           color = "$accent";
+        };
+        hyprwinwrap = {
+          class = "backgroundapp";
         };
       };
 
