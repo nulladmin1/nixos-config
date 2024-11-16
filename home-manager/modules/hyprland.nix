@@ -1,7 +1,6 @@
 {
   wallpaper,
-  hyprland,
-  hyprland-plugins,
+  inputs,
   system,
   ...
 }: {
@@ -57,8 +56,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = hyprland.packages.${system}.hyprland;
-    plugins = with hyprland-plugins.packages.${system}; [
+    package = inputs.hyprland.packages.${system}.hyprland;
+    plugins = with inputs.hyprland-plugins.packages.${system}; [
       hyprtrails
       csgo-vulkan-fix
       hyprwinwrap

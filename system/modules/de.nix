@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  hyprland,
+  inputs,
   system,
   ...
 }: {
@@ -9,8 +9,8 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = hyprland.packages.${system}.hyprland;
-    portalPackage = hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    package = inputs.hyprland.packages.${system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # WayFire

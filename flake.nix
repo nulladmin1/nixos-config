@@ -132,9 +132,8 @@
         inherit wallpaper;
         inherit font;
         inherit system;
-        inherit hyprland;
-        inherit hyprland-plugins;
         inherit editor;
+        inherit inputs;
       };
     };
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
@@ -155,10 +154,8 @@
         inherit wallpaper;
         inherit nixvim;
         inherit system;
-        inherit hyprland;
-        inherit hyprland-plugins;
         inherit editor;
-        inherit nix-gaming;
+        inherit inputs;
       };
     };
   };
