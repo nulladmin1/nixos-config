@@ -341,14 +341,6 @@
         color: @teal;
       }
 
-      #cpu {
-        color: @sky;
-      }
-
-      #memory {
-        color: @sapphire;
-      }
-
       #battery {
         color: @blue;
       }
@@ -390,8 +382,6 @@
           "wireplumber"
           "network"
           "power-profiles-daemon"
-          "cpu"
-          "memory"
           "battery"
           "clock"
           "tray"
@@ -450,14 +440,6 @@
             balanced = "";
             power-saver = "";
           };
-        };
-
-        cpu = {
-          format = " {usage}%";
-        };
-
-        memory = {
-          format = "{used}Gb  ";
         };
 
         battery = {
