@@ -28,6 +28,7 @@
       brave
       brightnessctl
       #ciscoPacketTracer8
+      discord
       feh
       fzf
       ghostwriter
@@ -43,6 +44,8 @@
       okular
       rofi
       slurp
+      spicetify-cli
+      spotify
       tldr
       wl-clipboard
       wlsunset
