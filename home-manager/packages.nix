@@ -43,7 +43,6 @@
       okular
       rofi
       slurp
-      swaybg
       tldr
       wl-clipboard
       wlsunset

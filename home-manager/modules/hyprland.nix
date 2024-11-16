@@ -17,6 +17,14 @@
     enable = true;
   };
 
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = "${wallpaper}";
+      wallpaper = ", ${wallpaper}";
+    };
+  };
+
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -61,7 +69,12 @@
       "$menu" = "rofi -show drun";
 
       "monitor" = ",1920x1200@165.00,auto,1";
-      "exec-once" = "$terminal & waybar & swaybg -i ${wallpaper} & wlsunset -S 5:30 -s 18:30";
+      "exec-once" = [
+        "$terminal"
+        "waybar"
+        "wlsunset -S 5:30 -s 18:30"
+        "hyprpaper"
+      ];
 
       "env" = [
         "XCURSOR_SIZE,24"
