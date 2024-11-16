@@ -61,6 +61,9 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+
+    # Nix Gaming
+    nix-gaming.url = "github:fufexan/nix-gaming";
   };
 
   outputs = {
@@ -78,6 +81,7 @@
     nixvim,
     hyprland,
     hyprland-plugins,
+    nix-gaming,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
@@ -154,6 +158,7 @@
         inherit hyprland;
         inherit hyprland-plugins;
         inherit editor;
+        inherit nix-gaming;
       };
     };
   };
