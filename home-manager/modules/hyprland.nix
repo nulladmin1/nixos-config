@@ -50,8 +50,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = hyprland.packages.${system}.hyprland;
-    plugins = [
-      hyprland-plugins.packages.${system}.hyprtrails
+    plugins = with hyprland-plugins.packages.${system}; [
+      hyprtrails
+      csgo-vulkan-fix
     ];
     settings = {
       "$terminal" = "alacritty";
