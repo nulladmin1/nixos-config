@@ -267,23 +267,23 @@
     xwayland.enable = true;
   };
 
-  programs.cava = {
-    enable = true;
-    settings = {
-      general = {
-        mode = "normal";
-        framerate = 60;
-        bars = 0;
-        bar_width = 2;
-        bar_spacing = 1;
-        bar_height = 32;
-      };
-      input = {
-        method = "pipewire";
-        source = "auto";
-      };
-    };
-  };
+  #programs.cava = {
+  #  enable = true;
+  #  settings = {
+  #    general = {
+  #      mode = "normal";
+  #      framerate = 60;
+  #      bars = 0;
+  #      bar_width = 2;
+  #      bar_spacing = 1;
+  #      bar_height = 32;
+  #    };
+  #    input = {
+  #      method = "pipewire";
+  #      source = "auto";
+  #    };
+  #  };
+  #};
 
   programs.waybar = {
     enable = true;
