@@ -6,5 +6,6 @@
     ./vscode.nix
     #./plasma-auto.nix
     ./hyprland.nix
+    ./temp.nix
   ];
 }
