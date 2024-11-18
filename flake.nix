@@ -139,7 +139,7 @@
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./home-manager
+        ./home
         ./shared
         plasma-manager.homeManagerModules.plasma-manager
         nur.hmModules.nur
