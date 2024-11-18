@@ -3,13 +3,7 @@
   pkgs,
   ...
 }: {
-  # Steam
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
-
-  security = {
+ security = {
     polkit.enable = true;
     pam.services.hyprlock = {};
   };
@@ -48,8 +42,6 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
-  programs.gamemode.enable = true;
 
   # ADB
   programs.adb.enable = true;

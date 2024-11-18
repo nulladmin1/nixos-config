@@ -10,5 +10,6 @@
     ./desktop
     ./nh.nix
     ./theming.nix
+    ./gaming.nix
   ];
 }
