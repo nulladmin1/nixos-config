@@ -8,12 +8,6 @@
     pam.services.hyprlock = {};
   };
 
-  # SANE
-  hardware.sane = {
-    enable = true;
-    extraBackends = [pkgs.hplipWithPlugin];
-  };
-
   # KDE Connect
   programs.kdeconnect.enable = true;
 
@@ -26,19 +20,6 @@
   # };
 
   programs.command-not-found.enable = false;
-
-  # Enable CUPS to print documents.
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [hplipWithPlugin];
-  };
-
-  # Avahi for printing
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
 
   # ADB
   programs.adb.enable = true;
