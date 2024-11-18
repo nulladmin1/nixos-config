@@ -7,7 +7,7 @@
     ./services.nix
     ./virtualization.nix
     ./nix-ld.nix
-    ./de.nix
+    ./desktop
     ./nh.nix
     ./theming.nix
   ];
