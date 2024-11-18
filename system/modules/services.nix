@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
- security = {
+  security = {
     polkit.enable = true;
     pam.services.hyprlock = {};
   };
@@ -24,9 +24,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # List services that you want to enable:
-  services.fwupd.enable = true;
 
   programs.command-not-found.enable = false;
 
