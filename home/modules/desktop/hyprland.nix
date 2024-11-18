@@ -12,8 +12,8 @@
         url = "https://github.com/catppuccin/swaync/releases/download/v0.2.3/macchiato.css";
         sha256 = "1cyiblyarslbjjnrd6yysm75fy8v0nfacacnizhg697md6fvmj9c";
       };
-    in builtins.readFile "${theme}";
-
+    in
+      builtins.readFile "${theme}";
   };
 
   programs.rofi = {
