@@ -21,6 +21,11 @@
     pkiBundle = "/etc/secureboot/";
   };
 
+  # Enable polkit
+  security = {
+    polkit.enable = true;
+  };
+
   #boot.loader = {
   #  efi = {
   #    canTouchEfiVariables = true;
@@ -69,10 +74,8 @@
 
   boot.tmp.cleanOnBoot = true;
 
-
   # Fwupd for firmware
   services.fwupd.enable = true;
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
