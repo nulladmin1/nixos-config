@@ -6,8 +6,8 @@
   # ZRAM Swap
   zramSwap.enable = true;
 
-  # NTFS Support
-  boot.supportedFilesystems = ["ntfs"];
+  # NTFS + exFat Support
+  boot.supportedFilesystems = ["ntfs" "exfat"];
 
   # Bootloader.
   #  boot.loader.systemd-boot = {
@@ -66,6 +66,8 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  boot.tmp.cleanOnBoot = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
