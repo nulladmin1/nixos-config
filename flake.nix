@@ -134,6 +134,7 @@
         lanzaboote.nixosModules.lanzaboote
         stylix.nixosModules.stylix
         disko.nixosModules.disko
+        nix-gaming.nixosModules.platformOptimizations
       ];
       specialArgs = {
         inherit username;
