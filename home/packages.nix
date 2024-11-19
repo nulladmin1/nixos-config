@@ -18,7 +18,7 @@
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
-      
+
       # My nixvim config
       nixvim.packages.${pkgs.system}.default
 
@@ -45,7 +45,7 @@
       rofi
       slurp
       spicetify-cli
-      spotify
+      #spotify
       tldr
       wl-clipboard
       wlsunset
@@ -78,11 +78,13 @@
     ]
     ++ (with config.nur.repos; [
       shadowrz.klassy-qt6
-    ]) ++ (with pkgs.jetbrains; [
+    ])
+    ++ (with pkgs.jetbrains; [
       idea-ultimate
       clion
       rust-rover
-    ]) ++ (with pkgs.kdePackages; [
+    ])
+    ++ (with pkgs.kdePackages; [
       kdenlive
       qt6ct
     ]);
