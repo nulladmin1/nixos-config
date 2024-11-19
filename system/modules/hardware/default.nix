@@ -3,6 +3,6 @@
     ./kernel.nix
     ./nvidia.nix
     ./system.nix
-    ./tlp.nix
+    #    ./tlp.nix
   ];
 }
