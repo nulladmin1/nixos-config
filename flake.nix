@@ -114,6 +114,11 @@
 
     wallpaper = "${wallpapers.packages.${system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
+    theme = {
+      name = "catppuccin";
+      scheme = "mocha";
+      accent = "mauve";
+    };
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.${hostname} = lib.nixosSystem {
@@ -140,6 +145,7 @@
         inherit font;
         inherit system;
         inherit editor;
+        inherit theme;
         inherit inputs;
       };
     };
@@ -163,6 +169,7 @@
         inherit nixvim;
         inherit system;
         inherit editor;
+        inherit theme;
         inherit inputs;
       };
     };
