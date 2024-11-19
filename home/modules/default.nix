@@ -6,5 +6,6 @@
     ./vscode.nix
     ./temp.nix
     ./desktop
+    ./spicetify.nix
   ];
 }

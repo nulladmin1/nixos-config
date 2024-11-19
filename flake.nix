@@ -64,6 +64,12 @@
 
     # Nix Gaming
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    # Spicetify-Nix
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -82,6 +88,7 @@
     hyprland,
     hyprland-plugins,
     nix-gaming,
+    spicetify-nix,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
@@ -145,6 +152,7 @@
         nur.hmModules.nur
         catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
+        spicetify-nix.homeManagerModules.default
       ];
       extraSpecialArgs = {
         inherit username;
