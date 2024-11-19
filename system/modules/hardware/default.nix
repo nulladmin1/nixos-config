@@ -1,5 +1,5 @@
 {...}: {
-  import = [
+  imports = [
     ./kernel.nix
     ./nvidia.nix
     ./system.nix
