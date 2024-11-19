@@ -32,6 +32,8 @@
     };
   };
 
+  services.swayosd.enable = true;
+
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -81,6 +83,7 @@
         "waybar"
         "wlsunset -S 5:30 -s 18:30"
         "hyprpaper"
+        "swayosd-server"
       ];
 
       "env" = [

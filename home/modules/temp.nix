@@ -1,6 +1,9 @@
-{ pkgs, git_email, git_username, ... }:
 {
-
+  pkgs,
+  git_email,
+  git_username,
+  ...
+}: {
   catppuccin = {
     enable = true;
     flavor = "mocha";
@@ -55,11 +58,9 @@
     enableBashIntegration = true;
   };
 
-  services.swayosd.enable = true;
-
   programs.zellij = {
     enable = true;
-#    enableBashIntegration = true;
+    #    enableBashIntegration = true;
     catppuccin.enable = true;
     settings = {
     };
@@ -72,7 +73,4 @@
   programs.btop = {
     enable = true;
   };
-
- 
-
 }
