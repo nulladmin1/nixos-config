@@ -4,12 +4,6 @@
   git_username,
   ...
 }: {
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
-
   # Alacritty
   programs.alacritty = {
     enable = true;
@@ -33,12 +27,6 @@
   # Neovim:
   programs.neovim = {
     enable = false;
-  };
-
-  # Default Applications
-  xdg.mimeApps.defaultApplications = {
-    "inode/directory" = "nemo.desktop";
-    "text/plain" = "brave.desktop";
   };
 
   # Git

@@ -4,8 +4,9 @@
     # ./gui.nix
     ./starship.nix
     ./vscode.nix
-    ./temp.nix
+    ./utils.nix
     ./desktop
     ./spicetify.nix
+    ./theming.nix
   ];
 }
