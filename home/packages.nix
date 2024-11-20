@@ -46,6 +46,7 @@
       slurp
       spicetify-cli
       #spotify
+      swww
       tldr
       wl-clipboard
       wlsunset
