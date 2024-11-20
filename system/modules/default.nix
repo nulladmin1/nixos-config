@@ -11,5 +11,6 @@
     ./printing.nix
     ./kdeconnect.nix
     ./services.nix
+    ./audio.nix
   ];
 }
