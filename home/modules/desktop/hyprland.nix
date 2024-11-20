@@ -26,6 +26,9 @@
 
   services.swayosd.enable = true;
 
+  # Enable Playerctl
+  services.playerctld.enable = true;
+
   services.hyprpaper = {
     enable = true;
     settings = {
