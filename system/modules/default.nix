@@ -12,5 +12,6 @@
     ./kdeconnect.nix
     ./services.nix
     ./audio.nix
+    ./xdg-portal.nix
   ];
 }

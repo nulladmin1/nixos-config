@@ -65,11 +65,4 @@
 
   # Enable flatpak
   #services.flatpak.enable = true;
-
-  # Enable XDG Portal (needed for flatpak)
-  #xdg.portal = {
-  #  enable = true;
-  #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #  config.common.default = "gtk";
-  #};
 }
