@@ -1,7 +1,4 @@
-{
-  editor,
-  ...
-}: {
+{editor, ...}: {
   # Bash:
   programs.bash = {
     enable = true;
@@ -23,7 +20,6 @@
       commit = "git commit -am";
       edithome = "cd ~/nixos-config/ && ${editor} home-manager/home.nix home-manager/packages.nix";
       editsysconf = "cd ~/nixos-config/ && ${editor} system/configuration.nix flake.nix";
-      screenshot = "bash $HOME/nixos-config/home-manager/scripts/screenshot.sh";
       #nvidia-offload = "export __NV_PRIME_RENDER_OFFLOAD=1
       #    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
       #    export __GLX_VENDOR_LIBRARY_NAME=nvidia
@@ -33,7 +29,7 @@
       # hidecursor = "printf '\033[?25h'";
     };
     bashrcExtra = ''
-    nerdfetch
+      nerdfetch
     '';
   };
 }
