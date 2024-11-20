@@ -121,10 +121,11 @@
     };
   in {
     formatter.${system} = pkgs.alejandra;
-    nixosConfigurations.${hostname} = lib.nixosSystem {
+    nixosConfigurations.neo16 = lib.nixosSystem {
       inherit system;
       modules = [
         ./system
+        ./hosts/neo16
         ./shared
         home-manager.nixosModules.home-manager
         nix-index-database.nixosModules.nix-index
