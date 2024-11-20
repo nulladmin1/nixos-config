@@ -6,7 +6,6 @@
     ./desktop
     ./hardware
     ./nh.nix
-    ./theming.nix
     ./gaming.nix
     ./printing.nix
     ./kdeconnect.nix

@@ -7,6 +7,5 @@
     ./utils.nix
     ./desktop
     ./spicetify.nix
-    ./theming.nix
   ];
 }
