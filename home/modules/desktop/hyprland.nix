@@ -66,6 +66,10 @@
         blur_passes = 2;
       };
 
+      general = {
+        hide_cursor = false;
+      };
+
       input-field = {
         monitor = "";
         size = "80px, 60px";
@@ -80,10 +84,34 @@
         fade_on_empty = false;
         rounding = 15;
 
-        position = "0, -20";
+        position = "0, -50";
         halign = "center";
         valign = "center";
       };
+
+      label = [
+        {
+          monitor = "";
+          text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
+          color = "$text";
+          font_size = 24;
+          font_family = "JetBrains Mono Nerd Font";
+          position = "0, 250";
+          halign = "center";
+          valign = "center";
+        }
+
+        {
+          monitor = "";
+          text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
+          color = "$text";
+          font_size = 96;
+          font_family = "JetBrains Mono Nerd Font Extrabold";
+          position = "0, 150";
+          halign = "center";
+          valign = "center";
+        }
+      ];
     };
   };
 
