@@ -20,5 +20,4 @@
 * More desktop environments
 * `plasma-manager`
 * Add support for AMD Stuff
-* Create a `hosts/` folder for host-related stuff
 * Make a better `Neovim` configuration
