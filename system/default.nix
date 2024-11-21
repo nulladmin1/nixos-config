@@ -12,5 +12,6 @@
     ./utils.nix
     ./audio.nix
     ./xdg-portal.nix
+    ./nix.nix
   ];
 }
