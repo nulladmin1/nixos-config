@@ -97,37 +97,14 @@
       inherit system;
       config.allowUnfree = true;
     };
-
-    username = "shreyd";
-    hostname = "shrey-neo16-nixos";
-    name = "Shrey Deogade";
-    email = "shrey.deogade@protonmail.com";
-
-    git_username = "nulladmin1";
-    git_email = "shrey.deogade@protonmail.com";
-
-    flake = "/home/${username}/nixos-config/";
-
-    locale = "en_US.UTF-8";
-
-    editor = "lvim";
-
-    wallpaper = "${wallpapers.packages.${system}.default}/random.png";
-    font = "JetBrainsMono Nerd Font";
-    theme = {
-      name = "catppuccin";
-      scheme = "mocha";
-      accent = "mauve";
-    };
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations.neo16 = lib.nixosSystem {
       inherit system;
       modules = [
-        ./system
         ./hosts/neo16
         ./shared
-        home-manager.nixosModules.home-manager
+        ./system
         nix-index-database.nixosModules.nix-index
         nur.nixosModules.nur
         {programs.nix-index-database.comma.enable = true;}
@@ -138,42 +115,23 @@
         nix-gaming.nixosModules.platformOptimizations
       ];
       specialArgs = {
-        inherit username;
-        inherit hostname;
-        inherit flake;
-        inherit locale;
-        inherit name;
-        inherit wallpaper;
-        inherit font;
-        inherit system;
-        inherit editor;
-        inherit theme;
-        inherit inputs;
+        inherit lib system inputs;
       };
     };
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      modules = [
-        ./home
-        ./shared
-        plasma-manager.homeManagerModules.plasma-manager
-        nur.hmModules.nur
-        catppuccin.homeManagerModules.catppuccin
-        stylix.homeManagerModules.stylix
-        spicetify-nix.homeManagerModules.default
-      ];
-      extraSpecialArgs = {
-        inherit username;
-        inherit hostname;
-        inherit git_email;
-        inherit git_username;
-        inherit wallpaper;
-        inherit nixvim;
-        inherit system;
-        inherit editor;
-        inherit theme;
-        inherit inputs;
-      };
-    };
+    #    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+    #      inherit pkgs;
+    #      modules = [
+    #        ./home
+    #        ./shared
+    #        plasma-manager.homeManagerModules.plasma-manager
+    #        nur.hmModules.nur
+    #        catppuccin.homeManagerModules.catppuccin
+    #        stylix.homeManagerModules.stylix
+    #        spicetify-nix.homeManagerModules.default
+    #      ];
+    #      extraSpecialArgs = [
+    #        specialArgs
+    #      ];
+    #    };
   };
 }
