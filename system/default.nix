@@ -9,7 +9,7 @@
     ./gaming.nix
     ./printing.nix
     ./kdeconnect.nix
-    ./services.nix
+    ./utils.nix
     ./audio.nix
     ./xdg-portal.nix
   ];
