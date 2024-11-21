@@ -12,13 +12,6 @@ in {
   imports = [
     ./opts.nix
   ];
-  # Enable NTFS and ExFAT Support
-  boot.supportedFilesystems = ["ntfs" "exfat"];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnfreePredicate = _: true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
