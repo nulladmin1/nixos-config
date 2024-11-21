@@ -1,9 +1,11 @@
 {
   pkgs,
-  git_email,
-  git_username,
+  config,
   ...
-}: {
+}: let
+  git_email = config.var.git_email;
+  git_username = config.var.git_username;
+in {
   # Alacritty
   programs.alacritty = {
     enable = true;

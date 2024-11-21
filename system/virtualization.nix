@@ -1,9 +1,10 @@
 {
   config,
   pkgs,
-  username,
   ...
-}: {
+}: let
+  username = config.var.username;
+in {
   virtualisation.libvirtd = {
     enable = true;
     qemu = {

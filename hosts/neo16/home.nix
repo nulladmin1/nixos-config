@@ -1,135 +1,41 @@
 {
   config,
-  pkgs,
-  username,
-  git_username,
-  git_email,
   editor,
+  inputs,
   ...
-}: {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
+}: let
+  username = config.var.username;
+in {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
+    users.${username} = {
+      home.username = username;
+      home.homeDirectory = "/home/${username}";
+      home.stateVersion = "24.05";
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+      imports =
+        [
+          ../../home
+        ]
+        ++ (with inputs; [
+          plasma-manager.homeManagerModules.plasma-manager
+          nur.hmModules.nur
+          catppuccin.homeManagerModules.catppuccin
+          stylix.homeManagerModules.stylix
+          spicetify-nix.homeManagerModules.default
+        ]);
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
-
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
-
-  # Alacritty
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        opacity = 0.9;
-        blur = true;
+      home.sessionVariables = {
+        EDITOR = "${editor}";
       };
-      font = {
-        normal = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Regular";
-        };
-      };
+
+      programs.home-manager.enable = true;
     };
-  };
-
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. If you don't want to manage your shell through Home
-  # Manager then you have to manually source 'hm-session-vars.sh' located at
-  # either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/shreyd/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    EDITOR = "${editor}";
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  # KDEConnect
-  # services.kdeconnect.enable = true;
-
-  # Neovim:
-  programs.neovim = {
-    enable = false;
-  };
-
-  # Default Applications
-  xdg.mimeApps.defaultApplications = {
-    "inode/directory" = "nemo.desktop";
-    "text/plain" = "brave.desktop";
-  };
-
-  # Git
-  programs.git = {
-    enable = true;
-    userName = git_username;
-    userEmail = git_email;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
-  programs.thefuck = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
-  services.swayosd.enable = true;
-
-  programs.zellij = {
-    enable = true;
-    #    enableBashIntegration = true;
-    catppuccin.enable = true;
-    settings = {
-    };
-  };
-
-  programs.fastfetch = {
-    enable = true;
-  };
-
-  programs.btop = {
-    enable = true;
   };
 }

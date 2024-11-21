@@ -1,10 +1,12 @@
 {
   pkgs,
-  wallpaper,
+  config,
   inputs,
   system,
   ...
-}: {
+}: let
+  wallpaper = config.var.wallpaper;
+in {
   services.swaync = {
     enable = true;
     style = let

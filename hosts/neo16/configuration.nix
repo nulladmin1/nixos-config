@@ -4,12 +4,13 @@
 {
   config,
   pkgs,
-  lib,
-  username,
-  name,
   ...
-}: {
+}: let
+  username = config.var.username;
+  name = config.var.name;
+in {
   imports = [
+    ./opts.nix
   ];
   # Enable NTFS and ExFAT Support
   boot.supportedFilesystems = ["ntfs" "exfat"];

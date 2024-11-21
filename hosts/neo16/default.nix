@@ -3,6 +3,5 @@
     ./configuration.nix
     ./hardware-configuration.nix
     ./disko.nix
-    ./var.nix
   ];
 }

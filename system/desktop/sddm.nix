@@ -1,8 +1,7 @@
-{
-  wallpaper,
-  font,
-  ...
-}: {
+{config, ...}: let
+  wallpaper = config.var.wallpaper;
+  font = config.var.font;
+in {
   # Enable SDDM
   services = {
     displayManager = {

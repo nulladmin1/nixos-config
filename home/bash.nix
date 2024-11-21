@@ -1,4 +1,6 @@
-{editor, ...}: {
+{config, ...}: let
+  editor = config.var.editor;
+in {
   # Bash:
   programs.bash = {
     enable = true;

@@ -1,8 +1,10 @@
 {
   pkgs,
-  hostname,
+  config,
   ...
-}: {
+}: let
+  hostname = config.var.hostname;
+in {
   # ZRAM Swap
   zramSwap.enable = true;
 

@@ -1,9 +1,6 @@
-{
-  config,
-  pkgs,
-  locale,
-  ...
-}: {
+{config, ...}: let
+  locale = config.var.locale;
+in {
   # Set your time zone.
   time.timeZone = "America/New_York";
 

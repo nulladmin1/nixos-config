@@ -1,4 +1,6 @@
-{flake, ...}: {
+{config, ...}: let
+  flake = config.var.flake;
+in {
   programs.nh = {
     enable = true;
     clean = {
