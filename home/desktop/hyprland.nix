@@ -31,13 +31,13 @@ in {
   # Enable Playerctl
   services.playerctld.enable = true;
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = "${wallpaper}";
-      wallpaper = ", ${wallpaper}";
-    };
-  };
+  #services.hyprpaper = {
+  #  enable = true;
+  #  settings = {
+  #    preload = "${wallpaper}";
+  #    wallpaper = ", ${wallpaper}";
+  #  };
+  #};
 
   services.hypridle = {
     enable = true;
@@ -138,8 +138,9 @@ in {
         "$terminal"
         "waybar"
         "wlsunset -S 5:30 -s 18:30"
-        "hyprpaper"
         "swayosd-server"
+        "swww-daemon"
+        "swww img ${wallpaper}"
       ];
 
       "env" = [
