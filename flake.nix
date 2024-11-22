@@ -107,7 +107,6 @@
         ./system
         nix-index-database.nixosModules.nix-index
         nur.nixosModules.nur
-        {programs.nix-index-database.comma.enable = true;}
         catppuccin.nixosModules.catppuccin
         lanzaboote.nixosModules.lanzaboote
         stylix.nixosModules.stylix

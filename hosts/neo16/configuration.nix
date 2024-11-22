@@ -54,10 +54,6 @@ in {
   environment.shells = with pkgs; [bash zsh fish];
   users.defaultUserShell = pkgs.bash;
 
-  programs.bash.interactiveShellInit = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
-
   fonts.packages = with pkgs; [
     nerdfonts
     fira-code
