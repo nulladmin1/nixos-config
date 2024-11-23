@@ -14,5 +14,6 @@
     ./xdg-portal.nix
     ./nix.nix
     ./fonts.nix
+    ./home-manager.nix
   ];
 }
