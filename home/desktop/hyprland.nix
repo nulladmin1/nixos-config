@@ -2,10 +2,10 @@
   pkgs,
   config,
   inputs,
-  system,
   ...
 }: let
   wallpaper = config.var.wallpaper;
+  system = pkgs.system;
 in {
   services.swaync = {
     enable = true;

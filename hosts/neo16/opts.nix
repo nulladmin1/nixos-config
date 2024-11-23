@@ -1,7 +1,7 @@
 {
   lib,
+  pkgs,
   inputs,
-  system,
   ...
 }: {
   imports = [../../shared/var-options.nix];
@@ -21,7 +21,7 @@
 
     editor = "lvim";
 
-    wallpaper = "${inputs.wallpapers.packages.${system}.default}/random.png";
+    wallpaper = "${inputs.wallpapers.packages.${pkgs.system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
     theme = {
       name = "catppuccin";

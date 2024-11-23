@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }: {
   xdg.portal = {
@@ -11,7 +10,7 @@
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
     ];
   };
 }
