@@ -102,9 +102,10 @@
     nixosConfigurations.neo16 = lib.nixosSystem {
       inherit system;
       modules = [
-        ./hosts/neo16
+        ./hosts/neo16/configuration.nix
         ./shared
         ./system
+        home-manager.nixosModules.home-manager
         nix-index-database.nixosModules.nix-index
         nur.nixosModules.nur
         catppuccin.nixosModules.catppuccin

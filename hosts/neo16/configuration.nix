@@ -11,6 +11,8 @@
 in {
   imports = [
     ./opts.nix
+    ./disko.nix
+    ./hardware-configuration.nix
   ];
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
@@ -18,6 +20,8 @@ in {
     description = name;
     extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "lp"];
   };
+
+  home-manager.users.${username} = import ./home.nix;
 
   # KWallet login every reboot
   security.pam.services.${username}.kwallet.enable = true;
