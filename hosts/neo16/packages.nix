@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  nixvim,
+  inputs,
   ...
 }: {
   home.packages = with pkgs;
@@ -20,7 +20,7 @@
       # '')
 
       # My nixvim config
-      nixvim.packages.${pkgs.system}.default
+      #      inputs.nixvim.packages.${pkgs.system}.default
 
       # Stuff
       anki
@@ -55,7 +55,7 @@
       flutter
       jetbrains-toolbox
       lazygit
-      lunarvim
+      #lunarvim
       neofetch
       nodejs
       pkg-config
