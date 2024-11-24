@@ -19,7 +19,7 @@
 
     locale = "en_US.UTF-8";
 
-    editor = "lvim";
+    editor = "nvim";
 
     wallpaper = "${inputs.wallpapers.packages.${pkgs.system}.default}/random.png";
     font = "JetBrainsMono Nerd Font";
