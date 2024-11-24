@@ -50,7 +50,6 @@
     # My Custom Nixvim Configuration
     nixvim = {
       url = "github:nulladmin1/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprland
