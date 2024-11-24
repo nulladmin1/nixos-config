@@ -1,4 +1,8 @@
-{ pkgs, config, ...}: let
+{
+  pkgs,
+  config,
+  ...
+}: let
   wallpaper = config.var.wallpaper;
 in {
   catppuccin = {
@@ -7,7 +11,7 @@ in {
     accent = "mauve";
   };
 
- stylix = {
+  stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     image = wallpaper;
   };
