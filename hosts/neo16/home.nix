@@ -13,6 +13,7 @@ in {
   imports =
     [
       ./opts.nix
+      ../../shared
       ../../home
       ./packages.nix
     ]
