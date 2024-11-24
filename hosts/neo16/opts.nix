@@ -21,7 +21,7 @@
 
     editor = "nvim";
 
-    wallpaper = "${inputs.wallpapers.packages.${pkgs.system}.default}/random.png";
+    wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
     font = "JetBrainsMono Nerd Font";
     theme = {
       name = "catppuccin";
