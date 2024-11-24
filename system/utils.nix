@@ -7,6 +7,11 @@
     source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
   '';
 
+  # SSH
+  programs.ssh = {
+    enableAskPassword = false;
+  };
+
   # ADB
   programs.adb.enable = true;
 }
