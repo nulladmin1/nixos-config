@@ -105,7 +105,7 @@ in {
           color = "$text";
           font_size = 96;
           font_family = "JetBrains Mono Nerd Font Extrabold";
-          position = "0, 150";
+          position = "0, 120";
           halign = "center";
           valign = "center";
         }
