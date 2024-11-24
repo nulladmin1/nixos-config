@@ -38,7 +38,7 @@
     # My Custom Wallpapers
     wallpapers = {
       url = "github:nulladmin1/wallpapers";
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
 
     # Disko

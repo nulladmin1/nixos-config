@@ -1416,11 +1416,7 @@
       }
     },
     "wallpapers": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+      "flake": false,
       "locked": {
         "lastModified": 1732489463,
         "narHash": "sha256-nJedsJe5KVaO2O42eh03JaIRAw+WDvusilQoh9yGHkA=",
