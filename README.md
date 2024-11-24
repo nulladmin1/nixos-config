@@ -1,4 +1,4 @@
-# `NullAdmin1`'s NixOS Flakes
+# ❄️ `NullAdmin1`'s NixOS Flakes ❄️
 
 ## Highlights:
 * Fully riced `Hyprland` Desktop Environment Setup (with the Hypr ecosystem)
