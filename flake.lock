@@ -1422,11 +1422,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732481825,
-        "narHash": "sha256-WSybnuzR5xAoeO3Pz+uzKzaiTZPgAFG1uzmi5/TC370=",
+        "lastModified": 1732489463,
+        "narHash": "sha256-nJedsJe5KVaO2O42eh03JaIRAw+WDvusilQoh9yGHkA=",
         "owner": "nulladmin1",
         "repo": "wallpapers",
-        "rev": "b3f2354ae7983b6ce223e120747bafb27a91063d",
+        "rev": "30a3ed79d7ebd8b7067adda08ce7bb5a0fbe393f",
         "type": "github"
       },
       "original": {
