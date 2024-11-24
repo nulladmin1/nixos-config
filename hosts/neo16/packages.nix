@@ -37,7 +37,7 @@
       htop
       inkscape
       kolourpaint
-      libreoffice-qt6-fresh
+      libreoffice-qt6-still
       nerdfetch
       obs-studio
       obs-studio-plugins.wlrobs
