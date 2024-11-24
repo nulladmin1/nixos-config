@@ -69,4 +69,10 @@ in {
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
+
+  programs.yazi = {
+    enable = true;
+  };
+
+  services.playerctld.enable = true;
 }
