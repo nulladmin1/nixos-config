@@ -42,6 +42,7 @@
       obs-studio
       obs-studio-plugins.wlrobs
       okular
+      ripgrep
       rofi
       slurp
       spicetify-cli
