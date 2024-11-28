@@ -4,6 +4,9 @@
   inputs,
   ...
 }: {
+  imports = [
+    inputs.nur.hmModules.nur
+  ];
   home.packages = with pkgs;
     [
       # # It is sometimes useful to fine-tune packages, for example, by applying
