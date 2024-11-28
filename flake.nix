@@ -81,18 +81,12 @@
     nixpkgs,
     home-manager,
     nix-index-database,
-    plasma-manager,
     nur,
     catppuccin,
     lanzaboote,
     stylix,
-    wallpapers,
     disko,
-    nixvim,
-    hyprland,
-    hyprland-plugins,
     nix-gaming,
-    spicetify-nix,
     ...
   } @ inputs: let
     lib = nixpkgs.lib;
