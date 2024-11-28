@@ -2,17 +2,19 @@
   pkgs,
   config,
   inputs,
+  osConfig,
   ...
 }: let
   wallpaper = config.var.wallpaper;
   system = pkgs.system;
+  catppuccin_flavor = osConfig.catppuccin.flavor;
 in {
   services.swaync = {
     enable = true;
     style = let
       theme = builtins.fetchurl {
-        url = "https://github.com/catppuccin/swaync/releases/download/v0.2.3/macchiato.css";
-        sha256 = "1cyiblyarslbjjnrd6yysm75fy8v0nfacacnizhg697md6fvmj9c";
+        url = "https://github.com/catppuccin/swaync/releases/download/v0.2.3/${catppuccin_flavor}.css";
+        sha256 = "1xr1wkg4zb467b35xhsfqiwhimfnn88i3ml5rf173rkm7fyby9qy";
       };
     in
       builtins.readFile "${theme}";
