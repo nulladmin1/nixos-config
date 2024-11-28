@@ -7,6 +7,7 @@
 * Disk configuration Managed with `Disko`
 * `BTRFS` Setup
 * Everything is *mostly* declarative (except `plasma-manager`)
+* Fully-fledged `Nixvim` configuration
 
 
 ## 🖼️ Gallery
@@ -20,4 +21,3 @@
 * More desktop environments
 * `plasma-manager`
 * Add support for AMD Stuff
-* Make a better `Neovim` configuration
