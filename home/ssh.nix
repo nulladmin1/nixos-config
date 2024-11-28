@@ -2,7 +2,7 @@
   programs.ssh = {
     enable = true;
 
-    matchBlock = {
+    matchBlocks = {
       "Git" = {
         host = "github.com";
         identitiesOnly = true;
