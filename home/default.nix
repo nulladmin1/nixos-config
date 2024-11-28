@@ -9,5 +9,6 @@
     ./spicetify.nix
     ./ssh.nix
     ./sops.nix
+    ./git.nix
   ];
 }
