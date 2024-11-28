@@ -16,5 +16,6 @@
     ./fonts.nix
     ./home-manager.nix
     ./users.nix
+    ./sops.nix
   ];
 }

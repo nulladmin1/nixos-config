@@ -8,5 +8,6 @@
     ./desktop
     ./spicetify.nix
     ./ssh.nix
+    ./sops.nix
   ];
 }
