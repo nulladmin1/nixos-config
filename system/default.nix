@@ -15,5 +15,6 @@
     ./nix.nix
     ./fonts.nix
     ./home-manager.nix
+    ./users.nix
   ];
 }

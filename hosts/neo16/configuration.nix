@@ -7,21 +7,15 @@
   inputs,
   ...
 }: let
-  username = config.var.username;
-  name = config.var.name;
+  inherit (config.var) username;
 in {
   imports = [
     ./opts.nix
     ./disko.nix
     ./hardware-configuration.nix
   ];
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    isNormalUser = true;
-    description = name;
-    extraGroups = ["networkmanager" "wheel" "audio" "adbusers" "lp"];
-  };
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   home-manager.users.${username} = import ./home.nix;
 
   # KWallet login every reboot
@@ -60,16 +54,5 @@ in {
   };
 
   # Shells
-  environment.shells = with pkgs; [bash zsh fish];
-  users.defaultUserShell = pkgs.bash;
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-    fira-code
-    fira-code-symbols
-    font-awesome
-  ];
-  fonts.fontDir.enable = true;
-
   system.stateVersion = "23.11"; # Did you read the comment?
 }
