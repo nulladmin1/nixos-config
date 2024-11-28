@@ -96,7 +96,7 @@ in {
           color = "$text";
           font_size = 24;
           font_family = "JetBrains Mono Nerd Font";
-          position = "0, 250";
+          position = "0, 220";
           halign = "center";
           valign = "center";
         }
