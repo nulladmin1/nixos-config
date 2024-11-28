@@ -2,7 +2,7 @@
   description = "Main system flake";
 
   inputs = {
-    # Nixpkgs
+    # Nixpkgs (nixos-unstable is the perfect version for me)
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # Home manager
@@ -11,41 +11,41 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Nix Index Database
+    # Nix Index Database for comma
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Plasma-Manager
+    # Plasma-Manager to declaratively manage KDE Plasma
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Lanzaboote
+    # Lanzaboote for a secure boot implementation
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # NUR
+    # NUR for Klassy
     nur.url = "github:nix-community/NUR";
 
-    # Catppuccin
+    # Catppuccin for theming
     catppuccin.url = "github:catppuccin/nix";
 
-    # Stylix
+    # Stylix for theming
     stylix.url = "github:danth/stylix";
 
-    # My Custom Wallpapers
+    # My Custom Wallpapers packages
     wallpapers = {
       url = "github:nulladmin1/wallpapers";
       flake = false;
     };
 
-    # Disko
+    # Disko for declarative disk management
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,19 +57,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
+    # Hyprland Tiling Window Manager
     hyprland.url = "github:hyprwm/Hyprland";
 
-    # Hyprland Plugins
+    # Hyprland Plugins for Hyprland
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
 
-    # Nix Gaming
+    # Nix Gaming for Steam platformOptimizations
     nix-gaming.url = "github:fufexan/nix-gaming";
 
-    # Spicetify-Nix
+    # Spicetify-Nix for Spotify theming
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
