@@ -74,6 +74,12 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # SOPS-Nix
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -87,6 +93,7 @@
     stylix,
     disko,
     nix-gaming,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
@@ -111,6 +118,7 @@
         stylix.nixosModules.stylix
         disko.nixosModules.disko
         nix-gaming.nixosModules.platformOptimizations
+        sops-nix.nixosModules.sops
       ];
       specialArgs = {
         inherit lib system inputs;
