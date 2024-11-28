@@ -7,5 +7,6 @@
     ./utils.nix
     ./desktop
     ./spicetify.nix
+    ./ssh.nix
   ];
 }

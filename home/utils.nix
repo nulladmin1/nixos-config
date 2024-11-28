@@ -45,7 +45,7 @@ in {
         format = "ssh";
         ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       };
-      user.signingkey = "~/.ssh/id_ed25519.pub";
+      user.signingkey = "${../shared/keys/id_ed25519.pub}";
     };
   };
 
