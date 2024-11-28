@@ -3,8 +3,7 @@
   config,
   ...
 }: let
-  git_email = config.var.git_email;
-  git_username = config.var.git_username;
+  inherit (config.var) git_email git_username;
 in {
   # Alacritty
   programs.alacritty = {

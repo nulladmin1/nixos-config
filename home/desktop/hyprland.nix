@@ -5,8 +5,8 @@
   osConfig,
   ...
 }: let
-  wallpaper = config.var.wallpaper;
-  system = pkgs.system;
+  inherit (config.var) wallpaper;
+  inherit (pkgs) system;
   catppuccin_flavor = osConfig.catppuccin.flavor;
 in {
   services.swaync = {

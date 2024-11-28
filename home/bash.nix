@@ -1,5 +1,5 @@
 {config, ...}: let
-  editor = config.var.editor;
+  inherit (config.var) editor;
 in {
   # Bash:
   programs.bash = {
