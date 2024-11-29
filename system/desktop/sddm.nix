@@ -1,13 +1,19 @@
 {config, ...}: let
-  wallpaper = config.var.wallpaper;
-  font = config.var.font;
+  inherit (config.var) wallpaper;
+  inherit (config.var) font;
 in {
-  # Enable SDDM
   services = {
     displayManager = {
       sddm = {
+        # Enable SDDM
+
         enable = true;
         wayland.enable = true;
+
+        catppuccin = {
+          background = wallpaper;
+          inherit font;
+        };
       };
     };
   };

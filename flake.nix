@@ -108,9 +108,12 @@
       inherit system;
       modules = [
         ./hosts/neo16/configuration.nix
-        ./shared/var-options.nix
+        ./shared
         ./system
         ./system/hardware/boot/lanzaboote.nix
+
+        inputs.stylix.nixosModules.stylix
+        inputs.catppuccin.nixosModules.catppuccin
       ];
       specialArgs = {
         inherit lib system inputs;

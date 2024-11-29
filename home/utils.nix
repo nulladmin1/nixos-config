@@ -37,7 +37,6 @@
   programs.zellij = {
     enable = true;
     enableBashIntegration = true;
-    catppuccin.enable = true;
     settings = {
     };
   };
