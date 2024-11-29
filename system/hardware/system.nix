@@ -1,10 +1,14 @@
 {
-  pkgs,
   config,
+  inputs,
   ...
 }: let
-  hostname = config.var.hostname;
+  inherit (config.var) hostname;
 in {
+  imports = [
+    inputs.lanzaboote.nixosModules.lanzaboote
+  ];
+
   # ZRAM Swap
   zramSwap.enable = true;
 

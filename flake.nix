@@ -110,15 +110,6 @@
         ./hosts/neo16/configuration.nix
         ./shared
         ./system
-        home-manager.nixosModules.home-manager
-        nix-index-database.nixosModules.nix-index
-        nur.nixosModules.nur
-        catppuccin.nixosModules.catppuccin
-        lanzaboote.nixosModules.lanzaboote
-        stylix.nixosModules.stylix
-        disko.nixosModules.disko
-        nix-gaming.nixosModules.platformOptimizations
-        sops-nix.nixosModules.sops
       ];
       specialArgs = {
         inherit lib system inputs;
