@@ -108,7 +108,7 @@
       inherit system;
       modules = [
         ./hosts/neo16/configuration.nix
-        ./shared
+        ./shared/var-options.nix
         ./system
         ./system/hardware/boot/lanzaboote.nix
       ];
@@ -116,20 +116,5 @@
         inherit lib system inputs;
       };
     };
-    #    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-    #      inherit pkgs;
-    #      modules = [
-    #        ./home
-    #        ./shared
-    #        plasma-manager.homeManagerModules.plasma-manager
-    #        nur.hmModules.nur
-    #        catppuccin.homeManagerModules.catppuccin
-    #        stylix.homeManagerModules.stylix
-    #        spicetify-nix.homeManagerModules.default
-    #      ];
-    #      extraSpecialArgs = [
-    #        specialArgs
-    #      ];
-    #    };
   };
 }
