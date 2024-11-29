@@ -110,6 +110,7 @@
         ./hosts/neo16/configuration.nix
         ./shared
         ./system
+        ./system/hardware/boot/lanzaboote.nix
       ];
       specialArgs = {
         inherit lib system inputs;
