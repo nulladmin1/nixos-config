@@ -8,6 +8,7 @@
 * `BTRFS` Setup
 * Everything is *mostly* declarative (except `plasma-manager`)
 * Fully-fledged `Nixvim` configuration
+* Secrets using `sops-nix`
 
 
 ## 🖼️ Gallery
