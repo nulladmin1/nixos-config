@@ -8,10 +8,6 @@ in {
       sddm = {
         enable = true;
         wayland.enable = true;
-        catppuccin = {
-          background = wallpaper;
-          inherit font;
-        };
       };
     };
   };
