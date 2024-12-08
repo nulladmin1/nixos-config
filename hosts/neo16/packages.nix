@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.nur.hmModules.nur
+    inputs.nur.modules.homeManager.default
   ];
   home.packages = with pkgs;
     [
