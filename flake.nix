@@ -104,19 +104,15 @@
     };
   in {
     formatter.${system} = pkgs.alejandra;
-    nixosConfigurations.neo16 = lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./hosts/neo16/configuration.nix
-        ./shared
-        ./system
-        ./system/hardware/boot/lanzaboote.nix
-
-        inputs.stylix.nixosModules.stylix
-        inputs.catppuccin.nixosModules.catppuccin
-      ];
-      specialArgs = {
-        inherit lib system inputs;
+    nixosConfigurations = {
+      neo16 = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/neo16/configuration.nix
+        ];
+        specialArgs = {
+          inherit lib system inputs;
+        };
       };
     };
   };

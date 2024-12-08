@@ -10,9 +10,16 @@
   inherit (config.var) username;
 in {
   imports = [
+    ../../shared
+    ../../system
+    ../../system/hardware/boot/lanzaboote.nix
     ./opts.nix
+
     inputs.disko.nixosModules.disko
     ./disko.nix
+
+    inputs.stylix.nixosModules.stylix
+    inputs.catppuccin.nixosModules.catppuccin
     ./hardware-configuration.nix
   ];
 
