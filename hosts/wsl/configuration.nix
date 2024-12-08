@@ -8,6 +8,7 @@
 in {
   imports = [
     inputs.nixos-wsl.nixosModules.default
+    ./opts.nix
 
     ../../system/nh.nix
     ../../system/nix.nix
@@ -24,6 +25,9 @@ in {
     defaultUser = username;
     startMenuLaunchers = true;
   };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  home-manager.users.${username} = import ./home.nix;
 
   system.stateVersion = "24.11";
 }

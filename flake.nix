@@ -122,6 +122,9 @@
         modules = [
           ./hosts/wsl/configuration.nix
         ];
+        specialArgs = {
+          inherit lib system inputs;
+        };
       };
     };
   };
