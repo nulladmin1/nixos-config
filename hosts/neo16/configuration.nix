@@ -41,9 +41,7 @@ in {
     unzip
     efibootmgr
     ffmpeg-full
-    comma
     alacritty
-    papirus-icon-theme
     vlc
     protonup
     sbctl
