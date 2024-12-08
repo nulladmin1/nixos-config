@@ -12,7 +12,7 @@ in {
   sops = {
     age.keyFile = homeDirectory + ".config/sops/age/keys.txt";
 
-    defaultSopsFile = ../secrets.yaml;
+    defaultSopsFile = ../secrets/secrets.yaml;
     validateSopsFiles = false;
 
     secrets = {
