@@ -1,9 +1,12 @@
 {pkgs, ...}: {
-  fonts.packages = with pkgs; [
-    nerdfonts
-    fira-code
-    fira-code-symbols
-    font-awesome
-  ];
+  fonts.packages = with pkgs;
+    [
+      fira-code
+      fira-code-symbols
+      font-awesome
+    ]
+    ++ (with pkgs.nerd-fonts; [
+      jetbrains-mono
+    ]);
   fonts.fontDir.enable = true;
 }
