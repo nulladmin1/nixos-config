@@ -80,6 +80,9 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # NixOS WSL
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
   outputs = {
@@ -113,6 +116,12 @@
         specialArgs = {
           inherit lib system inputs;
         };
+      };
+      wsl = lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/wsl/configuration.nix
+        ];
       };
     };
   };
