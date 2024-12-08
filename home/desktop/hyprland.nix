@@ -8,6 +8,13 @@
   inherit (pkgs) system;
   inherit (config.catppuccin) flavor;
 in {
+  home.packages = with pkgs; [
+    hyprshot
+    brightnessctl
+    wl-clipboard
+    wlsunset
+  ];
+
   services.swaync = {
     enable = true;
     style = let

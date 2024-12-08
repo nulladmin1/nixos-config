@@ -29,14 +29,12 @@
       anki
       bat
       brave
-      brightnessctl
       #ciscoPacketTracer8
       discord
       feh
       fzf
       ghostwriter
       gimp
-      hyprshot
       htop
       inkscape
       kolourpaint
@@ -46,14 +44,10 @@
       obs-studio-plugins.wlrobs
       okular
       ripgrep
-      rofi
-      slurp
       spicetify-cli
       #spotify
       swww
       tldr
-      wl-clipboard
-      wlsunset
 
       # Dev
       flutter
