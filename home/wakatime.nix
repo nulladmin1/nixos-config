@@ -8,7 +8,7 @@
   ];
 
   programs.wakanix = {
-    enable = true;
+    enable = false;
 
     settings.api = {
       url = "https://waka.hackclub.com/api";
