@@ -10,5 +10,6 @@
     ./ssh.nix
     ./sops.nix
     ./git.nix
+    ./wakatime.nix
   ];
 }

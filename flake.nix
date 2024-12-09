@@ -83,20 +83,18 @@
 
     # NixOS WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+    # Wakanix (my custom Wakatime module)
+    wakanix = {
+      url = "github:nulladmin1/wakanix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    nix-index-database,
-    nur,
-    catppuccin,
-    lanzaboote,
-    stylix,
-    disko,
-    nix-gaming,
-    sops-nix,
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
