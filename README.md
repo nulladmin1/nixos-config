@@ -1,6 +1,7 @@
 # ❄️ `NullAdmin1`'s NixOS Flakes ❄️
 
 ## Highlights:
+* Multi-host config, with a base NixOS Installation and `WSL`
 * Fully riced `Hyprland` Desktop Environment Setup (with the Hypr ecosystem)
 * Themed with `Catppuccin`
 * One-click enable `Gnome`, `KDE Plasma`, `Wayfire`, and other Desktop Environments
@@ -18,7 +19,6 @@
 ![A picture of the Hyprland rice with Nerdfetch and Yazi](./assets/nerdfetch_yazi.png)
 
 ## WIP/TODO:
-* WSL Config
 * More desktop environments
 * `plasma-manager`
 * Add support for AMD Stuff
