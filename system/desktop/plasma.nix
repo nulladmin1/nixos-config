@@ -18,5 +18,6 @@
     ]
     ++ (with config.nur.repos; [
       shadowrz.klassy-qt6
+    ++ (with nur.repos; [
     ]);
 }
