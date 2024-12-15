@@ -1,12 +1,14 @@
 {
   pkgs,
   config,
+  osConfig,
   inputs,
   ...
 }: let
   inherit (config.var) wallpaper;
   inherit (pkgs) system;
   inherit (config.catppuccin) flavor;
+  inherit (osConfig.programs.hyprland) enable;
 in {
   home.packages = with pkgs; [
     hyprshot
@@ -16,7 +18,7 @@ in {
   ];
 
   services.swaync = {
-    enable = true;
+    inherit enable;
     style = let
       theme = builtins.fetchurl {
         url = "https://github.com/catppuccin/swaync/releases/download/v0.2.3/${flavor}.css";
@@ -27,13 +29,15 @@ in {
   };
 
   programs.rofi = {
-    enable = true;
+    inherit enable;
   };
 
-  services.swayosd.enable = true;
+  services.swayosd = {
+    inherit enable;
+  };
 
   services.hyprpaper = {
-    enable = true;
+    inherit enable;
     settings = {
       preload = "${wallpaper}";
       wallpaper = ", ${wallpaper}";
@@ -41,7 +45,7 @@ in {
   };
 
   services.hypridle = {
-    enable = true;
+    inherit enable;
     settings = {
       general = {
         lock_cmd = "hyprlock";
@@ -64,7 +68,7 @@ in {
   };
 
   programs.hyprlock = {
-    enable = true;
+    inherit enable;
     settings = {
       background = {
         monitor = "";
@@ -122,7 +126,7 @@ in {
   };
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    inherit enable;
     package = inputs.hyprland.packages.${system}.hyprland;
     plugins = with inputs.hyprland-plugins.packages.${system}; [
       hyprtrails
@@ -353,7 +357,7 @@ in {
   #};
 
   programs.waybar = {
-    enable = true;
+    inherit enable;
     style = ''
       * {
         color: @text;
