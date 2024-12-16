@@ -13,7 +13,7 @@ in {
     inputs.nur.modules.nixos.default
     ../../shared
     ../../system
-    ../../system/hardware/boot/lanzaboote.nix
+    ../../system/hardware/boot/systemd-boot.nix
     ./opts.nix
 
     inputs.disko.nixosModules.disko
@@ -32,30 +32,6 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-
-    # My custom Nixvim configuration
-    inputs.nixvim.packages.${pkgs.system}.default
-
-    wget
-    unzip
-    efibootmgr
-    ffmpeg-full
-    alacritty
-    vlc
-    protonup
-    sbctl
-
-    # Dev
-    git
-    go
-    python3
-    rustup
-    alejandra
-    nil
-  ];
-
   environment.sessionVariables = {
     #    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${username}/.steam/root/compatibilitytools.d";
   };

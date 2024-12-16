@@ -17,5 +17,6 @@
     ./home-manager.nix
     ./users.nix
     ./sops.nix
+    ./packages.nix
   ];
 }
