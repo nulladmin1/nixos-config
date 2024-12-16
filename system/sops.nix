@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];
@@ -16,4 +20,8 @@
     secrets = {
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    sops
+  ];
 }
