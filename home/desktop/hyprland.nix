@@ -395,31 +395,31 @@ in {
         color: @red;
       }
 
-      #idle_inhibitor {
-        color: @peach;
-      }
-
       #window * {
         color: @mauve;
       }
 
-      #wireplumber {
+      #clock {
+        color: @peach;
+      }
+
+      #idle_inhibitor {
         color: @yellow;
       }
 
-      #network {
+      #wireplumber {
         color: @green;
       }
 
-      #power-profiles-daemon {
+      #network {
         color: @teal;
       }
 
-      #battery {
+      #power-profiles-daemon {
         color: @blue;
       }
 
-      #clock {
+      #battery {
         color: @lavender;
       }
 
@@ -450,6 +450,7 @@ in {
           "hyprland/window"
         ];
         modules-center = [
+          "clock"
         ];
         modules-right = [
           "idle_inhibitor"
@@ -457,7 +458,6 @@ in {
           "network"
           "power-profiles-daemon"
           "battery"
-          "clock"
           "tray"
         ];
 
