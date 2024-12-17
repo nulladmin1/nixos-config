@@ -9,6 +9,9 @@
   inherit (pkgs) system;
   inherit (config.catppuccin) flavor;
   inherit (osConfig.programs.hyprland) enable;
+
+  # The space between windows to line up Hyrpland and Waybar
+  windows_space_gap = 15;
 in {
   home.packages = with pkgs; [
     hyprshot
@@ -163,7 +166,7 @@ in {
 
       general = {
         gaps_in = 5;
-        gaps_out = 20;
+        gaps_out = windows_space_gap;
         border_size = 2;
 
         "col.active_border" = "$mauve $flamingo 45deg";
@@ -371,7 +374,7 @@ in {
       }
 
       #waybar > box {
-        margin: 10px 15px 0px;
+        margin: 10px ${builtins.toString windows_space_gap}px 0px;
         background-color: @base;
         border: 2px solid @mauve;
       }
