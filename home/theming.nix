@@ -1,0 +1,5 @@
+{...}: {
+  catppuccin.pointerCursor = {
+    enable = true;
+  };
+}
