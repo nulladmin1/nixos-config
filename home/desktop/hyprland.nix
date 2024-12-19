@@ -156,6 +156,7 @@ in {
       "env" = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME,catppuccin-mocha-mauve"
 
         # For Qt
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
