@@ -3,6 +3,7 @@
   config,
   osConfig,
   inputs,
+  lib,
   ...
 }: let
   inherit (config.var) wallpaper;
@@ -462,7 +463,7 @@ in {
           "idle_inhibitor"
           "wireplumber"
           "network"
-          "power-profiles-daemon"
+          (lib.lists.optional osConfig.power-profiles-daemon.enable "power-profiles-daemon") # Only enable power-profiles-daemon in waybar if it's enabled in system config
           "battery"
           "tray"
         ];
