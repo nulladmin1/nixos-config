@@ -23,6 +23,7 @@
       rustup
       alejandra
       nil
+      just
 
       # For QT Theming
       (catppuccin-kde.override {
