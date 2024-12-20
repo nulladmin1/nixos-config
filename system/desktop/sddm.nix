@@ -6,6 +6,10 @@
   inherit (config.var) wallpaper;
   inherit (config.var) font;
 in {
+  catppuccin.sddm = {
+    background = wallpaper;
+    inherit font;
+  };
   services = {
     displayManager = {
       sddm = {
@@ -15,11 +19,6 @@ in {
         wayland.enable = true;
 
         package = pkgs.kdePackages.sddm;
-
-        catppuccin = {
-          background = wallpaper;
-          inherit font;
-        };
       };
     };
   };
