@@ -18,5 +18,6 @@
     ./users.nix
     ./sops.nix
     ./packages.nix
+    ./theming.nix
   ];
 }
