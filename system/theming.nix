@@ -17,6 +17,14 @@ in {
     enable = true;
     autoEnable = false;
 
+    cursor = let
+      capitalize = str: lib.strings.toUpper (lib.strings.substring 0 1 str) + lib.strings.substring 1 (builtins.stringLength str) str;
+    in {
+      package = pkgs.catppuccin-cursors.${config.catppuccin.flavor + (capitalize config.catppuccin.accent)};
+      name = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-cursors";
+      size = 24;
+    };
+
     fonts = {
       monospace = {
         name = "";
