@@ -1,6 +1,6 @@
-{...}: {
+{config, ...}: {
   catppuccin = {
-    enable = true;
+    enable = !config.stylix.autoEnable;
     flavor = "mocha";
     accent = "mauve";
   };
