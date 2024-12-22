@@ -170,7 +170,7 @@ in {
       "env" = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "HYPRCURSOR_THEME,catppuccin-mocha-mauve"
+        "HYPRCURSOR_THEME,catppuccin-mocha-mauve-cursors"
 
         # For Qt
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
