@@ -33,5 +33,8 @@ in {
       };
     };
 
+    targets.gtk = {
+      enable = true;
+    };
   };
 }
