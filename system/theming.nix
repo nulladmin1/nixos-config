@@ -36,5 +36,9 @@ in {
     targets.gtk = {
       enable = true;
     };
+
+    opacity = {
+      terminal = 0.9;
+    };
   };
 }
