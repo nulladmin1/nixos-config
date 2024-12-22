@@ -32,6 +32,8 @@ in {
       builtins.readFile "${theme}";
   };
 
+  stylix.targets.rofi.enable = false;
+  catppuccin.rofi.enable = true;
   programs.rofi = {
     inherit enable;
   };
