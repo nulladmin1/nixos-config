@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.nix-gaming.nixosModules.platformOptimizations
   ];
@@ -11,6 +15,10 @@
     # A bunch of optimizations for Steam from SteamOS
     platformOptimizations.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    protonup
+  ];
 
   # gamemoderun
   programs.gamemode.enable = true;

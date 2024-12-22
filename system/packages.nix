@@ -13,7 +13,6 @@
       ffmpeg-full
       alacritty
       vlc
-      protonup
       sbctl
 
       # Dev
