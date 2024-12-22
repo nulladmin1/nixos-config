@@ -10,6 +10,8 @@
       adpyke.codesnap
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+      dart-code.flutter
+      dart-code.dart-code
       dbaeumer.vscode-eslint
       eamodio.gitlens
       esbenp.prettier-vscode
