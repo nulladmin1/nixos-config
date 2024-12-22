@@ -28,7 +28,10 @@ in {
     fonts = {
       monospace = {
         name = "";
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
       };
     };
+
   };
 }
