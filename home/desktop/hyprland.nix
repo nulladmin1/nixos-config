@@ -121,7 +121,7 @@ in {
             then "#${config.lib.stylix.colors.base05}"
             else "#FFFFFF";
           font_size = 24;
-          font_family = "JetBrains Mono Nerd Font";
+          font_family = config.stylix.fonts.monospace.name;
           position = "0, 220";
           halign = "center";
           valign = "center";
@@ -137,7 +137,7 @@ in {
             then "#${config.lib.stylix.colors.base05}"
             else "#FFFFFF";
           font_size = 96;
-          font_family = "JetBrains Mono Nerd Font Extrabold";
+          font_family = "${config.stylix.fonts.monospace.name} Extrabold";
           position = "0, 120";
           halign = "center";
           valign = "center";
@@ -409,7 +409,7 @@ in {
       + ''
         * {
           color: @text;
-          font-family: JetBrainsMono;
+          font-family: ${config.stylix.fonts.monospace.name};
           font-weight: bold;
           font-size: 14px;
         }
