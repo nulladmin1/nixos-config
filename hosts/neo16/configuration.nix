@@ -11,7 +11,7 @@ in {
     ../../shared
     ../../system
     ../../system/hardware/boot/systemd-boot.nix
-    ./opts.nix
+    ../common/opts.nix
 
     inputs.disko.nixosModules.disko
     ./disko.nix
@@ -20,7 +20,7 @@ in {
     ./hardware-configuration.nix
   ];
 
-  home-manager.users.${username} = import ./home.nix;
+  home-manager.users.${username} = import ../common/home.nix;
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11";
 }
