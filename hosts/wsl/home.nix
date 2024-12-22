@@ -25,7 +25,6 @@ in {
     ]
     ++ (with inputs; [
       catppuccin.homeManagerModules.catppuccin
-      stylix.homeManagerModules.stylix
     ]);
 
   programs.home-manager.enable = true;
