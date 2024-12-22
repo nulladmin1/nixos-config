@@ -27,7 +27,6 @@ in {
 
     fonts = {
       monospace = {
-        name = "";
         name = "JetBrainsMono Nerd Font";
         package = pkgs.nerd-fonts.jetbrains-mono;
       };
@@ -40,5 +39,10 @@ in {
     opacity = {
       terminal = 0.9;
     };
+  };
+
+  qt = {
+    enable = !config.services.desktopManager.plasma6.enable;
+    platformTheme = "gtk2";
   };
 }
