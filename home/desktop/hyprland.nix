@@ -19,9 +19,6 @@ in {
     brightnessctl
     wl-clipboard
     wlsunset
-
-    # Cursor theme
-    catppuccin-cursors.mochaMauve
   ];
 
   services.swaync = {
