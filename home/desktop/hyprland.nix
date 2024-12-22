@@ -44,7 +44,7 @@ in {
 
   services.hyprpaper = {
     inherit enable;
-    settings = {
+    settings = lib.attrsets.optionalAttrs (!config.stylix.targets.hyprpaper.enable) {
       preload = "${wallpaper}";
       wallpaper = ", ${wallpaper}";
     };
@@ -76,40 +76,50 @@ in {
   programs.hyprlock = {
     inherit enable;
     settings = {
-      background = {
-        monitor = "";
-        path = "${wallpaper}";
-        blur_passes = 2;
-      };
+      background =
+        {
+          monitor = "";
+          blur_passes = 2;
+        }
+        // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
+          path = "${wallpaper}";
+        };
 
       general = {
         hide_cursor = false;
       };
 
-      input-field = {
-        monitor = "";
-        size = "80px, 60px";
-        outline_thickness = 3;
-        inner_color = "$base";
+      input-field =
+        {
+          monitor = "";
+          size = "80px, 60px";
+          outline_thickness = 3;
+          fade_on_empty = false;
+          rounding = 15;
 
-        outer_color = "$accent";
-        check_color = "$accent";
-        fail_color = "$red";
+          position = "0, -50";
+          halign = "center";
+          valign = "center";
+        }
+        // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
+          outer_color = "$accent";
+          check_color = "$accent";
 
-        font_color = "$text";
-        fade_on_empty = false;
-        rounding = 15;
-
-        position = "0, -50";
-        halign = "center";
-        valign = "center";
-      };
+          fail_color = "$red";
+          inner_color = "$base";
+          font_color = "$text";
+        };
 
       label = [
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
-          color = "$text";
+          color =
+            if config.catppuccin.hyprlock.enable
+            then "$text"
+            else if config.stylix.enable
+            then "#${config.lib.stylix.colors.base05}"
+            else "#FFFFFF";
           font_size = 24;
           font_family = "JetBrains Mono Nerd Font";
           position = "0, 220";
@@ -120,7 +130,12 @@ in {
         {
           monitor = "";
           text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
-          color = "$text";
+          color =
+            if config.catppuccin.hyprlock.enable
+            then "$text"
+            else if config.stylix.enable
+            then "#${config.lib.stylix.colors.base05}"
+            else "#FFFFFF";
           font_size = 96;
           font_family = "JetBrains Mono Nerd Font Extrabold";
           position = "0, 120";
@@ -168,20 +183,22 @@ in {
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
 
-      general = {
-        gaps_in = 5;
-        gaps_out = windows_space_gap;
-        border_size = 2;
+      general =
+        {
+          gaps_in = 5;
+          gaps_out = windows_space_gap;
+          border_size = 2;
 
-        "col.active_border" = "$mauve $flamingo 45deg";
-        "col.inactive_border" = "$surface0";
+          resize_on_border = false;
 
-        resize_on_border = false;
+          allow_tearing = false;
 
-        allow_tearing = false;
-
-        layout = "dwindle";
-      };
+          layout = "dwindle";
+        }
+        // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprland.enable) {
+          "col.active_border" = "$mauve $flamingo 45deg";
+          "col.inactive_border" = "$surface0";
+        };
 
       decoration = {
         rounding = 10;
@@ -253,7 +270,12 @@ in {
 
       plugin = {
         hyprtrails = {
-          color = "$accent";
+          color =
+            if config.catppuccin.hyprland.enable
+            then "$accent"
+            else if config.stylix.targets.hyprland.enable
+            then "rgb(${config.lib.stylix.colors.base0E})"
+            else null;
         };
         hyprwinwrap = {
           class = "backgroundapp";
@@ -365,87 +387,106 @@ in {
 
   programs.waybar = {
     inherit enable;
-    style = ''
-      * {
-        color: @text;
-        font-family: JetBrainsMono Nerd Font;
-        font-weight: bold;
-        font-size: 14px;
-      }
+    style =
+      lib.strings.optionalString config.stylix.targets.waybar.enable ''
+        @define-color base #${config.lib.stylix.colors.base00};
+        @define-color mantle #${config.lib.stylix.colors.base01};
+        @define-color surface0 #${config.lib.stylix.colors.base02};
+        @define-color surface1 #${config.lib.stylix.colors.base03};
+        @define-color surface2 #${config.lib.stylix.colors.base04};
+        @define-color text #${config.lib.stylix.colors.base05};
+        @define-color rosewater #${config.lib.stylix.colors.base06};
+        @define-color lavender #${config.lib.stylix.colors.base07};
+        @define-color red #${config.lib.stylix.colors.base08};
+        @define-color peach #${config.lib.stylix.colors.base09};
+        @define-color yellow #${config.lib.stylix.colors.base0A};
+        @define-color green #${config.lib.stylix.colors.base0B};
+        @define-color teal #${config.lib.stylix.colors.base0C};
+        @define-color blue #${config.lib.stylix.colors.base0D};
+        @define-color mauve #${config.lib.stylix.colors.base0E};
+        @define-color flamingo #${config.lib.stylix.colors.base0F};
+      ''
+      + ''
+        * {
+          color: @text;
+          font-family: JetBrainsMono;
+          font-weight: bold;
+          font-size: 14px;
+        }
 
-      window#waybar {
-        background-color: rgba(0, 0, 0, 0);
-      }
+        window#waybar {
+          background-color: rgba(0, 0, 0, 0);
+        }
 
-      #waybar > box {
-        margin: 10px ${builtins.toString windows_space_gap}px 0px;
-        background-color: @base;
-        border: 2px solid @mauve;
-      }
+        #waybar > box {
+          margin: 10px ${builtins.toString windows_space_gap}px 0px;
+          background-color: @base;
+          border: 2px solid @mauve;
+        }
 
-      #workspaces,
-      #window,
-      #idle_inhibitor,
-      #wireplumber,
-      #network,
-      #cpu,
-      #memory,
-      #battery,
-      #clock,
-      #power-profiles-daemon,
-      #tray,
-      #waybar > box {
-        border-radius: 12px;
-      }
+        #workspaces,
+        #window,
+        #idle_inhibitor,
+        #wireplumber,
+        #network,
+        #cpu,
+        #memory,
+        #battery,
+        #clock,
+        #power-profiles-daemon,
+        #tray,
+        #waybar > box {
+          border-radius: 12px;
+        }
 
-      #workspaces * {
-        color: @red;
-      }
+        #workspaces * {
+          color: @red;
+        }
 
-      #window * {
-        color: @mauve;
-      }
+        #window * {
+          color: @mauve;
+        }
 
-      #clock {
-        color: @peach;
-      }
+        #clock {
+          color: @peach;
+        }
 
-      #idle_inhibitor {
-        color: @yellow;
-      }
+        #idle_inhibitor {
+          color: @yellow;
+        }
 
-      #wireplumber {
-        color: @green;
-      }
+        #wireplumber {
+          color: @green;
+        }
 
-      #network {
-        color: @teal;
-      }
+        #network {
+          color: @teal;
+        }
 
-      #power-profiles-daemon {
-        color: @blue;
-      }
+        #power-profiles-daemon {
+          color: @blue;
+        }
 
-      #battery {
-        color: @lavender;
-      }
+        #battery {
+          color: @lavender;
+        }
 
-      #tray {
-        color: @text;
-      }
+        #tray {
+          color: @text;
+        }
 
-      #idle_inhibitor,
-      #wireplumber,
-      #network,
-      #cpu,
-      #memory,
-      #battery,
-      #clock,
-      #power-profiles-daemon,
-      #tray {
-        padding: 0 5px;
-      }
-    '';
+        #idle_inhibitor,
+        #wireplumber,
+        #network,
+        #cpu,
+        #memory,
+        #battery,
+        #clock,
+        #power-profiles-daemon,
+        #tray {
+          padding: 0 5px;
+        }
+      '';
 
     settings = {
       mainBar = {
