@@ -7,6 +7,7 @@
   inherit (config.var) font;
 in {
   catppuccin.sddm = {
+    enable = true;
     background = wallpaper;
     inherit font;
   };
