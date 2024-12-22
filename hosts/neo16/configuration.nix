@@ -16,7 +16,6 @@ in {
     inputs.disko.nixosModules.disko
     ./disko.nix
 
-    inputs.stylix.nixosModules.stylix
     inputs.catppuccin.nixosModules.catppuccin
     ./hardware-configuration.nix
   ];
