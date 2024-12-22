@@ -6,16 +6,19 @@
   environment.systemPackages = with pkgs;
     [
       vim
-
       wget
       unzip
       efibootmgr
       ffmpeg-full
-      alacritty
       vlc
       sbctl
-
-      # Dev
+      bat
+      brave
+      feh
+      fzf
+      tldr
+      htop
+      ripgrep
       git
       go
       python3
@@ -23,6 +26,11 @@
       alejandra
       nil
       just
+      lazygit
+      flutter
+      nodejs
+      nerdfetch
+      thefuck
 
       # For QT Theming
       (catppuccin-kde.override {

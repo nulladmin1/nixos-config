@@ -27,35 +27,23 @@
 
       # Stuff
       anki
-      bat
-      brave
       #ciscoPacketTracer8
       discord
-      feh
-      fzf
       ghostwriter
       gimp
-      htop
       inkscape
       kolourpaint
       libreoffice-qt6-still
-      nerdfetch
       obs-studio
       obs-studio-plugins.wlrobs
       okular
-      ripgrep
       spicetify-cli
       #spotify
       swww
-      tldr
-
       # Dev
-      flutter
       jetbrains-toolbox
-      lazygit
       #lunarvim
       neofetch
-      nodejs
       pkg-config
       scc # Count lines of code by each language
       temurin-bin-17
