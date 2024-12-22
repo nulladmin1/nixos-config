@@ -63,11 +63,6 @@
       tmux # Terminal multiplexer
       virtualenv
       zoxide # Better cd
-
-      # Gaming
-      ferium
-      retroarch
-      xonotic
     ]
     ++ (with pkgs.jetbrains; [
       idea-ultimate
