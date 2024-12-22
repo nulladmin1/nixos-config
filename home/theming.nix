@@ -1,5 +1,9 @@
-{...}: {
+{
+  inputs,
+  lib,
+  ...
+}: {
   catppuccin.cursors = {
-    enable = true;
+    enable = false;
   };
 }
