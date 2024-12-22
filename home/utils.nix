@@ -1,12 +1,19 @@
-{...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   # Alacritty
   programs.alacritty = {
     enable = true;
     settings = {
-      window = {
-        opacity = 0.9;
-        blur = true;
-      };
+      window =
+        {
+          blur = true;
+        }
+        // lib.attrsets.optionalAttrs (!config.stylix.targets.alacritty.enable) {
+          opacity = 0.9;
+        };
       font = {
         normal = {
           family = "JetBrainsMono Nerd Font";
