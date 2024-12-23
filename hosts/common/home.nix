@@ -20,7 +20,6 @@ in {
     [
       ./opts.nix
       ../../home
-      ./packages.nix
       ../../shared
     ]
     ++ (with inputs; [

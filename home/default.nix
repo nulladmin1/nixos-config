@@ -12,5 +12,6 @@
     ./git.nix
     ./wakatime.nix
     ./theming.nix
+    ./packages.nix
   ];
 }
