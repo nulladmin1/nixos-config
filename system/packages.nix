@@ -22,7 +22,6 @@
       git
       go
       python3
-      rustup
       alejandra
       nil
       just
