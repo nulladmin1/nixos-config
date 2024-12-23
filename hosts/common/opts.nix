@@ -7,7 +7,6 @@
   imports = [../../shared/var-options.nix];
 
   config.var = {
-    hostname = "neo16";
     name = "Shrey Deogade";
     email = "shrey.deogade@protonmail.com";
     username = "shreyd";

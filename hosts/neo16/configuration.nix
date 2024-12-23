@@ -19,6 +19,14 @@ in {
     inputs.catppuccin.nixosModules.catppuccin
     ./hardware-configuration.nix
   ];
+  networking = {
+    hostName = "neo16";
+    nameservers = ["1.1.1.1" "1.0.0.1"];
+    interfaces = {
+      enp109s0.useDHCP = true;
+      wlp0s20f3.useDHCP = true;
+    };
+  };
 
   home-manager.users.${username} = import ../common/home.nix;
 
