@@ -25,6 +25,8 @@
       rust-lang.rust-analyzer
       serayuzgur.crates
       tamasfe.even-better-toml
+      vadimcn.vscode-lldb
+      vscodevim.vim
     ];
     # package = pkgs.vscode.fhsWithPackages (ps: with ps; [rustup]);
   };
