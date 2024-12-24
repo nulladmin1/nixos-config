@@ -10,6 +10,7 @@
   home.packages = with pkgs;
     [
       anki
+      blender
       #ciscoPacketTracer8
       discord
       ghostwriter
