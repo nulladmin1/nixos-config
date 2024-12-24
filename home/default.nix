@@ -13,5 +13,6 @@
     ./wakatime.nix
     ./theming.nix
     ./packages.nix
+    ./xdg.nix
   ];
 }
