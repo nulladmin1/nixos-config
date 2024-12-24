@@ -3,7 +3,11 @@
   lib,
   ...
 }: {
-  catppuccin.cursors = {
-    enable = false;
+  catppuccin = {
+    cursors = {
+      enable = false;
+    };
+
+    gtk.enable = false;
   };
 }
