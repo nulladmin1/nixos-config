@@ -146,6 +146,16 @@ in {
     };
   };
 
+  home.sessionVariables = let
+    inherit (config.xdg) userDirs;
+  in
+    lib.attrsets.optionalAttrs config.programs.hyprlock.enable {
+      "HYPRSHOT_DIR" =
+        if userDirs.extraConfig.XDG_SCREENSHOTS_DIR != null
+        then userDirs.extraConfig.XDG_SCREENSHOTS_DIR
+        else userDirs.pictures;
+    };
+
   wayland.windowManager.hyprland = {
     inherit enable;
     package = inputs.hyprland.packages.${system}.hyprland;
