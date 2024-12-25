@@ -7,6 +7,7 @@
     [
       # Core stuff
       bat # Better cat
+      bitwarden-cli # Bitwarden, but CLI
       brave # My browser of choice
       efibootmgr # Manage UEFI boot entries
       fzf # Fuzzy finder
