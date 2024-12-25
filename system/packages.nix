@@ -5,31 +5,34 @@
 }: {
   environment.systemPackages = with pkgs;
     [
-      vim
-      wget
-      unzip
-      efibootmgr
-      ffmpeg-full
-      vlc
-      sbctl
-      bat
-      brave
-      feh
-      fzf
-      tldr
-      htop
-      ripgrep
-      git
-      go
-      python3
-      alejandra
-      nil
-      just
-      lazygit
-      flutter
-      nodejs
-      nerdfetch
-      thefuck
+      # Core stuff
+      bat # Better cat
+      brave # My browser of choice
+      efibootmgr # Manage UEFI boot entries
+      fzf # Fuzzy finder
+      feh # Image viewer
+      ffmpeg-full # Handles multimedia files
+      git # Everyone knows what git is
+      htop # System monitor
+      vlc # Video viewer
+      wget # Wget
+
+      # Development
+      alejandra # Nix formatter
+      flutter # GUI Framework
+      go # Programming language
+      just # Simple command runner
+      lazygit # Git++
+      nerdfetch # Fetch utility
+      nil # Nix language server
+      nodejs # Javascript and stuff
+      python3 # Python
+      ripgrep # Better grep
+      sbctl # For secure boot
+      thefuck # Corrects previous console command
+      tldr # Better and simpler manpages
+      unzip # Unzips .zip files
+      vim # Text editor
 
       # For QT Theming
       (catppuccin-kde.override {
