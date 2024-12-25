@@ -699,11 +699,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1735084675,
-        "narHash": "sha256-PhQgwy3B/QYPefsCXpOds4Pa93h8u4agpv96rq3Knqs=",
+        "lastModified": 1735140790,
+        "narHash": "sha256-Zz1EEW4bb75t8jn56Uglz0spelTBXQ9EgvQS4el0Jrk=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "2a24a61126dcebd2e1f7862e5c21c105900110ac",
+        "rev": "1a3d17da9150f255ff2144cbe8317c0200de0ee4",
         "type": "github"
       },
       "original": {
@@ -729,11 +729,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734887159,
-        "narHash": "sha256-boPq+l4/D/Q+MvDqAI79fCdp/3Dit57YBuPbXa1cjW0=",
+        "lastModified": 1735139532,
+        "narHash": "sha256-AHVMD57jYgs1FfLXOUBRQyP7K9QenD/gCYITUfiAvXw=",
         "owner": "hyprwm",
         "repo": "hyprland-plugins",
-        "rev": "859b9cd371b4e1bf1043cedc8ab6c514e13ab358",
+        "rev": "7dc20bdf16ce876966e7a904c416a8e520a14793",
         "type": "github"
       },
       "original": {
@@ -1211,11 +1211,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1735070725,
-        "narHash": "sha256-NSKvAqkgOvf74Lxh5kUVV4pFYTPjdGRtuks7hgwczHo=",
+        "lastModified": 1735140820,
+        "narHash": "sha256-M2fX4ZcJG+gVs8hO4LBGwlh4S7nSYyfs8A5lZ0QXKJE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2fb4eca072cf867a338f11016906345716519db1",
+        "rev": "bc91a46182fb0fa54d32b95bac49d65fb9157c01",
         "type": "github"
       },
       "original": {
@@ -1397,11 +1397,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735013792,
-        "narHash": "sha256-kMSd7swqmksHIKh3CRTKTVkKDhqe68JKXkAg7GmAX4s=",
+        "lastModified": 1735100190,
+        "narHash": "sha256-H3cFMvOmryQz78UwrpelVg+3sBZjaVWgJXTvT2wWGGw=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "0b442bc3b6e796565c126ab720429650269e46ec",
+        "rev": "628d1d47b4af5aa53fa6bcbb0c38b7a4d921f0de",
         "type": "github"
       },
       "original": {
@@ -1656,11 +1656,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1735095968,
-        "narHash": "sha256-QeBe0HT4OY76J4MsGNWhIfu85Y+IX6bw6dhPqaG35Zg=",
+        "lastModified": 1735145925,
+        "narHash": "sha256-ylSZdtRrSdhJVBGumGba06WpOTmZmsXKmPsUnUD9ShA=",
         "owner": "nulladmin1",
         "repo": "wakanix",
-        "rev": "7faa79d50b72daf4a49cd226a606754d21b2e3c1",
+        "rev": "4b3c49833334dd948b79cda8c56070fc52af62e3",
         "type": "github"
       },
       "original": {
