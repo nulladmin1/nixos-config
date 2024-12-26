@@ -364,7 +364,7 @@ in {
         ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
       ];
       # Requires playerctl
-      bindl = [
+      bindl = lib.lists.optionals config.services.playerctld.enable [
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
