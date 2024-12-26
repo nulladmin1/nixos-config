@@ -15,6 +15,9 @@ in {
     enable = true;
     autoEnable = false;
     image = wallpaper;
+
+    polarity = "dark";
+
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${config.catppuccin.flavor}.yaml";
 
     cursor = let
