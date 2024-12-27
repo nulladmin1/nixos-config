@@ -2,7 +2,7 @@
   inherit (config.wayland.windowManager.hyprland) enable;
   stylePath = config.xdg.configHome + "/swayosd/style.css";
 in {
-  service.swayosd = {
+  services.swayosd = {
     inherit enable;
   };
 
