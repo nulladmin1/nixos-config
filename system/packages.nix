@@ -44,8 +44,12 @@
     ++ (with nur.repos; [
       shadowrz.klassy-qt6
     ])
-    ++ [
-      # My custom Nixvim configuration
-      inputs.nixvim.packages.${pkgs.system}.default
-    ];
+    ++ (with inputs;
+      map (pkg: pkg.packages.${pkgs.system}.default) [
+        # My custom Nixvim configuration
+        nixvim
+
+        # Comodoro, a Pomodoro app made by Pimalaya
+        comodoro
+      ]);
 }

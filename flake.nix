@@ -89,6 +89,18 @@
       url = "github:nulladmin1/wakanix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Pimalaya
+    pimalaya = {
+      url = "github:pimalaya/nix";
+      flake = false;
+    };
+
+    # Comodoro, a Pomodoro app made by Pimalaya
+    comodoro = {
+      url = "github:pimalaya/comodoro";
+      inputs.pimalaya.follows = "pimalaya";
+    };
   };
 
   outputs = {
