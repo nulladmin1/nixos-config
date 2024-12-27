@@ -17,5 +17,6 @@
     ./swaync.nix
     ./rofi.nix
     ./swayosd.nix
+    ./ghostty.nix
   ];
 }
