@@ -1,10 +1,6 @@
-{
-  config,
-  osConfig,
-  ...
-}: let
+{config, ...}: let
   inherit (config.catppuccin) flavor;
-  inherit (osConfig.programs.hyprland) enable;
+  inherit (config.wayland.windowManager.hyprland) enable;
 in {
   services.swaync = {
     inherit enable;

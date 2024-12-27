@@ -1,5 +1,5 @@
-{osConfig, ...}: let
-  inherit (osConfig.programs.hyprland) enable;
+{config, ...}: let
+  inherit (config.wayland.windowManager.hyprland) enable;
 in {
   stylix.targets.rofi.enable = false;
   catppuccin.rofi.enable = true;
