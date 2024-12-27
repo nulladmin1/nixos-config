@@ -16,5 +16,6 @@
     ./xdg.nix
     ./swaync.nix
     ./rofi.nix
+    ./swayosd.nix
   ];
 }
