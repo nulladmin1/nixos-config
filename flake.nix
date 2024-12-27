@@ -101,6 +101,11 @@
       url = "github:pimalaya/comodoro";
       inputs.pimalaya.follows = "pimalaya";
     };
+
+    # Ghostty
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = {
