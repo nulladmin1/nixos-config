@@ -14,5 +14,7 @@
     ./theming.nix
     ./packages.nix
     ./xdg.nix
+    ./swaync.nix
+    ./rofi.nix
   ];
 }

@@ -8,7 +8,6 @@
 }: let
   inherit (config.var) wallpaper;
   inherit (pkgs) system;
-  inherit (config.catppuccin) flavor;
   inherit (osConfig.programs.hyprland) enable;
 
   # The space between windows to line up Hyrpland and Waybar
@@ -20,23 +19,6 @@ in {
     wl-clipboard
     wlsunset
   ];
-
-  services.swaync = {
-    inherit enable;
-    style = let
-      theme = builtins.fetchurl {
-        url = "https://github.com/catppuccin/swaync/releases/download/v0.2.3/${flavor}.css";
-        sha256 = "1xr1wkg4zb467b35xhsfqiwhimfnn88i3ml5rf173rkm7fyby9qy";
-      };
-    in
-      builtins.readFile "${theme}";
-  };
-
-  stylix.targets.rofi.enable = false;
-  catppuccin.rofi.enable = true;
-  programs.rofi = {
-    inherit enable;
-  };
 
   services.swayosd = {
     inherit enable;
