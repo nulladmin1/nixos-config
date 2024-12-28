@@ -11,6 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nixos Hardware for hardware settings
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
+
     # Nix Index Database for comma
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -39,21 +44,9 @@
     # Stylix for theming
     stylix.url = "github:danth/stylix";
 
-    # My Custom Wallpapers packages
-    wallpapers = {
-      url = "github:nulladmin1/wallpapers";
-      flake = false;
-    };
-
     # Disko for declarative disk management
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # My Custom Nixvim Configuration
-    nixvim = {
-      url = "github:nulladmin1/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -84,12 +77,6 @@
     # NixOS WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
-    # Wakanix (my custom Wakatime module)
-    wakanix = {
-      url = "github:nulladmin1/wakanix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Pimalaya
     pimalaya = {
       url = "github:pimalaya/nix";
@@ -106,12 +93,30 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    # ------------------------ MY CUSTOM STUFF -------------------------------
+    # My Custom Wallpapers package
+    wallpapers = {
+      url = "github:nulladmin1/wallpapers";
+      flake = false;
+    };
+
+    # Wakanix (my custom Wakatime module)
+    wakanix = {
+      url = "github:nulladmin1/wakanix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # My Custom Nixvim Configuration
+    nixvim = {
+      url = "github:nulladmin1/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     ...
   } @ inputs: let
     inherit (nixpkgs) lib;
