@@ -13,7 +13,7 @@ in {
   home.file.${configFile}.text = ''
     theme = catppuccin-${config.catppuccin.flavor}
     font-family = ${config.stylix.fonts.monospace.name}
-    background-opacity = "${config.stylix.opacity.terminal}"
+    background-opacity = ${builtins.toString config.stylix.opacity.terminal}
     window-theme = system
   '';
 }
