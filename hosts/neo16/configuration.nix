@@ -7,8 +7,6 @@
   inherit (config.var) username;
 in {
   imports = [
-    inputs.nur.modules.nixos.default
-    ../../shared
     ../../system
     ../../system/hardware/boot/systemd-boot.nix
     ../common/opts.nix

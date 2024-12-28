@@ -3,6 +3,10 @@
   inputs,
   ...
 }: {
+  imports = with inputs; [
+    nur.modules.nixos.default
+  ];
+
   environment.systemPackages = with pkgs;
     [
       # Core stuff
