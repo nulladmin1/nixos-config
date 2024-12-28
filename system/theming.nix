@@ -53,8 +53,9 @@ in {
     platformTheme = "gtk2";
   };
 
+  # TODO
   catppuccin.sddm = {
-    inherit (config.services.displayManager.sddm) enable;
+    enable = false;
     background = wallpaper;
     inherit font;
   };
