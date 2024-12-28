@@ -8,8 +8,9 @@
   inherit (config.var) wallpaper;
   font = config.stylix.fonts.monospace.name;
 in {
-  imports = [
-    inputs.stylix.nixosModules.stylix
+  imports = with inputs; [
+    stylix.nixosModules.stylix
+    catppuccin.nixosModules.catppuccin
   ];
 
   stylix = {

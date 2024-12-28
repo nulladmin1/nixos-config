@@ -14,7 +14,6 @@ in {
     inputs.disko.nixosModules.disko
     ./disko.nix
 
-    inputs.catppuccin.nixosModules.catppuccin
     ./hardware-configuration.nix
   ];
   networking = {
