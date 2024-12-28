@@ -27,7 +27,7 @@ in {
     window#osd {
       padding: 12px 20px;
       border-radius: 999px;
-      border: alpha(@mauve. 0.8);
+      border: alpha(@mauve, 0.8);
       background: alpha(@base, 0.8);
     }
 
