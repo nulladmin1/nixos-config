@@ -36,8 +36,10 @@ in {
       };
     };
 
-    targets.gtk = {
-      enable = true;
+    targets = {
+      gnome.enable = true;
+      gtk.enable = true;
+      feh.enable = true;
     };
 
     opacity = {
