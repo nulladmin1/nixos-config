@@ -3,7 +3,9 @@
   osConfig,
   lib,
   ...
-}: {
+}: let
+  inherit (osConfig.catppuccin) enable flavor accent;
+in {
   stylix.targets = {
     gnome.enable = true;
     gtk.enable = true;
@@ -24,5 +26,10 @@
     style = lib.mkIf config.catppuccin.kvantum.enable {
       name = "kvantum";
     };
+  };
+
+  # Use the same settings as system catppuccin
+  catppuccin = {
+    inherit enable flavor accent;
   };
 }

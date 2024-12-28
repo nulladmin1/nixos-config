@@ -53,6 +53,12 @@ in {
     platformTheme = "gtk2";
   };
 
+  catppuccin = {
+    enable = !config.stylix.autoEnable;
+    flavor = "mocha";
+    accent = "mauve";
+  };
+
   # TODO
   catppuccin.sddm = {
     enable = false;
