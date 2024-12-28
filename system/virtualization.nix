@@ -1,20 +1,23 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
-  username = config.var.username;
+  inherit (config.var) username;
 in {
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      swtpm.enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        swtpm.enable = true;
+      };
     };
-  };
-  virtualisation.waydroid.enable = true;
+    waydroid.enable = true;
 
-  # Docker
-  virtualisation.docker.enable = true;
-  users.users.${username}.extraGroups = ["docker"];
+    # Docker
+    docker.enable = false;
+  };
+  users.users.${username}.extraGroups = lib.lists.optional config.virtualisation.docker.enable "docker";
 }
