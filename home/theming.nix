@@ -4,10 +4,12 @@
   lib,
   ...
 }: {
-  catppuccin = {
-    cursors = {
-      enable = false;
-    };
+  stylix.targets = {
+    gnome.enable = true;
+    gtk.enable = true;
+    vscode.enable = true;
+    kde.enable = true;
+  };
 
   qt = let
     osTheme = osConfig.qt.platformTheme;
