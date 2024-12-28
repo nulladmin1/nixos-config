@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (config.var) wallpaper;
-  inherit (config.var) font;
+  font = config.stylix.fonts.monospace.name;
 in {
   catppuccin.sddm = {
     enable = true;

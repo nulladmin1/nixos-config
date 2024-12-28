@@ -1,5 +1,5 @@
-{config, ...}: let
-  locale = config.var.locale;
+{...}: let
+  locale = "en_US.UTF-8";
 in {
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -21,13 +21,14 @@ in {
     LC_TELEPHONE = locale;
     LC_TIME = locale;
   };
+  location = {
+    # Enable location manually
+    provider = "manual";
 
-  # Enable location manually
-  location.provider = "manual";
-
-  # Manually set latitude and longtitude (not my actual lat/long)
-  location.latitude = 40.0;
-  location.longitude = -77.0;
+    # Manually set latitude and longtitude (not my actual lat/long)
+    latitude = 40.0;
+    longitude = -77.0;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {

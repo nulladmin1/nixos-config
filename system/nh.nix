@@ -1,5 +1,5 @@
 {config, ...}: let
-  flake = config.var.flake;
+  inherit (config.var) flake;
 in {
   programs.nh = {
     enable = true;
@@ -7,6 +7,6 @@ in {
       enable = true;
       extraArgs = "--keep-since 7d";
     };
-    flake = flake;
+    inherit flake;
   };
 }

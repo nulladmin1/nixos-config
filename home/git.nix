@@ -1,5 +1,5 @@
 {config, ...}: let
-  inherit (config.var) git_email git_username;
+  inherit (config.var) email git_username;
 in {
   ## Allowed Signers file for Git
   home.file.".ssh/allowed_signers".text = "* ${builtins.readFile ../shared/keys/id_ed25519.pub}";
@@ -8,7 +8,7 @@ in {
   programs.git = {
     enable = true;
     userName = git_username;
-    userEmail = git_email;
+    userEmail = email;
 
     extraConfig = {
       commit.gpgsign = true;
