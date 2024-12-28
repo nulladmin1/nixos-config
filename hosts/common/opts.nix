@@ -1,5 +1,12 @@
-{inputs, ...}: {
-  imports = [../../shared/var-options.nix];
+{
+  lib,
+  inputs,
+  ...
+}: {
+  options.var = lib.mkOption {
+    type = lib.types.attrs;
+    default = {};
+  };
 
   config.var = rec {
     name = "Shrey Deogade";
