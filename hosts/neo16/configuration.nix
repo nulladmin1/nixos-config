@@ -8,16 +8,22 @@
 }: let
   inherit (config.var) username;
 in {
-  imports = [
-    ../../system
-    ../../system/hardware/boot/systemd-boot.nix
-    ../common/opts.nix
+  imports =
+    [
+      ../../system
+      ../../system/hardware/boot/systemd-boot.nix
+      ../common/opts.nix
 
-    inputs.disko.nixosModules.disko
-    ./disko.nix
+      inputs.disko.nixosModules.disko
+      ./disko.nix
 
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ]
+    ++ (with inputs.nixos-hardware.nixosModules; [
+      common-cpu-intel-cpu-only
+      common-pc-laptop
+      common-pc-laptop-ssd
+    ]);
 
   home-manager.users.${username} = import ../common/home.nix;
 
