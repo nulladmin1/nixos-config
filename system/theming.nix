@@ -6,6 +6,7 @@
   ...
 }: let
   inherit (config.var) wallpaper;
+  font = config.stylix.fonts.monospace.name;
 in {
   imports = [
     inputs.stylix.nixosModules.stylix
@@ -50,5 +51,11 @@ in {
   qt = {
     enable = !config.services.desktopManager.plasma6.enable;
     platformTheme = "gtk2";
+  };
+
+  catppuccin.sddm = {
+    inherit (config.services.displayManager.sddm) enable;
+    background = wallpaper;
+    inherit font;
   };
 }
