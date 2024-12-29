@@ -8,10 +8,12 @@
     default = {};
   };
 
-  config.var = rec {
+  config.var = let
+    username = "shreyd";
+  in {
     name = "Shrey Deogade";
     email = "shrey.deogade@protonmail.com";
-    username = "shreyd";
+    inherit username;
 
     git_username = "nulladmin1";
 
