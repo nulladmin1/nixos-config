@@ -282,6 +282,7 @@ in {
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, F, fullscreen, 1"
+        "$mainMod, M, fullscreen, 0"
         ", Print, exec, hyprshot -m region"
         "$mainMod, Print, exec, hyprshot -m output"
 
