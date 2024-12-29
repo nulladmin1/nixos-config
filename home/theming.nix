@@ -5,6 +5,7 @@
   ...
 }: let
   inherit (osConfig.catppuccin) enable flavor accent;
+  inherit (config.var) prefer;
 in {
   stylix.targets = {
     gnome.enable = true;
@@ -19,15 +20,22 @@ in {
     osTheme = osConfig.qt.platformTheme;
   in {
     inherit (osConfig.qt) enable;
-    platformTheme.name =
-      if config.catppuccin.kvantum.enable
-      then "kvantum"
-      else if osTheme == "gtk2"
-      then "gtk"
-      else osTheme;
-    style = lib.mkIf config.catppuccin.kvantum.enable {
-      name = "kvantum";
-    };
+    platformTheme.name = prefer [
+      {
+        condition = osTheme == "gtk2";
+        value = "gtk";
+      }
+      {
+        condition = true;
+        value = osTheme;
+      }
+    ];
+    style.name = prefer [
+      {
+        condition = true;
+        value = "kde";
+      }
+    ];
   };
 
   # Use the same settings as system catppuccin
