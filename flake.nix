@@ -115,12 +115,14 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
-    inherit (nixpkgs) lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      #overlays = builtins.filter (file: builtins.match ".*\\.nix" file != null) (builtins.readDir ./overlays);
     };
+
+    lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
   in {
     formatter.${system} = pkgs.alejandra;
     nixosConfigurations = {

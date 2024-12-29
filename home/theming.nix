@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (osConfig.catppuccin) enable flavor accent;
-  inherit (config.var) prefer;
+  inherit (lib.customLib) prefer;
 in {
   stylix.targets = {
     gnome.enable = true;

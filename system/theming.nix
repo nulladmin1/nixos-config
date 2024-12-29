@@ -23,7 +23,7 @@ in {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${config.catppuccin.flavor}.yaml";
 
     cursor = let
-      capitalize = str: lib.strings.toUpper (lib.strings.substring 0 1 str) + lib.strings.substring 1 (builtins.stringLength str) str;
+      inherit (lib.customLib) capitalize;
       inherit (config.catppuccin) flavor accent;
     in {
       package = pkgs.catppuccin-cursors.${flavor + (capitalize accent)};
