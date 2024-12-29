@@ -10,7 +10,6 @@
       h = "history | fzf";
       ":q" = "exit";
       meow = "bat";
-      cd = "z";
       please = "sudo ";
       g = "git";
       push = "git push";
