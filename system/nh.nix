@@ -5,6 +5,7 @@
       enable = true;
       extraArgs = "--keep-since 7d";
     };
-    flake = builtins.toString ../.;
+    # TODO
+    flake = "/home/shreyd/nixos-config";
   };
 }
