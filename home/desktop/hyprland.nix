@@ -156,20 +156,22 @@ in {
         "swayosd-server"
       ];
 
-      "env" = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
-        "HYPRCURSOR_THEME,catppuccin-mocha-mauve-cursors"
+      "env" =
+        [
+          "XCURSOR_SIZE,24"
+          "HYPRCURSOR_SIZE,24"
+          "HYPRCURSOR_THEME,catppuccin-mocha-mauve-cursors"
 
-        # For Qt
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-
-        # Nvidia + Wayland
-        "LIBVA_DRIVER_NAME,nvidia"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-      ];
+          # For Qt
+          "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+          "QT_QPA_PLATFORM,wayland;xcb"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        ]
+        ++ lib.lists.optionals (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers) [
+          # Nvidia + Wayland
+          "LIBVA_DRIVER_NAME,nvidia"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        ];
 
       general =
         {
