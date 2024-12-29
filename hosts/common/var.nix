@@ -36,14 +36,5 @@
       type = lib.types.str;
       description = "Your wallpaper";
     };
-
-    flake = let
-      flakePath = builtins.toString ../../.;
-    in
-      lib.mkOption {
-        type = lib.types.str;
-        default = flakePath;
-        description = "Path to the nixos-config flake. Default is: ${flakePath}";
-      };
   };
 }
