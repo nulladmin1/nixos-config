@@ -13,6 +13,8 @@ in {
     kde.enable = true;
   };
 
+  catppuccin.kvantum.enable = false;
+
   qt = let
     osTheme = osConfig.qt.platformTheme;
   in {
