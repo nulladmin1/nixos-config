@@ -1,12 +1,7 @@
-{
-  lib,
-  inputs,
-  ...
-}: {
-  options.var = lib.mkOption {
-    type = lib.types.attrs;
-    default = {};
-  };
+{inputs, ...}: {
+  imports = [
+    ./var.nix
+  ];
 
   config.var = let
     username = "shreyd";
@@ -17,17 +12,8 @@
 
     git_username = "nulladmin1";
 
-    flake = "/home/${username}/nixos-config/";
-
     editor = "nvim";
 
     wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
-
-    prefer = pairs: let
-      result = builtins.filter (pair: pair.condition) pairs;
-    in
-      if result == []
-      then null
-      else (builtins.head result).value;
   };
 }
