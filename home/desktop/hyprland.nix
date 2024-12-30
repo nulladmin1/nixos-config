@@ -144,7 +144,7 @@ in {
       hyprwinwrap
     ];
     settings = {
-      "$terminal" = "ghostty";
+      "$terminal" = "alacritty";
       "$filemanager" = "yazi";
       "$menu" = "rofi -show drun";
 
