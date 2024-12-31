@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   extraPackages = with pkgs; [
-    #    hplipWithPlugin
+    hplip
   ];
 in {
   # Enable CUPS to print documents.
