@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   osConfig,
   lib,
@@ -16,26 +17,9 @@ in {
 
   catppuccin.kvantum.enable = false;
 
-  qt = let
-    osTheme = osConfig.qt.platformTheme;
-  in {
+  qt = {
     inherit (osConfig.qt) enable;
-    platformTheme.name = prefer [
-      {
-        condition = osTheme == "gtk2";
-        value = "gtk";
-      }
-      {
-        condition = true;
-        value = osTheme;
-      }
-    ];
-    style.name = prefer [
-      {
-        condition = true;
-        value = "kde";
-      }
-    ];
+    platformTheme.name = "qt6ct";
   };
 
   # Use the same settings as system catppuccin
