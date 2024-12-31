@@ -19,5 +19,6 @@
     ./sops.nix
     ./packages.nix
     ./theming.nix
+    ./kwallet.nix
   ];
 }
