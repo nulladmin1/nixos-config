@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  extraPackages = with pkgs; [
+    #    hplipWithPlugin
+  ];
+in {
   # Enable CUPS to print documents.
   services.printing = {
     enable = true;
-    drivers = with pkgs; [hplipWithPlugin];
+    drivers = extraPackages;
   };
 
   # Avahi for printing
@@ -15,6 +19,6 @@
   # SANE
   hardware.sane = {
     enable = true;
-    extraBackends = [pkgs.hplipWithPlugin];
+    extraBackends = extraPackages;
   };
 }
