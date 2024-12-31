@@ -19,4 +19,12 @@ in {
       user.signingkey = "~/.ssh/id_ed25519.pub";
     };
   };
+
+  # GitHub
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "ssh";
+    };
+  };
 }
