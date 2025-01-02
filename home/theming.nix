@@ -1,13 +1,13 @@
 {
-  pkgs,
-  config,
   osConfig,
-  lib,
+  inputs,
   ...
 }: let
   inherit (osConfig.catppuccin) enable flavor accent;
-  inherit (lib.customLib) prefer;
 in {
+  imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ];
   stylix.targets = {
     gnome.enable = true;
     gtk.enable = true;
