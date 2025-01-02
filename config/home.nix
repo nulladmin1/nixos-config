@@ -1,8 +1,4 @@
-{
-  config,
-  inputs,
-  ...
-}: let
+{config, ...}: let
   inherit (config.var) username;
   inherit (config.var) editor;
 in {
@@ -16,15 +12,10 @@ in {
     };
   };
 
-  imports =
-    [
-      ./opts.nix
-      ../../home
-      ../../shared
-    ]
-    ++ (with inputs; [
-      catppuccin.homeManagerModules.catppuccin
-    ]);
+  imports = [
+    ./opts.nix
+    ../home
+  ];
 
   programs.home-manager.enable = true;
 }
