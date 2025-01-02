@@ -1,4 +1,5 @@
 lib: {
+  # ------------ COMMON UTILITY FUNCTIONS --------------------- #
   capitalize = let
     inherit (lib.strings) toUpper substring;
   in
@@ -10,4 +11,11 @@ lib: {
     if result == []
     then null
     else (builtins.head result).value;
+
+  # ------------- TYPES AND STUFF ----------------------------#
+  availableBootloaders = [
+    "systemd-boot"
+    "lanzaboote"
+    "grub"
+  ];
 }
