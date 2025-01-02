@@ -24,3 +24,5 @@
 - More desktop environments
 - `plasma-manager`
 - Add support for AMD Stuff
+- Modularize config more
+- Implement the use of [nixos-facter](https://github.com/numtide/nixos-facter)
