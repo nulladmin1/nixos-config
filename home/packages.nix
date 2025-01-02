@@ -23,6 +23,7 @@
       obs-studio
       obs-studio-plugins.wlrobs
       okular
+      slack
       swww
       jetbrains-toolbox
     ]
