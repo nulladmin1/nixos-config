@@ -25,7 +25,5 @@ in {
     startMenuLaunchers = true;
   };
 
-  home-manager.users.${username} = import ../../config/home.nix;
-
   system.stateVersion = "24.11";
 }

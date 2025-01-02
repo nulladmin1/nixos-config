@@ -4,14 +4,11 @@
   inputs,
   modulesPath,
   ...
-}: let
-  inherit (config.var) username;
-in {
+}: {
   imports =
     [
       ../../system
       ../../system/hardware/boot/systemd-boot.nix
-      ../../config
 
       inputs.disko.nixosModules.disko
       ./disko.nix
@@ -24,13 +21,9 @@ in {
       common-pc-laptop-ssd
     ]);
 
-  home-manager.users.${username} = import ../../config/home.nix;
-
   # --------- DEVICE SPECIFIC STUFF ----------- #
 
-  config.var = {
-    bootloader = "systemd-boot";
-  };
+  var.bootloader = "systemd-boot";
 
   networking = {
     hostName = "neo16";
