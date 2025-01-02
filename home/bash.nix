@@ -15,6 +15,7 @@
       push = "git push";
       pull = "git pull";
       commit = "git commit -am";
+      tmp = "dir=$(mktemp -d) && cd $dir";
     };
     bashrcExtra = ''
       nerdfetch
