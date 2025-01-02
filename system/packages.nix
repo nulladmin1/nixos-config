@@ -35,7 +35,7 @@
       ripgrep # Better grep
       sbctl # For secure boot
       thefuck # Corrects previous console command
-      tldr # Better and simpler manpages
+      tealdeer # Better and simpler manpages
       unzip # Unzips .zip files
       vim # Text editor
 
