@@ -7,7 +7,7 @@
 in {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    ../common/opts.nix
+    ../../config
 
     ../../system/nh.nix
     ../../system/nix.nix
@@ -25,7 +25,7 @@ in {
     startMenuLaunchers = true;
   };
 
-  home-manager.users.${username} = import ../common/home.nix;
+  home-manager.users.${username} = import ../../config/home.nix;
 
   system.stateVersion = "24.11";
 }

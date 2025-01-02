@@ -11,7 +11,7 @@ in {
     [
       ../../system
       ../../system/hardware/boot/systemd-boot.nix
-      ../common/opts.nix
+      ../../config
 
       inputs.disko.nixosModules.disko
       ./disko.nix
@@ -24,7 +24,13 @@ in {
       common-pc-laptop-ssd
     ]);
 
-  home-manager.users.${username} = import ../common/home.nix;
+  home-manager.users.${username} = import ../../config/home.nix;
+
+  # --------- DEVICE SPECIFIC STUFF ----------- #
+
+  config.var = {
+    bootloader = "systemd-boot";
+  };
 
   networking = {
     hostName = "neo16";
