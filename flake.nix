@@ -115,34 +115,26 @@
   };
 
   outputs = {nixpkgs, ...} @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-      #overlays = builtins.filter (file: builtins.match ".*\\.nix" file != null) (builtins.readDir ./overlays);
-    };
-
     lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
-  in {
-    formatter.${system} = pkgs.alejandra;
-    nixosConfigurations = {
-      neo16 = lib.nixosSystem {
+
+    mkHost = hostname: {system}:
+      lib.nixosSystem {
         inherit system;
         modules = [
-          ./hosts/neo16/configuration.nix
+          ./hosts/${hostname}/configuration.nix
+          ./config
         ];
         specialArgs = {
           inherit lib system inputs;
         };
       };
-      wsl = lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/wsl/configuration.nix
-        ];
-        specialArgs = {
-          inherit lib system inputs;
-        };
+  in {
+    nixosConfigurations = {
+      neo16 = mkHost "neo16" {
+        system = "x86_64-linux";
+      };
+      wsl = mkHost "neo16" {
+        system = "x86_64-linux";
       };
     };
   };
