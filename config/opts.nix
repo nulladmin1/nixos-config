@@ -3,12 +3,10 @@
     ./var.nix
   ];
 
-  config.var = let
+  config.var = {
     username = "shreyd";
-  in {
     name = "Shrey Deogade";
     email = "shrey.deogade@protonmail.com";
-    inherit username;
 
     git_username = "nulladmin1";
 
