@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (lib) mkOption;
-  inherit (lib.types) str enum;
+  inherit (lib.types) str path enum;
 in {
   options.var = {
     name = mkOption {
@@ -21,6 +21,11 @@ in {
     username = mkOption {
       type = str;
       description = "Your Username";
+    };
+
+    sshKeyPath = mkOption {
+      type = path;
+      description = "Path to your SSH key (stored in the nixos-config repo, not in system)";
     };
 
     git_username = mkOption {

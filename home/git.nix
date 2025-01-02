@@ -1,8 +1,8 @@
 {config, ...}: let
-  inherit (config.var) email git_username;
+  inherit (config.var) email git_username sshKeyPath;
 in {
   ## Allowed Signers file for Git
-  home.file.".ssh/allowed_signers".text = "* ${builtins.readFile ../shared/keys/id_ed25519.pub}";
+  home.file.".ssh/allowed_signers".text = "* ${builtins.readFile sshKeyPath}";
 
   # Git
   programs.git = {
