@@ -1,6 +1,8 @@
 {
   pkgs,
+  lib,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -10,6 +12,7 @@
     [
       anki
       blender
+      chromium
       #ciscoPacketTracer8
       discord
       ghostwriter
@@ -31,5 +34,6 @@
     ++ (with pkgs.kdePackages; [
       kdenlive
       qt6ct
-    ]);
+    ])
+    ++ (lib.lists.optional config.programs.yazi.enable ueberzugpp);
 }
