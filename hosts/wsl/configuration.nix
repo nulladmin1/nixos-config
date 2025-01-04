@@ -7,7 +7,11 @@
 in {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    ../../config
+<<<<<<< Updated upstream
+=======
+    ../common/opts.nix
+    ../../shared
+>>>>>>> Stashed changes
 
     ../../system/nh.nix
     ../../system/nix.nix
@@ -17,6 +21,7 @@ in {
     ../../system/utils.nix
     ../../system/locales.nix
     ../../system/home-manager.nix
+    ../../system/theming.nix
   ];
 
   wsl = {
