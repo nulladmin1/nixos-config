@@ -1,5 +1,7 @@
 {
   pkgs,
+  lib,
+  config,
   inputs,
   ...
 }: {
@@ -46,9 +48,7 @@
         accents = ["mauve"];
       })
     ]
-    ++ (with nur.repos; [
-      shadowrz.klassy-qt6
-    ])
+    ++ (with nur.repos; lib.optional config.services.desktopManager.plasma6.enable shadowrz.klassy-qt6 )
     ++ (with inputs;
       map (pkg: pkg.packages.${pkgs.system}.default) [
         # My custom Nixvim configuration
