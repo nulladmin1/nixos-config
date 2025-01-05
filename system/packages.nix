@@ -54,9 +54,6 @@
         # My custom Nixvim configuration
         nixvim
 
-        # Comodoro, a Pomodoro app made by Pimalaya
-        comodoro
-
         # Ghostty
         ghostty
       ]);

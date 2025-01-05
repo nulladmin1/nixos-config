@@ -77,18 +77,6 @@
     # NixOS WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
-    # Pimalaya
-    pimalaya = {
-      url = "github:pimalaya/nix";
-      flake = false;
-    };
-
-    # Comodoro, a Pomodoro app made by Pimalaya
-    comodoro = {
-      url = "github:pimalaya/comodoro";
-      inputs.pimalaya.follows = "pimalaya";
-    };
-
     # Ghostty
     ghostty = {
       url = "github:ghostty-org/ghostty";
