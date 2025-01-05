@@ -21,6 +21,7 @@
       htop # System monitor
       vlc # Video viewer
       wget # Wget
+      speedcrunch # A really good calculator
 
       # Development
       alejandra # Nix formatter
