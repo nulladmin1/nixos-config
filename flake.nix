@@ -1,6 +1,29 @@
 {
   description = "Main system flake";
 
+  outputs = {nixpkgs, ...} @ inputs: let
+    lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
+
+    mkHost = hostname: {system}:
+      lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hosts/${hostname}/configuration.nix
+          ./config
+        ];
+        specialArgs = {
+          inherit lib system inputs;
+        };
+      };
+
+    mkHosts = system: hosts: lib.genAttrs hosts (host: mkHost host {inherit system;});
+  in {
+    nixosConfigurations = mkHosts "x86_64-linux" [
+      "neo16"
+      "wsl"
+    ];
+  };
+
   inputs = {
     # Nixpkgs (nixos-unstable is the perfect version for me)
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -99,31 +122,6 @@
     nixvim = {
       url = "github:nulladmin1/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = {nixpkgs, ...} @ inputs: let
-    lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
-
-    mkHost = hostname: {system}:
-      lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./hosts/${hostname}/configuration.nix
-          ./config
-        ];
-        specialArgs = {
-          inherit lib system inputs;
-        };
-      };
-  in {
-    nixosConfigurations = {
-      neo16 = mkHost "neo16" {
-        system = "x86_64-linux";
-      };
-      wsl = mkHost "neo16" {
-        system = "x86_64-linux";
-      };
     };
   };
 }
