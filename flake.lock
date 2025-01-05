@@ -151,28 +151,6 @@
         "url": "https://flakehub.com/f/catppuccin/nix/1.2.%2A.tar.gz"
       }
     },
-    "comodoro": {
-      "inputs": {
-        "fenix": "fenix",
-        "nixpkgs": "nixpkgs_2",
-        "pimalaya": [
-          "pimalaya"
-        ]
-      },
-      "locked": {
-        "lastModified": 1732872222,
-        "narHash": "sha256-mp115TbUc226kDWDXtrbLO5sc/UqVFSNbqQBOnf7AFQ=",
-        "owner": "pimalaya",
-        "repo": "comodoro",
-        "rev": "997de49cd70dcc488c5a1e16475e4ca8f03485f7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pimalaya",
-        "repo": "comodoro",
-        "type": "github"
-      }
-    },
     "crane": {
       "inputs": {
         "nixpkgs": [
@@ -233,28 +211,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "disko",
-        "type": "github"
-      }
-    },
-    "fenix": {
-      "inputs": {
-        "nixpkgs": [
-          "comodoro",
-          "nixpkgs"
-        ],
-        "rust-analyzer-src": "rust-analyzer-src"
-      },
-      "locked": {
-        "lastModified": 1732405626,
-        "narHash": "sha256-uDbQrdOyqa2679kKPzoztMxesOV7DG2+FuX/TZdpxD0=",
-        "owner": "soywod",
-        "repo": "fenix",
-        "rev": "c7af381484169a78fb79a11652321ae80b0f92a6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "soywod",
-        "repo": "fenix",
         "type": "github"
       }
     },
@@ -890,7 +846,7 @@
         "hyprlang": "hyprlang",
         "hyprutils": "hyprutils",
         "hyprwayland-scanner": "hyprwayland-scanner",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": "pre-commit-hooks",
         "systems": "systems_3",
         "xdph": "xdph"
@@ -1182,7 +1138,7 @@
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts_2",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "umu": "umu"
       },
       "locked": {
@@ -1239,7 +1195,7 @@
       "inputs": {
         "flake-compat": "flake-compat_4",
         "flake-utils": "flake-utils_4",
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1733854371,
@@ -1366,21 +1322,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1732539489,
-        "narHash": "sha256-EPstM4aUuClDkFdoyno1CSRZIfGdCfZKw/XzMlQB0NY=",
-        "owner": "soywod",
-        "repo": "nixpkgs",
-        "rev": "87b010196489f96e4acdcc804ed3d096476e46ad",
-        "type": "github"
-      },
-      "original": {
-        "owner": "soywod",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1735291276,
         "narHash": "sha256-NYVcA06+blsLG6wpAbSPTCyLvxD/92Hy4vlY9WxFI1M=",
         "owner": "NixOS",
@@ -1395,7 +1336,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1735268880,
         "narHash": "sha256-7QEFnKkzD13SPxs+UFR5bUFN2fRw+GlL0am72ZjNre4=",
@@ -1411,7 +1352,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1733384649,
         "narHash": "sha256-K5DJ2LpPqht7K76bsxetI+YHhGGRyVteTPRQaIIKJpw=",
@@ -1427,7 +1368,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1735471104,
         "narHash": "sha256-0q9NGQySwDQc7RhAV2ukfnu7Gxa5/ybJ2ANT8DQrQrs=",
@@ -1442,7 +1383,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_7": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1735471104,
         "narHash": "sha256-0q9NGQySwDQc7RhAV2ukfnu7Gxa5/ybJ2ANT8DQrQrs=",
@@ -1458,7 +1399,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_8": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1735648875,
         "narHash": "sha256-fQ4k/hyQiH9RRPznztsA9kbcDajvwV1sRm01el6Sr3c=",
@@ -1527,7 +1468,7 @@
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts_4",
-        "nixpkgs": "nixpkgs_7",
+        "nixpkgs": "nixpkgs_6",
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
@@ -1588,22 +1529,6 @@
       "original": {
         "owner": "NuschtOS",
         "repo": "search",
-        "type": "github"
-      }
-    },
-    "pimalaya": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1733688064,
-        "narHash": "sha256-ievcXt7195dGJmkVv2PhwGDHqZA14iNfzq9jjTG8Xao=",
-        "owner": "pimalaya",
-        "repo": "nix",
-        "rev": "c1f6ca4d95ef9647478d70a137b76f1cf2791faa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pimalaya",
-        "repo": "nix",
         "type": "github"
       }
     },
@@ -1684,7 +1609,6 @@
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
-        "comodoro": "comodoro",
         "disko": "disko",
         "ghostty": "ghostty",
         "home-manager": "home-manager_2",
@@ -1695,33 +1619,15 @@
         "nix-index-database": "nix-index-database",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_6",
+        "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
         "nur": "nur",
-        "pimalaya": "pimalaya",
         "plasma-manager": "plasma-manager",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix",
         "wakanix": "wakanix",
         "wallpapers": "wallpapers"
-      }
-    },
-    "rust-analyzer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1732050317,
-        "narHash": "sha256-G5LUEOC4kvB/Xbkglv0Noi04HnCfryur7dVjzlHkgpI=",
-        "owner": "rust-lang",
-        "repo": "rust-analyzer",
-        "rev": "c0bbbb3e5d7d1d1d60308c8270bfd5b250032bb4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rust-lang",
-        "ref": "nightly",
-        "repo": "rust-analyzer",
-        "type": "github"
       }
     },
     "rust-overlay": {
@@ -1800,7 +1706,7 @@
         "flake-utils": "flake-utils_6",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_4",
-        "nixpkgs": "nixpkgs_8",
+        "nixpkgs": "nixpkgs_7",
         "systems": "systems_7",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",
