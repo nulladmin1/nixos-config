@@ -35,7 +35,6 @@
       ripgrep # Better grep
       sbctl # For secure boot
       thefuck # Corrects previous console command
-      tealdeer # Better and simpler manpages
       unzip # Unzips .zip files
       vim # Text editor
 
@@ -45,7 +44,9 @@
         accents = ["mauve"];
       })
     ]
-    ++ (with nur.repos; lib.optional config.services.desktopManager.plasma6.enable shadowrz.klassy-qt6 )
+    ++ (with nur.repos; [
+      shadowrz.klassy-qt6
+    ])
     ++ (with inputs;
       map (pkg: pkg.packages.${pkgs.system}.default) [
         # My custom Nixvim configuration
