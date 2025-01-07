@@ -13,7 +13,6 @@
     [
       # Core stuff
       bat # Better cat
-      bitwarden-cli # Bitwarden, but CLI
       brave # My browser of choice
       efibootmgr # Manage UEFI boot entries
       fzf # Fuzzy finder
@@ -23,12 +22,10 @@
       htop # System monitor
       vlc # Video viewer
       wget # Wget
-      speedcrunch # A really good calculator
 
       # Development
       alejandra # Nix formatter
       flutter # GUI Framework
-      go # Programming language
       just # Simple command runner
       lazygit # Git++
       nerdfetch # Fetch utility
