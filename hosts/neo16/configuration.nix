@@ -27,11 +27,11 @@
 
   networking = {
     hostName = "neo16";
-    nameservers = ["1.1.1.1" "1.0.0.1"];
     interfaces = {
       enp109s0.useDHCP = true;
       wlp0s20f3.useDHCP = true;
     };
+    networkmanager.insertNameservers = ["1.1.1.1" "1.0.0.1"];
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
