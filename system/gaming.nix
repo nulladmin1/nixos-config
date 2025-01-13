@@ -19,7 +19,6 @@
   environment.systemPackages = with pkgs; [
     # Gaming
     ferium
-    retroarch
     xonotic
     protonup
   ];
