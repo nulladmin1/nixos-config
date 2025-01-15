@@ -19,6 +19,7 @@
       gimp
       inkscape
       kolourpaint
+      krita
       libreoffice-qt6-still
       obs-studio
       obs-studio-plugins.wlrobs
