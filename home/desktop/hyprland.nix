@@ -18,15 +18,16 @@ in {
     brightnessctl
     wl-clipboard
     wlsunset
+    swww
   ];
   services = {
-    hyprpaper = {
-      inherit enable;
-      settings = lib.attrsets.optionalAttrs (!config.stylix.targets.hyprpaper.enable) {
-        preload = "${wallpaper}";
-        wallpaper = ", ${wallpaper}";
-      };
-    };
+    #    hyprpaper = {
+    #      inherit enable;
+    #      settings = lib.attrsets.optionalAttrs (!config.stylix.targets.hyprpaper.enable) {
+    #        preload = "${wallpaper}";
+    #        wallpaper = ", ${wallpaper}";
+    #      };
+    # };
 
     hypridle = {
       inherit enable;
@@ -154,6 +155,7 @@ in {
         "waybar"
         "wlsunset -S 5:30 -s 18:30"
         "swayosd-server"
+        "swww-daemon & sleep 0.1 && swww img ${wallpaper}"
       ];
 
       "env" =
