@@ -23,7 +23,7 @@
 
   # --------- DEVICE SPECIFIC STUFF ----------- #
 
-  var.bootloader = "systemd-boot";
+  var.bootloader = "grub";
 
   networking = {
     hostName = "neo16";
