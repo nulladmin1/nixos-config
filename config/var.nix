@@ -49,10 +49,9 @@ in {
       inherit (lib.customLib) availableBootloaders;
     in
       mkOption {
-        type = enum (lib.attrNames availableBootloaders);
-        default = "systemd-boot";
+        type = enum availableBootloaders;
         description = ''
-          The bootloader to use. systemd-boot is the default, and grub and lanzaboote are the other options. Lanzaboote is used for Secureboot
+          The bootloader to use. systemd-boot, grub and lanzaboote are the options. Lanzaboote is used for Secureboot
         '';
       };
   };

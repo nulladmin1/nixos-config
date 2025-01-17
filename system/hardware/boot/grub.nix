@@ -1,6 +1,10 @@
-{...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   # GRUB Bootloader
-  boot.loader = {
+  boot.loader = lib.mkIf (config.var.bootloader == "grub") {
     efi = {
       canTouchEfiVariables = true;
     };

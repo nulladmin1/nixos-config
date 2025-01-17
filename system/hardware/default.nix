@@ -5,5 +5,7 @@
     ./system.nix
     #    ./tlp.nix
     ./power-profiles-daemon.nix
+
+    ./boot
   ];
 }
