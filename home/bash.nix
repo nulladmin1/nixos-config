@@ -21,7 +21,7 @@
       commit = "git commit -am";
       tmp = "dir=$(mktemp -d) && cd $dir";
     };
-    bashrcExtra = ''
+    initExtra = ''
       nerdfetch
     '';
   };
