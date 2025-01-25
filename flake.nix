@@ -123,5 +123,11 @@
       url = "github:nulladmin1/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # My custom Nix-flake-template fetcher
+    getflake = {
+      url = "github:nulladmin1/getflake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

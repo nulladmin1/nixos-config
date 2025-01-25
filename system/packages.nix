@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  config,
   inputs,
   ...
 }: {
@@ -54,5 +52,8 @@
 
         # Ghostty
         ghostty
+
+        # getflake
+        getflake
       ]);
 }
