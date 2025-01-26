@@ -1,18 +1,33 @@
 {
   description = "Main system flake";
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {
+    nixpkgs,
+    nixpkgs-stable,
+    ...
+  } @ inputs: let
     lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
 
     mkHost = hostname: {system}:
       lib.nixosSystem {
         inherit system;
+
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+
         modules = [
           ./hosts/${hostname}/configuration.nix
           ./config
         ];
-        specialArgs = {
-          inherit lib system inputs;
+        specialArgs = let
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        in {
+          inherit lib system inputs pkgs-stable;
         };
       };
 
@@ -25,8 +40,11 @@
   };
 
   inputs = {
-    # Nixpkgs (nixos-unstable is the perfect version for me)
+    # Nixpkgs main
     nixpkgs.url = "nixpkgs/nixos-unstable";
+
+    # Nixpkgs stable
+    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
 
     # Home manager
     home-manager = {

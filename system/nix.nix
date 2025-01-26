@@ -27,8 +27,4 @@
         ];
     };
   };
-
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
 }
