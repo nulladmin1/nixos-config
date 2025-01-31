@@ -23,6 +23,7 @@
       tamasfe.even-better-toml
       vadimcn.vscode-lldb
       vscodevim.vim
+      wakatime.vscode-wakatime
     ];
     # package = pkgs.vscode.fhsWithPackages (ps: with ps; [rustup]);
   };
