@@ -64,6 +64,14 @@
       };
     };
   };
+  # Enable Jellyfin
+  services.jellyfin = let
+    inherit (config.var) username;
+  in {
+    enable = true;
+    openFirewall = true;
+    user = username;
+  };
 
   system.stateVersion = "23.11";
 }

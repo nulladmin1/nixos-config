@@ -20,6 +20,5 @@
     ./packages.nix
     ./theming.nix
     ./kwallet.nix
-    ./jellyfin.nix
   ];
 }
