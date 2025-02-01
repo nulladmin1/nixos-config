@@ -7,6 +7,9 @@
 }: {
   imports =
     [
+      # For Jellyfin
+      ./jellyfin.nix
+
       ../../system
       ../../system/hardware/boot/systemd-boot.nix
 
@@ -63,14 +66,6 @@
         enableOffloadCmd = !config.hardware.nvidia.prime.sync.enable;
       };
     };
-  };
-  # Enable Jellyfin
-  services.jellyfin = let
-    inherit (config.var) username;
-  in {
-    enable = true;
-    openFirewall = true;
-    user = username;
   };
 
   system.stateVersion = "23.11";
