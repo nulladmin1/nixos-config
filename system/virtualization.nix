@@ -17,7 +17,7 @@ in {
     waydroid.enable = true;
 
     # Docker
-    docker.enable = false;
+    docker.enable = true;
   };
   users.users.${username}.extraGroups = lib.lists.optional config.virtualisation.docker.enable "docker";
 }
