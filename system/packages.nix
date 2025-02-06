@@ -23,7 +23,6 @@
 
       # Development
       alejandra # Nix formatter
-      flutter # GUI Framework
       just # Simple command runner
       lazygit # Git++
       nerdfetch # Fetch utility
