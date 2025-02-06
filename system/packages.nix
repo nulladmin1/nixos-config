@@ -44,6 +44,9 @@
     ++ (with nur.repos; [
       shadowrz.klassy-qt6
     ])
+    ++ (with kdePackages; [
+      skanpage # Scanning utility
+    ])
     ++ (with inputs;
       map (pkg: pkg.packages.${pkgs.system}.default) [
         # My custom Nixvim configuration
