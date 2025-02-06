@@ -73,4 +73,9 @@
     enable = true;
     settings.updates.auto_update = true;
   };
+
+  programs.eza = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 }
