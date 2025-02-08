@@ -18,5 +18,6 @@
     ./rofi.nix
     ./swayosd.nix
     ./ghostty.nix
+    ./helix.nix
   ];
 }
