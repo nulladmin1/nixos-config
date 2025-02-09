@@ -139,7 +139,6 @@
     # My Custom Nixvim Configuration
     nixvim = {
       url = "github:nulladmin1/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # My custom Nix-flake-template fetcher
