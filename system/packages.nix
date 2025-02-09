@@ -41,9 +41,6 @@
         accents = ["mauve"];
       })
     ]
-    ++ (with nur.repos; [
-      shadowrz.klassy-qt6
-    ])
     ++ (with kdePackages; [
       skanpage # Scanning utility
     ])
