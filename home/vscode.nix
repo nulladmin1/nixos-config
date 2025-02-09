@@ -29,7 +29,8 @@ in {
         rust-lang.rust-analyzer
         serayuzgur.crates
         tamasfe.even-better-toml
-        vadimcn.vscode-lldb
+        # TODO
+        #        vadimcn.vscode-lldb
         vscodevim.vim
         wakatime.vscode-wakatime
       ]
