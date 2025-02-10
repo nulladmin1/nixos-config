@@ -35,6 +35,7 @@
         libreoffice-qt6-still
         obs-studio
         obs-studio-plugins.wlrobs
+        varia
       ]
       ++ (with jetbrains; [
         idea-ultimate
