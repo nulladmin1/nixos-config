@@ -1,5 +1,79 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  inherit (lib) getExe;
+in {
   programs.helix = {
     enable = true;
+
+    settings = {
+      editor = {
+        bufferline = "always";
+      };
+    };
+
+    extraPackages = with pkgs; [
+      # LSP
+      bash-language-server # Bash
+      cmake-language-server # Cmake
+      libclang # Clangd
+      marksman # Markdown
+      ruff # Python
+      gopls # Go
+      vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
+      hyprls # Hyprland Config
+      taplo # Toml
+      zls # Zig
+
+      # Formatters
+      alejandra # Nix
+      nodePackages_latest.prettier # Web stuff
+    ];
+
+    # Language configuration
+    languages = {
+      language = let
+        prettier = getExe pkgs.nodePackages.prettier;
+      in [
+        {
+          name = "nix";
+          formatter = {
+            command = "alejandra";
+          };
+          auto-format = true;
+
+          language-servers = ["nil"];
+        }
+        {
+          name = "cmake";
+          formatter = {
+            command = getExe pkgs.cmake-lint;
+          };
+        }
+        {
+          name = "jsonc";
+          formatter = {
+            command = prettier;
+            args = ["--parser" "json"];
+          };
+        }
+        {
+          name = "html";
+          formatter = {
+            command = prettier;
+            args = ["--parser" "html"];
+          };
+        }
+        {
+          name = "markdown";
+          formatter = {
+            command = prettier;
+            args = ["--parser" "markdown"];
+          };
+        }
+      ];
+    };
   };
 }
