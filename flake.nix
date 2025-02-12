@@ -91,15 +91,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland Tiling Window Manager
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    # Hyprland Plugins for Hyprland
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     # Nix Gaming for Steam platformOptimizations
     nix-gaming.url = "github:fufexan/nix-gaming";
 

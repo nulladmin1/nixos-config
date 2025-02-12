@@ -2,12 +2,10 @@
   pkgs,
   config,
   osConfig,
-  inputs,
   lib,
   ...
 }: let
   inherit (config.var) wallpaper;
-  inherit (pkgs) system;
   inherit (osConfig.programs.hyprland) enable;
 
   # The space between windows to line up Hyrpland and Waybar
@@ -138,8 +136,7 @@ in {
 
   wayland.windowManager.hyprland = {
     inherit enable;
-    package = inputs.hyprland.packages.${system}.hyprland;
-    plugins = with inputs.hyprland-plugins.packages.${system}; [
+    plugins = with pkgs.hyprlandPlugins; [
       hyprtrails
       csgo-vulkan-fix
       hyprwinwrap
