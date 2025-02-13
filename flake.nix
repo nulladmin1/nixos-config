@@ -8,24 +8,24 @@
   } @ inputs: let
     lib = nixpkgs.lib.extend (final: prev: (import ./lib final));
 
+    mkPkgs = nixpkgs: system:
+      import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
     mkHost = hostname: {system}:
       lib.nixosSystem {
         inherit system;
 
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        pkgs = mkPkgs nixpkgs system;
 
         modules = [
           ./hosts/${hostname}/configuration.nix
           ./config
         ];
         specialArgs = let
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          pkgs-stable = mkPkgs nixpkgs-stable system;
         in {
           inherit lib system inputs pkgs-stable;
         };
