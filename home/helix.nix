@@ -12,6 +12,12 @@ in {
     settings = {
       editor = {
         bufferline = "always";
+        cursor-shape.insert = "bar";
+        color-modes = true;
+
+        lsp = {
+          display-inlay-hints = true;
+        };
       };
     };
 
