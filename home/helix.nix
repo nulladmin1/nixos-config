@@ -4,6 +4,7 @@
   ...
 }: let
   inherit (lib) getExe;
+  rust-toolchain = pkgs.fenix.stable;
 in {
   programs.helix = {
     enable = true;
@@ -14,23 +15,33 @@ in {
       };
     };
 
-    extraPackages = with pkgs; [
-      # LSP
-      bash-language-server # Bash
-      cmake-language-server # Cmake
-      libclang # Clangd
-      marksman # Markdown
-      ruff # Python
-      gopls # Go
-      vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
-      hyprls # Hyprland Config
-      taplo # Toml
-      zls # Zig
+    extraPackages =
+      (with pkgs; [
+        # LSP
+        bash-language-server # Bash
+        cmake-language-server # Cmake
+        libclang # Clangd
+        marksman # Markdown
+        ruff # Python
+        gopls # Go
+        vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
+        hyprls # Hyprland Config
+        taplo # Toml
+        zls # Zig
 
-      # Formatters
-      alejandra # Nix
-      nodePackages_latest.prettier # Web stuff
-    ];
+        # Formatters
+        alejandra # Nix
+        nodePackages_latest.prettier # Web stuff
+        zig # Zig
+      ])
+      ++ (with rust-toolchain; [
+        # LSP
+        rust-analyzer
+
+        # Formatters
+        rustfmt
+        clippy
+      ]);
 
     # Language configuration
     languages = {
@@ -74,6 +85,11 @@ in {
           };
         }
       ];
+      language-server = {
+        rust-analyzer = {
+          config.check.command = "clippy";
+        };
+      };
     };
   };
 }

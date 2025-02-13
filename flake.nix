@@ -12,6 +12,9 @@
       import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [
+          inputs.fenix.overlays.default
+        ];
       };
 
     mkHost = hostname: {system}:
@@ -114,6 +117,12 @@
       url = "github:ghostty-org/ghostty";
     };
 
+    # Fenix (for Helix and Nixvim)
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # ------------------------ MY CUSTOM STUFF -------------------------------
     # My Custom Wallpapers package
     wallpapers = {
@@ -130,6 +139,7 @@
     # My Custom Nixvim Configuration
     nixvim = {
       url = "github:nulladmin1/nixvim";
+      inputs.fenix.follows = "fenix";
     };
 
     # My custom Nix-flake-template fetcher
