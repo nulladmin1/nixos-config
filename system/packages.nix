@@ -12,6 +12,7 @@
       # Core stuff
       bat # Better cat
       brave # My browser of choice
+      bitwarden-cli # Password manager
       efibootmgr # Manage UEFI boot entries
       fzf # Fuzzy finder
       feh # Image viewer
