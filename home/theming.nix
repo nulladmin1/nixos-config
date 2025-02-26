@@ -41,7 +41,7 @@ in {
 
     themeFile = "catppuccin-${flavor}-${accent}.json";
   in
-    lib.mkIf (builtins.elem pkgs.ghostwriter config.home.packages) {
+    lib.mkIf (builtins.elem pkgs.kdePackages.ghostwriter config.home.packages) {
       "ghostwriter/themes/${themeFile}".source = "${themeRepo}/themes/${themeFile}";
     };
 }

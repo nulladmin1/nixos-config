@@ -16,13 +16,15 @@
         chromium
         #ciscoPacketTracer8
         discord
-        ghostwriter
-        kdePackages.qt6ct
-        okular
         slack
         swww
         jetbrains-toolbox
       ]
+      ++ (with kdePackages; [
+        ghostwriter
+        qt6ct
+        okular
+      ])
       ++ (lib.lists.optional config.programs.yazi.enable ueberzugpp))
     ++ (with pkgs-stable;
       [
