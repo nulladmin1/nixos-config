@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{...}: {
   # KDE Plasma 6
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;

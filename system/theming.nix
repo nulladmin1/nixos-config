@@ -49,8 +49,8 @@ in {
     };
   };
 
-  qt = {
-    enable = !config.services.desktopManager.plasma6.enable;
+  qt = lib.mkIf (!config.services.desktopManager.plasma6.enable) {
+    enable = true;
     platformTheme = "gtk2";
   };
 
