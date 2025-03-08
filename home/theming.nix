@@ -1,9 +1,7 @@
 {
   osConfig,
-  config,
   inputs,
   pkgs,
-  lib,
   ...
 }: let
   inherit (osConfig.catppuccin) enable flavor accent;
@@ -19,7 +17,7 @@ in {
     };
     targets = {
       gnome.enable = true;
-      gtk.enable = true;
+      gtk.enable = !osConfig.services.desktopManager.plasma6.enable;
       vscode.enable = true;
     };
   };
