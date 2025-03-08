@@ -43,6 +43,7 @@
 
     krunner = {
       shortcuts.launch = "Meta+R";
+      position = "center";
     };
 
     kscreenlocker = {
