@@ -19,5 +19,6 @@
     ./swayosd.nix
     ./ghostty.nix
     ./helix.nix
+    ./ghostwriter.nix
   ];
 }
