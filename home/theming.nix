@@ -11,11 +11,17 @@ in {
   imports = [
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
-  stylix.targets = {
-    gnome.enable = true;
-    gtk.enable = true;
-    vscode.enable = true;
-    kde.enable = true;
+  stylix = {
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
+    };
+    targets = {
+      gnome.enable = true;
+      gtk.enable = true;
+      vscode.enable = true;
+    };
   };
 
   catppuccin.kvantum.enable = false;
