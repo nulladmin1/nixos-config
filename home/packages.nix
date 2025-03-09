@@ -17,7 +17,7 @@
         #ciscoPacketTracer8
         discord
         slack
-        swww
+        spotube
         jetbrains-toolbox
       ]
       ++ (with kdePackages; [
