@@ -13,6 +13,7 @@
     (with pkgs;
       [
         anki
+        bambu-studio
         chromium
         #ciscoPacketTracer8
         discord
