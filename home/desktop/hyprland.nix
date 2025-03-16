@@ -535,8 +535,33 @@ in {
           format-muted = "Muted ";
         };
 
-        clock = {
+        clock = let
+          rosewater = "#f5e0dc";
+          lavender = "#b4befe";
+          teal = "#99ffdd";
+          peach = "#fab387";
+          red = "#f38ba8";
+        in {
           format = "  {:%H:%M}";
+          tooltip-format = "<tt><small>{calendar}</small></tt>";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            format = {
+              "months" = "<span color='${rosewater}'><b>{}</b></span>";
+              "days" = "<span color='${lavender}'><b>{}</b></span>";
+              "weeks" = "<span color='${teal}'><b>W{}</b></span>";
+              "weekdays" = "<span color='${peach}'><b>{}</b></span>";
+              "today" = "<span color='${red}'><b><u>{}</u></b></span>";
+            };
+          };
+          actions = {
+            "on-click-right" = "mode";
+            "on-scroll-up" = "tz_up";
+            "on-scroll-down" = "tz_down";
+          };
         };
 
         network = {
