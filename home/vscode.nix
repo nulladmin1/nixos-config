@@ -14,8 +14,6 @@ in {
     profiles.default.extensions = with pkgs.vscode-extensions;
       [
         adpyke.codesnap
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
         dbaeumer.vscode-eslint
         eamodio.gitlens
         esbenp.prettier-vscode
@@ -37,6 +35,10 @@ in {
       ++ (optionals (builtins.elem pkgs.flutter sharedPackages) [
         dart-code.flutter
         dart-code.dart-code
+      ])
+      ++ (optionals (!config.catppuccin.enable) [
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
       ]);
     # package = pkgs.vscode.fhsWithPackages (ps: with ps; [rustup]);
   };
