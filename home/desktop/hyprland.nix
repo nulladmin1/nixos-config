@@ -53,75 +53,74 @@ in {
 
   programs.hyprlock = {
     inherit enable;
-    settings = {
-      background =
-        {
-          monitor = "";
-          blur_passes = 2;
-        }
-        // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
-          path = "${wallpaper}";
+    settings = let
+      layout = let
+        text = "rgb(${config.lib.stylix.colors.base05})";
+        accent = "rgb(${config.lib.stylix.colors.base0E})";
+        red = "rgb(${config.lib.stylix.colors.base08})";
+      in
+        lib.attrsets.optionalAttrs (!config.catppuccin.hyprlock.enable) {
+          input-field =
+            {
+              monitor = "";
+              size = "80px, 60px";
+              outline_thickness = 3;
+              fade_on_empty = false;
+              rounding = 15;
+
+              position = "0, -50";
+              halign = "center";
+              valign = "center";
+            }
+            // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
+              outer_color = accent;
+              check_color = accent;
+
+              fail_color = red;
+              inner_color = text;
+              font_color = text;
+            };
+
+          label = [
+            {
+              monitor = "";
+              text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
+              color = text;
+              font_size = 24;
+              font_family = config.stylix.fonts.monospace.name;
+              position = "0, 220";
+              halign = "center";
+              valign = "center";
+            }
+
+            {
+              monitor = "";
+              text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
+              color = text;
+              font_size = 96;
+              font_family = "${config.stylix.fonts.monospace.name} Extrabold";
+              position = "0, 120";
+              halign = "center";
+              valign = "center";
+            }
+          ];
         };
+    in
+      {
+        background =
+          {
+            monitor = "";
+            blur_passes = 2;
+          }
+          // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
+            path = "${wallpaper}";
+          };
 
-      general = {
-        hide_cursor = false;
-      };
-
-      input-field =
-        {
-          monitor = "";
-          size = "80px, 60px";
-          outline_thickness = 3;
-          fade_on_empty = false;
-          rounding = 15;
-
-          position = "0, -50";
-          halign = "center";
-          valign = "center";
-        }
-        // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprlock.enable) {
-          outer_color = "$accent";
-          check_color = "$accent";
-
-          fail_color = "$red";
-          inner_color = "$base";
-          font_color = "$text";
+        general = {
+          hide_cursor = false;
         };
-
-      label = [
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(date +\"%A, %B %d\")\"";
-          color =
-            if config.catppuccin.hyprlock.enable
-            then "$text"
-            else if config.stylix.enable
-            then "#${config.lib.stylix.colors.base05}"
-            else "#FFFFFF";
-          font_size = 24;
-          font_family = config.stylix.fonts.monospace.name;
-          position = "0, 220";
-          halign = "center";
-          valign = "center";
-        }
-
-        {
-          monitor = "";
-          text = "cmd[update:1000] echo \"$(date +\"%-I:%M\")\"";
-          color =
-            if config.catppuccin.hyprlock.enable
-            then "$text"
-            else if config.stylix.enable
-            then "#${config.lib.stylix.colors.base05}"
-            else "#FFFFFF";
-          font_size = 96;
-          font_family = "${config.stylix.fonts.monospace.name} Extrabold";
-          position = "0, 120";
-          halign = "center";
-          valign = "center";
-        }
-      ];
-    };
+      }
+      // layout;
   };
 
   home.sessionVariables = let
