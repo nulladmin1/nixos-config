@@ -140,7 +140,9 @@ in {
       csgo-vulkan-fix
       hyprwinwrap
     ];
-    settings = {
+    settings = let
+      inherit (config.catppuccin) flavor accent;
+    in {
       "$terminal" = "alacritty";
       "$filemanager" = "yazi";
       "$menu" = "rofi -show drun";
@@ -158,7 +160,7 @@ in {
         [
           "XCURSOR_SIZE,24"
           "HYPRCURSOR_SIZE,24"
-          "HYPRCURSOR_THEME,catppuccin-mocha-mauve-cursors"
+          "HYPRCURSOR_THEME,catppuccin-${flavor}-${accent}-cursors"
 
           # For Qt
           "QT_AUTO_SCREEN_SCALE_FACTOR,1"
