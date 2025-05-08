@@ -1,12 +1,12 @@
-{...}: {
+{config, ...}: {
   # Hyprland
   programs.hyprland = {
-    enable = true;
+    enable = builtins.elem "hyprland" config.var.desktopEnvironments;
     xwayland.enable = true;
     withUWSM = true;
   };
 
   programs.uwsm = {
-    enable = true;
+    enable = builtins.elem "hyprland" config.var.desktopEnvironments;
   };
 }

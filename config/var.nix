@@ -54,5 +54,16 @@ in {
           The bootloader to use. systemd-boot, grub and lanzaboote are the options. Lanzaboote is used for Secureboot
         '';
       };
+
+    desktopEnvironments = let
+      inherit (lib.customLib) availableDesktopEnvironments;
+    in
+      mkOption {
+        type = lib.types.listOf (enum availableDesktopEnvironments);
+        default = ["plasma" "hyprland"];
+        description = ''
+          The desktop environment to use. Plasma, Gnome and Hyprland are the options.
+        '';
+      };
   };
 }

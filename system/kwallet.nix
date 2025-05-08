@@ -11,7 +11,8 @@ in {
   ];
 
   security.pam.services.${username}.kwallet = {
-    enable = true;
+    inherit (config.services.desktopManager.plasma6) enable;
+
     package = pkgs.kdePackages.kwallet-pam;
   };
 }

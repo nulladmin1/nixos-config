@@ -18,4 +18,10 @@ lib: {
     "lanzaboote"
     "grub"
   ];
+
+  availableDesktopEnvironments = [
+    "plasma"
+    "gnome"
+    "hyprland"
+  ];
 }

@@ -15,5 +15,10 @@
     sshKeyPath = ../hosts/common/keys/id_ed25519.pub;
 
     wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
+
+    desktopEnvironments = [
+      "hyprland"
+      "plasma"
+    ];
   };
 }
