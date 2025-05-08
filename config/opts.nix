@@ -18,7 +18,7 @@
 
     desktopEnvironments = [
       "hyprland"
-      "plasma"
+      "gnome"
     ];
   };
 }
