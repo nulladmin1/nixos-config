@@ -1,4 +1,13 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   # Gnome
   services.xserver.desktopManager.gnome.enable = builtins.elem "gnome" config.var.desktopEnvironments;
+
+  environment.gnome.excludePackages = with pkgs; [
+    orca
+    gnome-software
+  ];
 }

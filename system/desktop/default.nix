@@ -4,7 +4,7 @@
 
     ./hyprland.nix
     ./plasma.nix
-    # ./gnome.nix
+    ./gnome.nix
     # ./wayfire.nix
   ];
 }
