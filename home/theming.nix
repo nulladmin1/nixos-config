@@ -7,7 +7,7 @@
   inherit (osConfig.catppuccin) enable flavor accent;
 in {
   imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
+    inputs.catppuccin.homeModules.catppuccin
   ];
   stylix = {
     iconTheme = {
