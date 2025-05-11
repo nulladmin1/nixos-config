@@ -25,7 +25,6 @@ in {
         ms-vscode-remote.remote-ssh
         ms-vsliveshare.vsliveshare
         rust-lang.rust-analyzer
-        serayuzgur.crates
         tamasfe.even-better-toml
         # TODO
         #        vadimcn.vscode-lldb
