@@ -26,6 +26,7 @@ in {
         # LSP
         bash-language-server # Bash
         cmake-language-server # Cmake
+        emmet-ls # Emmet Language Server
         libclang # Clangd
         marksman # Markdown
         ruff # Python
@@ -82,6 +83,15 @@ in {
             command = prettier;
             args = ["--parser" "html"];
           };
+          language-servers = ["emmet-ls"];
+        }
+        {
+          name = "css";
+          language-servers = ["emmet-ls"];
+          formatter = {
+            command = prettier;
+            args = ["--parser" "css"];
+          };
         }
         {
           name = "markdown";
@@ -94,6 +104,11 @@ in {
       language-server = {
         rust-analyzer = {
           config.check.command = "clippy";
+        };
+
+        emmet-ls = {
+          command = "${pkgs.emmet-ls}/bin/emmet-ls";
+          args = ["stdio"];
         };
       };
     };
