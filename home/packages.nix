@@ -14,11 +14,11 @@
       [
         anki
         bambu-studio
+        calibre
         chromium
         #ciscoPacketTracer8
         discord
         slack
-        spotube
         jetbrains-toolbox
       ]
       ++ (with kdePackages; [
