@@ -21,6 +21,7 @@ in {
         kamadorueda.alejandra
         ms-python.python
         ms-python.vscode-pylance
+        ms-vscode.live-server
         ms-vscode-remote.remote-containers
         ms-vscode-remote.remote-ssh
         ms-vsliveshare.vsliveshare
