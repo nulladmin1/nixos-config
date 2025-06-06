@@ -9,7 +9,7 @@
       sddm =
         {
           # Enable SDDM
-          enable = true;
+          enable = false;
           wayland.enable = true;
         }
         // lib.attrsets.optionalAttrs (!config.services.desktopManager.plasma6.enable) {
