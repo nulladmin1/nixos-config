@@ -4,7 +4,7 @@
   ...
 }: {
   # Gnome
-  services.xserver.desktopManager.gnome.enable = builtins.elem "gnome" config.var.desktopEnvironments;
+  services.desktopManager.gnome.enable = builtins.elem "gnome" config.var.desktopEnvironments;
 
   environment.gnome.excludePackages = with pkgs; [
     orca
