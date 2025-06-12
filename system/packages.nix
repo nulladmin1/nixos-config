@@ -32,7 +32,6 @@
       python3 # Python
       ripgrep # Better grep
       sbctl # For secure boot
-      thefuck # Corrects previous console command
       unzip # Unzips .zip files
       vim # Text editor
 
