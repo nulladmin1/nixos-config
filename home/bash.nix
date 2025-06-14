@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   # Bash:
   programs.bash = {
     enable = true;
@@ -24,9 +20,5 @@
     initExtra = ''
       nerdfetch
     '';
-  };
-
-  home.sessionVariables = {
-    PAGER = "${lib.getExe pkgs.most}";
   };
 }
