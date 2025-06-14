@@ -153,7 +153,7 @@ in {
         "waybar"
         "wlsunset -S 5:30 -s 18:30"
         "swayosd-server"
-        "swww-daemon & sleep 0.1 && swww img ${wallpaper}"
+        "swww-daemon && sleep 0.1 && swww img ${wallpaper}"
       ];
 
       "env" =
