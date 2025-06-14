@@ -15,5 +15,6 @@
     blur-my-shell
     caffeine
     clipboard-indicator
+    gsconnect
   ];
 }
