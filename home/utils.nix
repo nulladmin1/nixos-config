@@ -39,11 +39,6 @@
     enableBashIntegration = true;
   };
 
-  programs.pay-respects = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
   programs.zellij = {
     enable = true;
     enableBashIntegration = true;
