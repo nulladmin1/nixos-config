@@ -144,7 +144,7 @@ in {
       inherit (config.catppuccin) flavor accent;
     in {
       "$terminal" = "alacritty";
-      "$filemanager" = "yazi";
+      "$filemanager" = "alacritty -e yazi";
       "$menu" = "rofi -show drun";
 
       "monitor" = ",1920x1200@165.00,auto,1";
@@ -278,7 +278,7 @@ in {
         "$mainMod, Return, exec, $terminal"
         "$mainMod, W, killactive,"
         "$mainMod CTRL, Q, exit,"
-        "$mainMod, E, exec, $terminal -e $fileManager"
+        "$mainMod, E, exec, $filemanager"
         "$mainMod, V, togglefloating,"
         "$mainMod, R, exec, $menu"
         "$mainMod, P, pseudo,"
