@@ -13,7 +13,7 @@
   # The space between windows to line up Hyrpland and Waybar
   windows_space_gap = 15;
 in {
-  config = lib.mkIf config.custom.${moduleName}.enable {
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     custom = {
       rofi.enable = true;
       swayosd.enable = true;

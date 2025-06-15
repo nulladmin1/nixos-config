@@ -7,11 +7,7 @@
 }: let
   moduleName = "plasma";
 in {
-  options.custom.${moduleName} = {
-    enable = lib.options.mkEnableOption moduleName;
-  };
-
-  config = lib.mkIf config.custom.${moduleName}.enable {
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     imports = [
       inputs.plasma-manager.homeManagerModules.plasma-manager
     ];
