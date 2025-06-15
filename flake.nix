@@ -1,6 +1,13 @@
 {
   description = "Main system flake";
 
+  outputs = inputs:
+    inputs.snowfall-lib.mkFlake {
+      inherit inputs;
+
+      src = ./.;
+    };
+
   inputs = {
     # Main Nixpkgs
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -107,11 +114,4 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = inputs:
-    inputs.snowfall-lib.mkFlake {
-      inherit inputs;
-
-      src = ./.;
-    };
 }
