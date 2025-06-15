@@ -9,16 +9,16 @@
   moduleName = "hyprland";
 
   wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
-  inherit (osConfig.programs.hyprland) enable;
 
   # The space between windows to line up Hyrpland and Waybar
   windows_space_gap = 15;
 in {
-  options.custom.${moduleName} = {
-    enable = lib.options.mkEnableOption moduleName;
-  };
-
   config = lib.mkIf config.custom.${moduleName}.enable {
+    custom = {
+      rofi.enable = true;
+      swayosd.enable = true;
+    };
+
     home.packages = with pkgs; [
       hyprshot
       brightnessctl
@@ -27,16 +27,12 @@ in {
       swww
     ];
     services = {
-      #    hyprpaper = {
-      #      inherit enable;
-      #      settings = lib.attrsets.optionalAttrs (!config.stylix.targets.hyprpaper.enable) {
-      #        preload = "${wallpaper}";
-      #        wallpaper = ", ${wallpaper}";
-      #      };
-      # };
+      swaync = {
+        enable = true;
+      };
 
       hypridle = {
-        inherit enable;
+        enable = true;
         settings = {
           general = {
             lock_cmd = "hyprlock";
@@ -60,7 +56,7 @@ in {
     };
 
     programs.hyprlock = {
-      inherit enable;
+      enable = true;
       settings = let
         layout = let
           text = "rgb(${config.lib.stylix.colors.base05})";
@@ -139,7 +135,7 @@ in {
       };
 
     wayland.windowManager.hyprland = {
-      inherit enable;
+      enable = true;
       plugins = with pkgs.hyprlandPlugins; [
         hyprtrails
         csgo-vulkan-fix
@@ -366,7 +362,7 @@ in {
     };
 
     programs.waybar = {
-      inherit enable;
+      enable = true;
       style =
         lib.strings.optionalString config.stylix.targets.waybar.enable ''
           @define-color base #${config.lib.stylix.colors.base00};
