@@ -15,8 +15,7 @@ in {
     programs.plasma = let
       wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
     in {
-      inherit (osConfig.services.desktopManager.plasma6) enable;
-
+      enable = true;
       workspace = {
         inherit wallpaper;
         lookAndFeel = "Catppuccin-Mocha-Mauve";

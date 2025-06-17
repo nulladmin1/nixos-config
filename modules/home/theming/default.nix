@@ -1,6 +1,5 @@
 {
   lib,
-  config,
   osConfig,
   inputs,
   pkgs,
@@ -8,11 +7,7 @@
 }: let
   moduleName = "theming";
 in {
-  options.custom.${moduleName} = {
-    enable = lib.options.mkEnableOption moduleName;
-  };
-
-  config = lib.mkIf config.custom.${moduleName}.enable {
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     imports = [
       inputs.catppuccin.homeModules.catppuccin
     ];

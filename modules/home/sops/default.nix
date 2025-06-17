@@ -1,5 +1,5 @@
 {
-  system,
+  osConfig,
   lib,
   config,
   inputs,
@@ -8,11 +8,7 @@
   moduleName = "sops";
   inherit (config.home) homeDirectory;
 in {
-  options.custom.${moduleName} = {
-    enable = lib.options.mkEnableOption moduleName;
-  };
-
-  config = lib.mkIf config.custom.${moduleName}.enable {
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     imports = [
       inputs.sops-nix.homeManagerModules.sops
     ];

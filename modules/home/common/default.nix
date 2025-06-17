@@ -1,17 +1,16 @@
 {
   lib,
-  config,
+  osConfig,
   ...
 }: {
-  options.custom.home = {
-    enable = lib.options.mkEnableOption "home";
-  };
-  config = lib.mkIf config.custom.home.enable {
+  config = lib.mkIf osConfig.custom.common.enable {
     custom = {
       ghostty.enable = true;
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;
+      hyprland.enable = true;
+      packages.enable = true;
       sops.enable = true;
       spicetify.enable = true;
       ssh.enable = true;
