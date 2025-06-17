@@ -22,8 +22,8 @@ in {
       waydroid.enable = true;
 
       docker.enable = true;
-
-      users.users.shreyd.extraGroups = ["docker"];
     };
+
+    users.users.shreyd.extraGroups = ["docker"];
   };
 }
