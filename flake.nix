@@ -6,6 +6,10 @@
       inherit inputs;
 
       src = ./.;
+
+      overlays = [
+        inputs.fenix.overlays.default
+      ];
     };
 
   inputs = {
