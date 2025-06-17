@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   moduleName = "hardware";
@@ -29,5 +30,8 @@ in {
 
     # Fwupd for firmware
     services.fwupd.enable = true;
+
+    # Use latest kernel
+    boot.kernelPackages = pkgs.linuxPackages_latest;
   };
 }
