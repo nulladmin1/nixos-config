@@ -9,12 +9,11 @@
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;
-      sops.enable = true;
       spicetify.enable = true;
       ssh.enable = true;
       terminal.enable = true;
-      theming.enable = true;
       wakatime.enable = true;
+      vscode.enable = true;
       xdg.enable = true;
     };
   };

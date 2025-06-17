@@ -10,14 +10,14 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
+  imports = [
+    inputs.nixos-wsl.nixosModules.default
+  ];
+
   config = lib.mkIf config.custom.${moduleName}.enable {
-    imports = [
-      inputs.nixos-wsl.nixosModules.default
-    ];
     custom = {
       audio.enable = true;
       fonts.enable = true;
-      vscode.enable = true;
       kdeconnect.enable = true;
       locales.enable = true;
       nh.enable = true;

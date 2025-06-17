@@ -5,7 +5,7 @@
   system,
   ...
 }: let
-  moduleName = "rofi";
+  moduleName = "spicetify";
 in {
   options.custom.${moduleName} = {
     enable = lib.options.mkEnableOption moduleName;

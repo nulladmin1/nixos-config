@@ -13,7 +13,6 @@ in {
     custom = {
       audio.enable = true;
       fonts.enable = true;
-      vscode.enable = true;
       gdm.enable = true;
       gnome.enable = true;
       hardware.enable = true;
@@ -30,6 +29,11 @@ in {
       utils.enable = true;
       virtualisation.enable = true;
       xdg-portal.enable = true;
+    };
+
+    nixpkgs.config = {
+      allowUnfree = true;
+      nvidia.acceptLicense = true;
     };
   };
 }
