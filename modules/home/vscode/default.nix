@@ -2,19 +2,12 @@
   lib,
   config,
   osConfig,
-  system,
-  inputs,
+  pkgs,
   ...
 }: let
   moduleName = "vscode";
   sharedPackages = osConfig.environment.systemPackages ++ config.home.packages;
   inherit (lib.lists) optionals;
-
-  # TODO
-  pkgs = import inputs.nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
 in {
   options.custom.${moduleName} = {
     enable = lib.options.mkEnableOption moduleName;

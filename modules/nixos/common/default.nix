@@ -30,10 +30,5 @@ in {
       virtualisation.enable = true;
       xdg-portal.enable = true;
     };
-
-    nixpkgs.config = {
-      allowUnfree = true;
-      nvidia.acceptLicense = true;
-    };
   };
 }

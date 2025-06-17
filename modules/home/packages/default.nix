@@ -3,15 +3,10 @@
   config,
   inputs,
   system,
+  pkgs,
   ...
 }: let
   moduleName = "apps";
-
-  # TODO
-  pkgs = import inputs.nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
 
   pkgs-stable = import inputs.nixpkgs-stable {
     inherit system;
