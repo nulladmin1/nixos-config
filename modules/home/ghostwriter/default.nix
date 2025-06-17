@@ -11,11 +11,11 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
-  config = lib.mkIf config.custom.${moduleName}.enable {
-    imports = [
-      inputs.plasma-manager.homeManagerModules.plasma-manager
-    ];
+  imports = [
+    inputs.plasma-manager.homeManagerModules.plasma-manager
+  ];
 
+  config = lib.mkIf config.custom.${moduleName}.enable {
     programs.ghostwriter = let
       pointSize = 12;
     in {

@@ -7,10 +7,11 @@
 }: let
   moduleName = "theming";
 in {
+  imports = [
+    inputs.catppuccin.homeModules.catppuccin
+  ];
+
   config = lib.mkIf osConfig.custom.${moduleName}.enable {
-    imports = [
-      inputs.catppuccin.homeModules.catppuccin
-    ];
     stylix = {
       iconTheme = {
         package = pkgs.papirus-icon-theme;

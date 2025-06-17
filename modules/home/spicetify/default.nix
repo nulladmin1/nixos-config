@@ -11,10 +11,11 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
+
   config = lib.mkIf config.custom.${moduleName}.enable {
-    imports = [
-      inputs.spicetify-nix.homeManagerModules.default
-    ];
     programs.spicetify = let
       spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
     in

@@ -8,11 +8,11 @@
   moduleName = "sops";
   inherit (config.home) homeDirectory;
 in {
-  config = lib.mkIf osConfig.custom.${moduleName}.enable {
-    imports = [
-      inputs.sops-nix.homeManagerModules.sops
-    ];
+  imports = [
+    inputs.sops-nix.homeManagerModules.sops
+  ];
 
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     sops = {
       age.keyFile = homeDirectory + "/.config/sops/age/keys.txt";
 

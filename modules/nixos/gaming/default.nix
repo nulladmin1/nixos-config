@@ -11,10 +11,11 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
+  imports = [
+    inputs.nix-gaming.nixosModules.platformOptimizations
+  ];
+
   config = lib.mkIf config.custom.${moduleName}.enable {
-    imports = [
-      inputs.nix-gaming.nixosModules.platformOptimizations
-    ];
     # Steam
     programs.steam = {
       enable = true;

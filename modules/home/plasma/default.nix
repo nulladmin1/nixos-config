@@ -7,11 +7,11 @@
 }: let
   moduleName = "plasma";
 in {
-  config = lib.mkIf osConfig.custom.${moduleName}.enable {
-    imports = [
-      inputs.plasma-manager.homeManagerModules.plasma-manager
-    ];
+  imports = [
+    inputs.plasma-manager.homeManagerModules.plasma-manager
+  ];
 
+  config = lib.mkIf osConfig.custom.${moduleName}.enable {
     programs.plasma = let
       wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
     in {

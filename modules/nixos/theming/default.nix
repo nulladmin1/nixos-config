@@ -11,16 +11,16 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
+  imports = [
+    inputs.stylix.nixosModules.stylix
+    inputs.catppuccin.nixosModules.catppuccin
+  ];
+
   config = let
     font = config.stylix.fonts.monospace.name;
     wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
   in
     lib.mkIf config.custom.${moduleName}.enable {
-      imports = with inputs; [
-        stylix.nixosModules.stylix
-        catppuccin.nixosModules.catppuccin
-      ];
-
       stylix = {
         enable = true;
         autoEnable = false;
@@ -30,7 +30,11 @@ in {
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-${config.catppuccin.flavor}.yaml";
 
         cursor = let
-          inherit (lib.customLib) capitalize;
+          capitalize = let
+            inherit (lib.strings) toUpper substring;
+          in
+            str: toUpper (substring 0 1 str) + substring 1 (builtins.stringLength str) str;
+
           inherit (config.catppuccin) flavor accent;
         in {
           package = pkgs.catppuccin-cursors.${flavor + (capitalize accent)};
@@ -57,7 +61,7 @@ in {
       };
 
       catppuccin = {
-        enable = !config.stylix.autoEnable;
+        enable = true;
         flavor = "mocha";
         accent = "mauve";
       };

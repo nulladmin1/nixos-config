@@ -11,10 +11,11 @@ in {
     enable = lib.options.mkEnableOption moduleName;
   };
 
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
+
   config = lib.mkIf config.custom.${moduleName}.enable {
-    imports = [
-      inputs.sops-nix.nixosModules.sops
-    ];
     sops = {
       defaultSopsFile = ../../../secrets/secrets.yaml;
       validateSopsFiles = false;
