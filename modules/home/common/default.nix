@@ -17,5 +17,14 @@
       wakatime.enable = true;
       xdg.enable = true;
     };
+
+    programs.home-manager.enable = true;
+
+    home = {
+      stateVersion = "24.05";
+      homeDirectory = "/home/shreyd";
+
+      sessionVariables.EDITOR = "nvim";
+    };
   };
 }
