@@ -1,13 +1,22 @@
 {
   lib,
   config,
-  pkgs,
   inputs,
   system,
   ...
 }: let
   moduleName = "apps";
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+
+  # TODO
+  pkgs = import inputs.nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+  };
+
+  pkgs-stable = import inputs.nixpkgs-stable {
+    inherit system;
+    config.allowUnfree = true;
+  };
 in {
   options.custom.${moduleName} = {
     enable = lib.options.mkEnableOption moduleName;
@@ -37,8 +46,6 @@ in {
           blender
           gimp
           inkscape
-          kdePackages.kdenlive
-          kolourpaint
           krita
           libreoffice-qt6-still
           obs-studio
@@ -49,6 +56,10 @@ in {
           idea-ultimate
           clion
           rust-rover
+        ])
+        ++ (with kdePackages; [
+          kdenlive
+          kolourpaint
         ]));
   };
 }
