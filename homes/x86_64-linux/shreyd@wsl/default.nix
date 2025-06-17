@@ -1,0 +1,3 @@
+{...}: {
+  custom.apps.enable = false;
+}
