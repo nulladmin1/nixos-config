@@ -14,7 +14,7 @@ in {
     cachixKeys = caches: keys: lib.lists.zipListsWith (cache: key: "${cache}.cachix.org-1:${key}") caches keys;
   in
     lib.mkIf config.custom.${moduleName}.enable {
-      settings = {
+      nix.settings = {
         auto-optimise-store = true;
         experimental-features = ["nix-command" "flakes"];
         substituters = cachixSubstituters [
