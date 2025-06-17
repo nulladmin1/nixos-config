@@ -28,7 +28,7 @@ in {
       theming.enable = true;
       users.enable = true;
       utils.enable = true;
-      virtualization.enable = true;
+      virtualisation.enable = true;
       xdg-portal.enable = true;
     };
   };

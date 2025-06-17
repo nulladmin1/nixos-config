@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  moduleName = "rofi";
+  moduleName = "virtualisation";
 in {
   options.custom.${moduleName} = {
     enable = lib.options.mkEnableOption moduleName;
