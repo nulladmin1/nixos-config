@@ -39,7 +39,7 @@ in {
       ++ (with pkgs-stable;
         [
           blender
-          gimp
+          gimp3-with-plugins
           inkscape
           krita
           libreoffice-qt6-still
