@@ -17,8 +17,11 @@
     ]);
 
   # Custom module imports
-  custom.common.enable = true;
-  custom.jellyfin.enable = true;
+  custom = {
+    common.enable = true;
+    jellyfin.enable = true;
+    gaming.enable = true;
+  };
 
   # Network configuration
   networking = {

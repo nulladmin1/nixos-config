@@ -31,6 +31,7 @@ in {
       ferium
       xonotic
       protonup
+      prismlauncher
     ];
 
     # gamemoderun
