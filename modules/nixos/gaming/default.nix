@@ -32,6 +32,7 @@ in {
       xonotic
       protonup
       prismlauncher
+      minecraft
     ];
 
     # gamemoderun

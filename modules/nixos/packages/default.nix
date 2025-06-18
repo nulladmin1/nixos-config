@@ -20,7 +20,6 @@ in {
         bitwarden-cli # Password manager
         fzf # Fuzzy finder
         feh # Image viewer
-        ffmpeg-full # Handles multimedia files
         git # Everyone knows what git is
         htop # System monitor
         vlc # Video viewer
