@@ -31,8 +31,9 @@ in {
       ferium
       xonotic
       protonup
-      prismlauncher
-      minecraft
+      (prismlauncher.override {
+        gamemodeSupport = true;
+      })
     ];
 
     # gamemoderun
