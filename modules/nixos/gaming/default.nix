@@ -24,6 +24,11 @@ in {
       # https://github.com/fufexan/nix-gaming#platform-optimizations
       # A bunch of optimizations for Steam from SteamOS
       platformOptimizations.enable = true;
+
+      # Enable Proton-GE
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
     };
 
     environment.systemPackages = with pkgs; [
