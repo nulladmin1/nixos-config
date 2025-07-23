@@ -1,7 +1,3 @@
-# ⚠️ ATTENTION ⚠️
-
-A major rewrite is happening in this branch (main) to switch to [`Snowfall-lib`](https://github.com/snowfallorg/lib). Look at legacy code on the [legacy branch](https://github.com/nulladmin1/nixos-config/tree/legacy)
-
 # ❄️ `NullAdmin1`'s NixOS Flakes ❄️
 
 ## Highlights:
