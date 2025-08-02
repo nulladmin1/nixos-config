@@ -18,6 +18,7 @@ in {
       enable = true;
 
       settings = {
+        theme = "catppuccin-transparent";
         editor = {
           bufferline = "always";
           cursor-shape.insert = "bar";
@@ -27,6 +28,30 @@ in {
             display-inlay-hints = true;
           };
         };
+      };
+
+      themes = {
+        catppuccin-transparent = let
+          inherit (config.catppuccin) flavor;
+          themeRepo = pkgs.fetchFromGitHub {
+            owner = "catppuccin";
+            repo = "helix";
+            rev = "183823f462b2a8feciwdcc2a5f0ab5a86ac9fd985";
+            hash = "sha256-l9R3wMBLf2jofboGIaH39VnpjxP0lbWvhlexdNXq2co=";
+          };
+
+          themeFile = "${themeRepo}/themes/default/catppuccin_${flavor}.toml";
+
+          theme =
+            lib.importTOML themeFile;
+
+          patchedTheme =
+            (builtins.removeAttrs theme ["ui.background"])
+            // {
+              ui.background = {};
+            };
+        in
+          patchedTheme;
       };
 
       extraPackages =

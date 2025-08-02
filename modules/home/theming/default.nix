@@ -23,16 +23,16 @@ in {
         gtk.enable = !osConfig.services.desktopManager.plasma6.enable;
       };
     };
+    catppuccin = {
+      kvantum.enable = false;
+      helix.enable = false;
 
-    catppuccin.kvantum.enable = false;
+      inherit (osConfig.catppuccin) enable flavor accent;
+    };
 
     qt = {
       inherit (osConfig.qt) enable;
       platformTheme.name = "qt6ct";
-    };
-
-    catppuccin = {
-      inherit (osConfig.catppuccin) enable flavor accent;
     };
   };
 }
