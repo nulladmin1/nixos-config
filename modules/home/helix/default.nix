@@ -14,6 +14,24 @@ in {
   };
 
   config = lib.mkIf config.custom.${moduleName}.enable {
+    # Integrate Yazi in Helix using Zellij (https://yazi-rs.github.io/docs/tips/#helix-with-zellij)
+    home.file.".config/helix/yazi-picker.sh" = {
+      executable = true;
+
+      text = ''
+        #!/usr/bin/env bash
+        paths=$(yazi "$2" --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
+        if [[ -n "$paths" ]]; then
+          zellij action toggle-floating-panes
+          zellij action write 27 # send <Escape> key
+          zellij action write-chars ":$1 $paths"
+          zellij action write 13 # send <Enter> key
+        else
+          zellij action toggle-floating-panes
+        fi
+      '';
+    };
+
     programs.helix = {
       enable = true;
 
@@ -27,6 +45,11 @@ in {
           lsp = {
             display-inlay-hints = true;
           };
+        };
+
+        # Integrate Yazi in Helix using Zellij
+        keys.normal = {
+          space.space = ":sh zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open %{buffer_name}";
         };
       };
 
