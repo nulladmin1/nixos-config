@@ -13,7 +13,7 @@ in {
     custom = {
       audio.enable = true;
       fonts.enable = true;
-      gdm.enable = true;
+      greetd.enable = true;
       gnome.enable = true;
       hardware.enable = true;
       hyprland.enable = true;
