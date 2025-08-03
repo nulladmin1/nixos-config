@@ -53,6 +53,7 @@ in {
           gnome.enable = true;
           gtk.enable = true;
           feh.enable = true;
+          regreet.enable = true;
         };
 
         opacity = {

@@ -24,6 +24,7 @@ in {
         htop # System monitor
         vlc # Video viewer
         wget # Wget
+        adwaita-icon-theme # For some GTK icons
 
         # Development
         alejandra # Nix formatter
