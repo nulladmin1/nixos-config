@@ -31,5 +31,8 @@ in {
 
     # ADB
     programs.adb.enable = true;
+
+    # LocalSend
+    programs.localsend.enable = true;
   };
 }
