@@ -25,6 +25,8 @@ in {
         vlc # Video viewer
         wget # Wget
         adwaita-icon-theme # For some GTK icons
+        ifuse # Filesystem support for iOS
+        libimobiledevice # To mount iPhone
 
         # Development
         alejandra # Nix formatter

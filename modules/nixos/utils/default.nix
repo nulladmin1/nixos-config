@@ -34,5 +34,8 @@ in {
 
     # LocalSend
     programs.localsend.enable = true;
+
+    # usbmuxd for IOS
+    services.usbmuxd.enable = true;
   };
 }
