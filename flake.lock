@@ -85,6 +85,22 @@
         "type": "github"
       }
     },
+    "catppuccin-helix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753613333,
+        "narHash": "sha256-l9R3wMBLf2jofboGIaH39VnpjxP0lbWvhlexdNXq2co=",
+        "owner": "catppuccin",
+        "repo": "helix",
+        "rev": "1f13d5e7c72b064699e2c8761f603e4ddd48db8a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "helix",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "nixpkgs": [

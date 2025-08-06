@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
   inherit (lib) getExe;
@@ -56,17 +57,9 @@ in {
       themes = {
         catppuccin-transparent = let
           inherit (config.catppuccin) flavor;
-          themeRepo = pkgs.fetchFromGitHub {
-            owner = "catppuccin";
-            repo = "helix";
-            rev = "183823f462b2a8feciwdcc2a5f0ab5a86ac9fd985";
-            hash = "sha256-l9R3wMBLf2jofboGIaH39VnpjxP0lbWvhlexdNXq2co=";
-          };
-
-          themeFile = "${themeRepo}/themes/default/catppuccin_${flavor}.toml";
 
           theme =
-            lib.importTOML themeFile;
+            lib.importTOML "${inputs.catppuccin-helix}/themes/default/catppuccin_${flavor}.toml";
 
           patchedTheme =
             (builtins.removeAttrs theme ["ui.background"])
@@ -91,6 +84,7 @@ in {
           hyprls # Hyprland Config
           taplo # Toml
           zls # Zig
+          kdePackages.qtdeclarative # qmlls for QML
 
           # Formatters
           alejandra # Nix

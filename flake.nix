@@ -102,6 +102,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Catppuccin theme for Helix
+    catppuccin-helix = {
+      flake = false;
+      url = "github:catppuccin/helix";
+    };
     # ------------------------ MY CUSTOM STUFF -------------------------------
     # My Custom Wallpapers package
     wallpapers = {
