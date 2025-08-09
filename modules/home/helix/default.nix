@@ -6,8 +6,6 @@
   ...
 }: let
   inherit (lib) getExe;
-  rust-toolchain = pkgs.fenix.stable;
-
   moduleName = "helix";
 in {
   options.custom.${moduleName} = {
@@ -70,35 +68,26 @@ in {
           patchedTheme;
       };
 
-      extraPackages =
-        (with pkgs; [
-          # LSP
-          bash-language-server # Bash
-          cmake-language-server # Cmake
-          emmet-ls # Emmet Language Server
-          libclang # Clangd
-          marksman # Markdown
-          ruff # Python
-          gopls # Go
-          vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
-          hyprls # Hyprland Config
-          taplo # Toml
-          zls # Zig
-          kdePackages.qtdeclarative # qmlls for QML
+      extraPackages = with pkgs; [
+        # LSP
+        bash-language-server # Bash
+        cmake-language-server # Cmake
+        emmet-ls # Emmet Language Server
+        libclang # Clangd
+        marksman # Markdown
+        ruff # Python
+        gopls # Go
+        vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
+        hyprls # Hyprland Config
+        taplo # Toml
+        zls # Zig
+        kdePackages.qtdeclarative # qmlls for QML
 
-          # Formatters
-          alejandra # Nix
-          nodePackages_latest.prettier # Web stuff
-          zig # Zig
-        ])
-        ++ (with rust-toolchain; [
-          # LSP
-          rust-analyzer
-
-          # Formatters
-          rustfmt
-          clippy
-        ]);
+        # Formatters
+        alejandra # Nix
+        nodePackages_latest.prettier # Web stuff
+        zig # Zig
+      ];
 
       # Language configuration
       languages = {
