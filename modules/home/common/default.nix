@@ -24,7 +24,7 @@
       stateVersion = "24.05";
       homeDirectory = "/home/shreyd";
 
-      sessionVariables.EDITOR = "nvim";
+      sessionVariables.EDITOR = "hx";
     };
   };
 }
