@@ -15,6 +15,7 @@ in {
       fonts.enable = true;
       greetd.enable = true;
       gnome.enable = true;
+      gnome-keyring.enable = true;
       hardware.enable = true;
       hyprland.enable = true;
       kdeconnect.enable = true;
