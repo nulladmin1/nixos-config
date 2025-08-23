@@ -23,12 +23,15 @@ in {
         [
           anki
           bambu-studio
+          blueman
           calibre
           chromium
           #ciscoPacketTracer8
           discord
+          foliate
           slack
-          jetbrains-toolbox
+          pavucontrol
+          #  jetbrains-toolbox
         ]
         ++ (with kdePackages; [
           ghostwriter
@@ -46,11 +49,11 @@ in {
           obs-studio
           obs-studio-plugins.wlrobs
         ]
-        ++ (with jetbrains; [
-          idea-ultimate
-          clion
-          rust-rover
-        ])
+        # ++ (with jetbrains; [
+        #   idea-ultimate
+        #   clion
+        #   rust-rover
+        # ])
         ++ (with kdePackages; [
           kdenlive
           kolourpaint

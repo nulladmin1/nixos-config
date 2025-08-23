@@ -31,7 +31,7 @@ in {
     };
 
     qt = {
-      inherit (osConfig.qt) enable;
+      enable = false;
       platformTheme.name = "qt6ct";
     };
   };

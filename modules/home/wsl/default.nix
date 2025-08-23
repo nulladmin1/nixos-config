@@ -5,7 +5,6 @@
 }: {
   config = lib.mkIf osConfig.custom.wsl.enable {
     custom = {
-      ghostty.enable = true;
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;

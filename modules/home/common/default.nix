@@ -6,7 +6,6 @@
   config = lib.mkIf osConfig.custom.common.enable {
     custom = {
       apps.enable = true;
-      ghostty.enable = true;
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;
