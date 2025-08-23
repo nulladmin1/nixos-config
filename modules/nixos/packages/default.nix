@@ -28,6 +28,18 @@ in {
         ifuse # Filesystem support for iOS
         libimobiledevice # To mount iPhone
 
+        # Other
+        (nemo-with-extensions.override {
+          extensions = [
+            nemo-preview
+            nemo-emblems
+            nemo-fileroller
+          ];
+        }) # File Manager
+        gnome-calculator # Calculator
+        gnome-calendar # Calendar
+        snapshot # Gnome Camera
+
         # Development
         alejandra # Nix formatter
         just # Simple command runner
@@ -53,9 +65,6 @@ in {
         map (pkg: pkg.packages.${pkgs.system}.default) [
           # My custom Nixvim configuration
           nixvim
-
-          # Ghostty
-          ghostty
 
           # getflake
           getflake

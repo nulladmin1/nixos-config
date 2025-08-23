@@ -22,7 +22,6 @@ in {
       (with pkgs;
         [
           anki
-          bambu-studio
           blueman
           calibre
           chromium

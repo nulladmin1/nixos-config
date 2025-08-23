@@ -12,11 +12,10 @@ in {
 
   config = lib.mkIf config.custom.${moduleName}.enable {
     services.desktopManager.gnome.enable = true;
-
-    environment.gnome.excludePackages = with pkgs; [
-      orca
-      gnome-software
-    ];
+    services.gnome = {
+      core-apps.enable = false;
+      core-developer-tools.enable = false;
+    };
 
     environment.systemPackages = with pkgs.gnomeExtensions; [
       blur-my-shell

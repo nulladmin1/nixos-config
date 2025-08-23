@@ -58,9 +58,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # NUR for Klassy
-    nur.url = "github:nix-community/NUR";
-
     # Catppuccin for theming
     catppuccin.url = "github:catppuccin/nix";
 
@@ -90,11 +87,6 @@
 
     # NixOS WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-
-    # Ghostty
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
 
     # Fenix (for Helix and Nixvim)
     fenix = {
