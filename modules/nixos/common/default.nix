@@ -17,7 +17,10 @@ in {
       gnome.enable = true;
       gnome-keyring.enable = true;
       hardware.enable = true;
-      hyprland.enable = true;
+      hyprland = {
+        enable = true;
+        setup = "caelestia";
+      };
       kdeconnect.enable = true;
       locales.enable = true;
       nh.enable = true;

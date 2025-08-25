@@ -99,6 +99,12 @@
       flake = false;
       url = "github:catppuccin/helix";
     };
+
+    # Caelestia Shell
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+    };
+
     # ------------------------ MY CUSTOM STUFF -------------------------------
     # My Custom Wallpapers package
     wallpapers = {

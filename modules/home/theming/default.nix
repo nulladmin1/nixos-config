@@ -15,7 +15,7 @@ in {
     stylix = {
       iconTheme = {
         package = pkgs.papirus-icon-theme;
-        light = "Papirus-Light";
+        light = "Papirus";
         dark = "Papirus-Dark";
       };
       targets = {
@@ -28,11 +28,6 @@ in {
       helix.enable = false;
 
       inherit (osConfig.catppuccin) enable flavor accent;
-    };
-
-    qt = {
-      enable = false;
-      platformTheme.name = "qt6ct";
     };
   };
 }

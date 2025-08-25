@@ -18,6 +18,7 @@
 in {
   imports = [
     inputs.caelestia-shell.homeManagerModules.default
+    ./services.nix
   ];
 
   config = lib.mkIf cfg.enable {
@@ -37,31 +38,40 @@ in {
     home.sessionVariables = let
       inherit (config.xdg) userDirs;
     in
-      lib.attrsets.optionalAttrs config.programs.hyprlock.enable {
+      {}
+      // (lib.attrsets.optionalAttrs config.programs.hyprlock.enable {
         "HYPRSHOT_DIR" = userDirs.extraConfig.XDG_SCREENSHOTS_DIR;
-      };
+      });
 
     programs.caelestia = {
       enable = setup == "caelestia";
+      package = inputs.caelestia-shell.packages.${pkgs.system}.caelestia-shell.override {
+        withCli = true;
+        extraRuntimeDeps = with pkgs; [
+          kdePackages.kirigami
+        ];
+      };
       settings = {
         general = {
           apps = {
             terminal = pkgs.alacritty;
           };
-          bar = {
-            workspaces = {
-              shown = 3;
-            };
-          };
-          session = {
-            vimKeybinds = true;
-          };
-          paths = {
-            wallpaperDir = inputs.wallpapers;
+        };
+
+        bar = {
+          workspaces = {
+            shown = 3;
           };
         };
-        cli.enable = true;
+        session = {
+          vimKeybinds = true;
+        };
+        paths = {
+          wallpaperDir = "${inputs.wallpapers}";
+        };
       };
+
+      cli.enable = true;
     };
 
     wayland.windowManager.hyprland = {
@@ -86,11 +96,14 @@ in {
               "$terminal"
               "wlsunset -S 5:30 -s 18:30"
             ]
-            // lib.lists.optionals (setup == "default") [
+            ++ (lib.lists.optionals (setup == "default") [
               "swayosd-server"
               "swww-daemon && sleep 0.1 && swww img ${wallpaper}"
               "waybar"
-            ];
+            ])
+            ++ (lib.lists.optionals (setup == "caelestia") [
+              "caelestia shell -d"
+            ]);
 
           "env" =
             [
@@ -103,16 +116,15 @@ in {
               "QT_QPA_PLATFORM,wayland;xcb"
               "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
             ]
-            ++ lib.lists.optionals (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers) [
+            ++ (lib.lists.optionals (builtins.elem "nvidia" osConfig.services.xserver.videoDrivers) [
               # Nvidia + Wayland
               "LIBVA_DRIVER_NAME,nvidia"
               "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-            ];
+            ]);
 
           general =
             {
               gaps_in = 5;
-              gaps_out = windows_space_gap;
               border_size = 2;
 
               resize_on_border = false;
@@ -124,6 +136,9 @@ in {
             // lib.attrsets.optionalAttrs (!config.stylix.targets.hyprland.enable) {
               "col.active_border" = "$mauve $flamingo 45deg";
               "col.inactive_border" = "$surface0";
+            }
+            // lib.attrsets.optionalAttrs (setup == "default") {
+              gaps_out = windows_space_gap;
             };
 
           decoration = {
