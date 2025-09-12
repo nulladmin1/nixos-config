@@ -105,6 +105,12 @@
       url = "github:caelestia-dots/shell";
     };
 
+    # Wakatime-ls
+    wakatime-ls = {
+      url = "github:mrnossiom/wakatime-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # ------------------------ MY CUSTOM STUFF -------------------------------
     # My Custom Wallpapers package
     wallpapers = {

@@ -45,7 +45,7 @@ in {
         just # Simple command runner
         lazygit # Git++
         nerdfetch # Fetch utility
-        nil # Nix language server
+        nixd # Nix language server
         nodejs # Javascript and stuff
         python3 # Python
         ripgrep # Better grep

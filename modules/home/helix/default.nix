@@ -81,7 +81,11 @@ in {
         hyprls # Hyprland Config
         taplo # Toml
         zls # Zig
+        nixd # Nix
         kdePackages.qtdeclarative # qmlls for QML
+        inputs.wakatime-ls.packages.${pkgs.system}.default # Wakatime integration
+
+        simple-completion-language-server # Snippets and stuff
 
         # Formatters
         alejandra # Nix
@@ -93,6 +97,7 @@ in {
       languages = {
         language = let
           prettier = getExe pkgs.nodePackages.prettier;
+          commonLsp = ["wakatime" "scls"];
         in [
           {
             name = "nix";
@@ -101,10 +106,19 @@ in {
             };
             auto-format = true;
 
-            language-servers = ["nil"];
+            language-servers = ["nixd"] ++ commonLsp;
+          }
+          {
+            name = "c";
+            language-servers = ["clangd"] ++ commonLsp;
+          }
+          {
+            name = "cpp";
+            language-servers = ["clangd"] ++ commonLsp;
           }
           {
             name = "cmake";
+            language-servers = ["cmake-language-server"] ++ commonLsp;
             formatter = {
               command = getExe pkgs.cmake-lint;
             };
@@ -122,11 +136,11 @@ in {
               command = prettier;
               args = ["--parser" "html"];
             };
-            language-servers = ["emmet-ls"];
+            language-servers = ["emmet-ls"] ++ commonLsp;
           }
           {
             name = "css";
-            language-servers = ["emmet-ls"];
+            language-servers = ["emmet-ls"] ++ commonLsp;
             formatter = {
               command = prettier;
               args = ["--parser" "css"];
@@ -134,10 +148,27 @@ in {
           }
           {
             name = "markdown";
+            language-servers = ["marksman"] ++ commonLsp;
             formatter = {
               command = prettier;
               args = ["--parser" "markdown"];
             };
+          }
+          {
+            name = "python";
+            language-servers = ["ty" "ruff" "jedi" "pylsp"] ++ commonLsp;
+          }
+          {
+            name = "rust";
+            language-servers = ["rust-analyzer"] ++ commonLsp;
+          }
+          {
+            name = "javascript";
+            language-servers = ["typescript-language-server"] ++ commonLsp;
+          }
+          {
+            name = "java";
+            language-servers = ["jdtls"] ++ commonLsp;
           }
         ];
         language-server = {
@@ -149,8 +180,113 @@ in {
             command = "${pkgs.emmet-ls}/bin/emmet-ls";
             args = ["stdio"];
           };
+
+          scls = {
+            command = "simple-completion-language-server";
+            config = {
+              feature_words = true;
+              feature_snippets = true;
+              snippets_first = true;
+              feature_paths = true;
+              feature_unicode_input = true;
+            };
+            environment = {
+              RUST_LOG = "info,simple-completion-language-server=info";
+              LOG_FILE = "/tmp/completion.log";
+            };
+          };
+
+          wakatime = {
+            command = "wakatime-ls";
+          };
         };
       };
+    };
+    home.file.".config/helix/external-snippets.toml".source = (pkgs.formats.toml {}).generate "snippets" {
+      sources = [
+        {
+          name = "friendly-snippets";
+          git = "https://github.com/rafamadriz/friendly-snippets.git";
+          paths = [
+            {
+              scope = ["bash"];
+              path = "snippets/shell/";
+            }
+            {
+              scope = ["c"];
+              path = "snippets/c/";
+            }
+            {
+              scope = ["cmake"];
+              path = "snippets/cmake.json";
+            }
+            {
+              scope = ["cpp"];
+              path = "snippets/cpp/";
+            }
+            {
+              scope = ["dart"];
+              path = "snippets/dart.json";
+            }
+            {
+              scope = ["dart"];
+              path = "snippets/frameworks/flutter.json";
+            }
+            {
+              scope = ["dockerfile"];
+              path = "snippets/docker/docker_file.json";
+            }
+            {
+              scope = ["docker-compose"];
+              path = "snippets/docker/docker-compose.json";
+            }
+            {
+              scope = ["git-commit"];
+              path = "snippets/gitcommit.json";
+            }
+            {
+              scope = ["go"];
+              path = "snippets/go.json";
+            }
+            {
+              scope = ["haskell"];
+              path = "snippets/haskell.json";
+            }
+            {
+              scope = ["html"];
+              path = "snippets/html.json";
+            }
+            {
+              scope = ["java"];
+              path = "snippets/java";
+            }
+            {
+              scope = ["javascript"];
+              path = "snippets/javascript/javascript.json";
+            }
+            {
+              scope = ["markdown"];
+              path = "snippets/markdown.json";
+            }
+            {
+              scope = ["nix"];
+              path = "snippets/nix.json";
+            }
+            {
+              scope = ["python"];
+              path = "snippets/python/";
+            }
+            {
+              scope = ["rust"];
+              path = "snippets/rust/";
+            }
+            {
+              scope = ["python" "rust" "go" "c" "cpp" "java"];
+              path = "snippets/loremipsum.json";
+            }
+          ];
+        }
+      ];
     };
   };
 }

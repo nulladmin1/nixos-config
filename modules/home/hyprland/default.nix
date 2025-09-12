@@ -66,6 +66,9 @@ in {
         session = {
           vimKeybinds = true;
         };
+        services = {
+          useTwelveHourClock = false;
+        };
         paths = {
           wallpaperDir = "${inputs.wallpapers}";
         };
@@ -100,9 +103,6 @@ in {
               "swayosd-server"
               "swww-daemon && sleep 0.1 && swww img ${wallpaper}"
               "waybar"
-            ])
-            ++ (lib.lists.optionals (setup == "caelestia") [
-              "caelestia shell -d"
             ]);
 
           "env" =

@@ -8,6 +8,7 @@
   bind =
     [
       "$mainMod, Return, exec, $terminal"
+      "$mainMod, B, exec, brave"
       "$mainMod, W, killactive,"
       "$mainMod CTRL, Q, exit,"
       "$mainMod, E, exec, $filemanager"

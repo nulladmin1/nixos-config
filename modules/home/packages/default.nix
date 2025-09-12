@@ -31,6 +31,9 @@ in {
           slack
           pavucontrol
           #  jetbrains-toolbox
+          simple-completion-language-server
+
+          inputs.wakatime-ls.packages.${pkgs.system}.default
         ]
         ++ (with kdePackages; [
           ghostwriter
