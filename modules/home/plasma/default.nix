@@ -8,12 +8,12 @@
   moduleName = "plasma";
 in {
   imports = [
-    inputs.plasma-manager.homeManagerModules.plasma-manager
+    inputs.plasma-manager.homeModules.plasma-manager
   ];
 
   config = lib.mkIf osConfig.custom.${moduleName}.enable {
     programs.plasma = let
-      wallpaper = "${inputs.wallpapers}/Arcane/arcane_powder_ekko_looking.png";
+      wallpaper = config.stylix.image;
     in {
       enable = true;
       workspace = {
