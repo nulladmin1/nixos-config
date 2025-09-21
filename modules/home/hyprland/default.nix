@@ -92,8 +92,6 @@ in {
           "$filemanager" = "alacritty -e yazi";
           "$menu" = "rofi -show drun";
 
-          # TODO - Don't hardcode this
-          "monitor" = ",1920x1200@165.00,auto,1";
           "exec-once" =
             [
               "$terminal"
