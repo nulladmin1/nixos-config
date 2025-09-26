@@ -8,6 +8,7 @@
   bind =
     [
       "$mainMod, Return, exec, $terminal"
+      "$mainMod, R, exec, $menu"
       "$mainMod, B, exec, brave"
       "$mainMod, W, killactive,"
       "$mainMod CTRL, Q, exit,"
@@ -56,9 +57,6 @@
       "$mainMod, mouse_up, workspace, e-1"
     ]
     ++ (lib.lists.optionals (setup == "default") [
-      # Launcher (Rofi)
-      "$mainMod, R, exec, $menu"
-
       # Hyprlock
       "$mainMod, L, exec, hyprlock"
 
@@ -71,7 +69,7 @@
     ])
     ++ (lib.lists.optionals (setup == "caelestia") [
       # Launcher
-      "$mainMod, R, global, caelestia:launcher"
+      "$mainMod SHIFT, R, global, caelestia:launcher"
 
       # Lock
       "$mainMod, L, global, caelestia:lock"

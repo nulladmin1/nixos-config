@@ -23,7 +23,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     custom = {
-      rofi.enable = true;
+      launcher.enable = true;
       swayosd.enable = true;
     };
 
@@ -80,17 +80,15 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       plugins = with pkgs.hyprlandPlugins; [
-        hyprtrails
         csgo-vulkan-fix
-        hyprwinwrap
       ];
       settings = let
         inherit (config.catppuccin) flavor accent;
       in
         {
           "$terminal" = "alacritty";
-          "$filemanager" = "alacritty -e yazi";
-          "$menu" = "rofi -show drun";
+          "$filemanager" = "nemo";
+          "$menu" = "vicinae";
 
           "exec-once" =
             [
