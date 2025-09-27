@@ -196,28 +196,6 @@ in {
               natural_scroll = false;
             };
           };
-          gestures = {
-            workspace_swipe = false;
-          };
-
-          device = {
-            name = "epic-mouse-v1";
-            sensitivity = -0.5;
-          };
-
-          plugin = {
-            hyprtrails = {
-              color =
-                if config.catppuccin.hyprland.enable
-                then "$accent"
-                else if config.stylix.targets.hyprland.enable
-                then "rgb(${config.lib.stylix.colors.base0E})"
-                else null;
-            };
-            hyprwinwrap = {
-              class = "backgroundapp";
-            };
-          };
           windowrulev2 = [
             "suppressevent maximize, class:.*"
             "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
