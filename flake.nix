@@ -9,10 +9,6 @@
       channels-config = {
         allowUnfree = true;
       };
-
-      overlays = [
-        inputs.fenix.overlays.default
-      ];
     };
 
   inputs = {
@@ -88,12 +84,6 @@
     # NixOS WSL
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
-    # Fenix (for Helix and Nixvim)
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Catppuccin theme for Helix
     catppuccin-helix = {
       flake = false;
@@ -111,6 +101,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Vicinae
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+    };
+
     # ------------------------ MY CUSTOM STUFF -------------------------------
     # My Custom Wallpapers package
     wallpapers = {
@@ -121,7 +116,6 @@
     # My Custom Nixvim Configuration
     nixvim = {
       url = "github:nulladmin1/nixvim";
-      inputs.fenix.follows = "fenix";
     };
 
     # My custom Nix-flake-template fetcher
