@@ -12,6 +12,7 @@ in {
   config = lib.mkIf config.custom.${moduleName}.enable {
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false;
 
       matchBlocks = {
         "Git" = {
