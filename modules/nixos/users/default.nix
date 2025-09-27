@@ -23,6 +23,6 @@ in {
 
     users.defaultUserShell = pkgs.bash;
 
-    services.logind.killUserProcesses = false;
+    services.logind.settings.Login.killUserProcesses = false;
   };
 }
