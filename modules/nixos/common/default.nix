@@ -12,9 +12,9 @@ in {
   config = lib.mkIf config.custom.${moduleName}.enable {
     custom = {
       audio.enable = true;
+      cosmic.enable = true;
       fonts.enable = true;
       greetd.enable = true;
-      gnome.enable = true;
       gnome-keyring.enable = true;
       hardware.enable = true;
       hyprland = {
