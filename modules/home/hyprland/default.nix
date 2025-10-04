@@ -47,6 +47,10 @@ in {
           kdePackages.kirigami
         ];
       };
+      systemd = {
+        enable = true;
+        target = "wayland-session@Hyprland.target"; # Only enable Caelestia with Hyprland
+      };
       settings = {
         general = {
           apps = {
