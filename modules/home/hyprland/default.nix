@@ -97,7 +97,6 @@ in {
             ]
             ++ (lib.lists.optionals (setup == "default") [
               "swayosd-server"
-              "swww-daemon && sleep 0.1 && swww img ${wallpaper}"
               "waybar"
             ]);
 
