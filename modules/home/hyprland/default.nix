@@ -29,10 +29,6 @@ in {
 
     home.packages = with pkgs; [
       hyprshot
-      brightnessctl
-      wl-clipboard
-      wlsunset
-      swww
     ];
 
     home.sessionVariables = let

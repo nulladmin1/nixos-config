@@ -32,6 +32,8 @@ in {
           pavucontrol
           #  jetbrains-toolbox
           simple-completion-language-server
+          wl-clipboard
+          wlsunset
 
           inputs.wakatime-ls.packages.${pkgs.system}.default
         ]
