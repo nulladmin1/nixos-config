@@ -10,6 +10,7 @@
       git.enable = true;
       helix.enable = true;
       spicetify.enable = true;
+      swww.enable = true;
       ssh.enable = true;
       terminal.enable = true;
       vscode.enable = true;
