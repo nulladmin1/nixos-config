@@ -88,7 +88,7 @@ in {
         {
           "$terminal" = "alacritty";
           "$filemanager" = "nemo";
-          "$menu" = "vicinae";
+          "$menu" = "vicinae toggle";
 
           "exec-once" =
             [
