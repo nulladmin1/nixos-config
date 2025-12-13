@@ -13,16 +13,18 @@ in {
     # Git
     programs.git = {
       enable = true;
-      userName = "nulladmin1";
-      userEmail = "shrey.deogade@protonmail.com";
 
-      extraConfig = {
+      settings = {
         commit.gpgsign = true;
         gpg = {
           format = "ssh";
           ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         };
-        user.signingkey = "~/.ssh/id_ed25519.pub";
+        user = {
+          name = "nulladmin1";
+          email = "shrey.deogade@protonmail.com";
+          signingkey = "~/.ssh/id_ed25519.pub";
+        };
       };
     };
 
