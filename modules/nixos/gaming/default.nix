@@ -35,7 +35,7 @@ in {
       # Gaming
       ferium
       xonotic
-      protonup
+      protonup-ng
       (prismlauncher.override {
         gamemodeSupport = true;
       })
