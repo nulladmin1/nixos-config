@@ -8,8 +8,6 @@
 }: let
   moduleName = "hyprland";
 
-  wallpaper = config.stylix.image;
-
   # The space between windows to line up Hyrpland and Waybar
   windows_space_gap = 15;
 
@@ -75,6 +73,12 @@ in {
       };
 
       cli.enable = true;
+    };
+
+    xdg.portal = {
+      config.hyprland = {
+        default = ["hyprland" "gtk" "wlr"];
+      };
     };
 
     wayland.windowManager.hyprland = {
