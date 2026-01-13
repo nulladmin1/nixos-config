@@ -3,7 +3,7 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
     powerManagement = {
@@ -13,7 +13,7 @@
     prime = {
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:01:0:0";
-      sync.enable = true;
+      sync.enable = false;
       offload = {
         enable = !config.hardware.nvidia.prime.sync.enable;
         enableOffloadCmd = !config.hardware.nvidia.prime.sync.enable;
