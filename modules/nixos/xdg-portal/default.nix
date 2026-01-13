@@ -14,11 +14,14 @@ in {
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;
+      config.common.default = "*";
       extraPortals = with pkgs; [
         xdg-desktop-portal-hyprland
         xdg-desktop-portal-cosmic
         xdg-desktop-portal-gtk
       ];
     };
+
+    programs.dconf.enable = true; # For GTK
   };
 }

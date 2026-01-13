@@ -17,6 +17,8 @@ in {
     xdg.portal = {
       config.cosmic = {
         default = ["cosmic" "gtk"];
+        "org.freedesktop.portal.FileChooser" = ["gtk"];
+        "org.freedesktop.portal.OpenURI" = ["gtk"];
       };
     };
   };
