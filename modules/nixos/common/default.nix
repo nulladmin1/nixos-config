@@ -34,5 +34,10 @@ in {
       virtualisation.enable = true;
       xdg-portal.enable = true;
     };
+
+    home-manager = {
+      verbose = true;
+      backupFileExtension = "bak";
+    };
   };
 }

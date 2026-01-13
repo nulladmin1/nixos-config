@@ -18,13 +18,18 @@
       xdg.enable = true;
     };
 
-    programs.home-manager.enable = true;
+    programs.home-manager = {
+      enable = true;
+    };
 
     home = {
       stateVersion = "24.05";
       homeDirectory = "/home/shreyd";
 
-      sessionVariables.EDITOR = "hx";
+      sessionVariables = {
+        EDITOR = "hx";
+        GTK_USE_PORTAL = "1";
+      };
     };
   };
 }
