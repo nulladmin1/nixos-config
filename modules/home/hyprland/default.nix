@@ -77,7 +77,7 @@ in {
 
     xdg.portal = {
       config.hyprland = {
-        default = ["hyprland" "gtk" "wlr"];
+        default = ["hyprland" "gtk"];
       };
     };
 

@@ -15,6 +15,20 @@ in {
       inherit (config.wayland.windowManager.hyprland) enable;
     };
 
+    # Make SwayOSD only run when Hyprland runs (hyprland-session.target)
+    systemd.user.services.swayosd = let
+      target = lib.singleton "hyprland-session.target";
+    in {
+      Unit = {
+        PartOf = target;
+        After = target;
+      };
+
+      Install = {
+        WantedBy = target;
+      };
+    };
+
     home.file."${stylePath}".text = ''
       @define-color base #${config.lib.stylix.colors.base00};
       @define-color mantle #${config.lib.stylix.colors.base01};
