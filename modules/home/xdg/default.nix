@@ -20,23 +20,6 @@ in {
           XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots/";
         };
       };
-
-      mimeApps = {
-        enable = true;
-        defaultApplications = {
-          "application/xhtml+xml" = ["brave-browser.desktop"];
-          "text/html" = ["brave-browser.desktop"];
-          "text/xml" = ["brave-browser.desktop"];
-          "x-scheme-handler/ftp" = ["brave-browser.desktop"];
-          "x-scheme-handler/http" = ["brave-browser.desktop"];
-          "x-scheme-handler/https" = ["brave-browser.desktop"];
-          "application/pdf" = ["okular.desktop"];
-          "application/zip" = ["nemo.desktop"];
-          "image/*" = ["feh.desktop"];
-          "text/*" = ["code.desktop"];
-          "video/*" = ["vlc.desktop"];
-        };
-      };
     };
   };
 }

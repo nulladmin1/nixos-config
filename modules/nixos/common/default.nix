@@ -32,7 +32,6 @@ in {
       users.enable = true;
       utils.enable = true;
       virtualisation.enable = true;
-      xdg-portal.enable = true;
     };
 
     home-manager = {

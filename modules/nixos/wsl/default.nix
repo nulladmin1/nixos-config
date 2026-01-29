@@ -28,7 +28,6 @@ in {
       theming.enable = true;
       users.enable = true;
       utils.enable = true;
-      xdg-portal.enable = true;
     };
 
     wsl = {
