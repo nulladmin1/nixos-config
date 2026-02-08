@@ -16,6 +16,7 @@
       vscode.enable = true;
       wakatime.enable = true;
       xdg.enable = true;
+      zed.enable = true;
     };
 
     programs.home-manager = {
