@@ -29,9 +29,6 @@ in {
       enableAskPassword = false;
     };
 
-    # ADB
-    programs.adb.enable = true;
-
     # LocalSend
     programs.localsend.enable = true;
 
