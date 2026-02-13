@@ -21,6 +21,7 @@ in {
         enable = true;
         setup = "caelestia";
       };
+      kde.enable = true;
       kdeconnect.enable = true;
       locales.enable = true;
       nh.enable = true;
