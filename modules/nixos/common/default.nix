@@ -25,6 +25,7 @@ in {
       kdeconnect.enable = true;
       locales.enable = true;
       nh.enable = true;
+      niri.enable = true;
       nix.enable = true;
       packages.enable = true;
       printing.enable = true;
