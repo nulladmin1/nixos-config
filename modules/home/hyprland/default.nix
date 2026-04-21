@@ -34,7 +34,7 @@ in {
     in
       {}
       // (lib.attrsets.optionalAttrs config.programs.hyprlock.enable {
-        "HYPRSHOT_DIR" = userDirs.extraConfig.XDG_SCREENSHOTS_DIR;
+        "HYPRSHOT_DIR" = userDirs.extraConfig.SCREENSHOTS;
       });
 
     programs.caelestia = {
