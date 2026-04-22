@@ -89,14 +89,14 @@ in {
 
         # Formatters
         alejandra # Nix
-        nodePackages_latest.prettier # Web stuff
+        prettier # Web stuff
         zig # Zig
       ];
 
       # Language configuration
       languages = {
         language = let
-          prettier = getExe pkgs.nodePackages.prettier;
+          prettier = getExe pkgs.prettier;
           commonLsp = ["wakatime" "scls"];
         in [
           {
