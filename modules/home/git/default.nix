@@ -14,6 +14,10 @@ in {
     programs.git = {
       enable = true;
       lfs.enable = true;
+      signing = {
+        key = "~/.ssh/id_ed25519.pub";
+        format = "ssh";
+      };
 
       settings = {
         commit.gpgsign = true;
