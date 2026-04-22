@@ -83,9 +83,6 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      plugins = with pkgs.hyprlandPlugins; [
-        csgo-vulkan-fix
-      ];
       settings = let
         inherit (config.catppuccin) flavor accent;
       in
