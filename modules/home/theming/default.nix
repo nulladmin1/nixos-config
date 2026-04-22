@@ -13,7 +13,7 @@ in {
 
   config = lib.mkIf osConfig.custom.${moduleName}.enable {
     stylix = {
-      iconTheme = {
+      icons = {
         package = pkgs.papirus-icon-theme;
         light = "Papirus";
         dark = "Papirus-Dark";
