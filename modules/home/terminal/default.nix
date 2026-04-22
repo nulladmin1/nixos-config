@@ -82,6 +82,7 @@ in {
 
     programs.yazi = {
       enable = true;
+      shellWrapperName = "y";
     };
 
     programs.tealdeer = {
