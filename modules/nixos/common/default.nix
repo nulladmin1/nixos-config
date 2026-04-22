@@ -19,7 +19,7 @@ in {
       hardware.enable = true;
       hyprland = {
         enable = true;
-        setup = "caelestia";
+        setup = "default";
       };
       kde.enable = true;
       kdeconnect.enable = true;
