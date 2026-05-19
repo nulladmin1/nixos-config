@@ -9,6 +9,7 @@
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;
+      noctalia.enable = true;
       spicetify.enable = true;
       swww.enable = true;
       ssh.enable = true;
