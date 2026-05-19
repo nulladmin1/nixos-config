@@ -3,14 +3,14 @@
   config,
   ...
 }: let
-  moduleName = "swww";
+  moduleName = "awww";
 in {
   options.custom.${moduleName} = {
     enable = lib.options.mkEnableOption moduleName;
   };
 
   config = lib.mkIf config.custom.${moduleName}.enable {
-    services.swww = {
+    services.awww = {
       enable = true;
     };
   };

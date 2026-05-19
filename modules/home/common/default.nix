@@ -6,12 +6,12 @@
   config = lib.mkIf osConfig.custom.common.enable {
     custom = {
       apps.enable = true;
+      awww.enable = true;
       ghostwriter.enable = true;
       git.enable = true;
       helix.enable = true;
       noctalia.enable = true;
       spicetify.enable = true;
-      swww.enable = true;
       ssh.enable = true;
       terminal.enable = true;
       vscode.enable = true;
