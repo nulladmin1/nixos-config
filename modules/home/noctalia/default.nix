@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   inputs,
   ...
@@ -18,5 +19,25 @@ in {
     programs.noctalia-shell = {
       enable = true;
     };
+
+    home.packages = with pkgs; [
+      imagemagick
+
+      # Screen Toolkit
+      grim
+      slurp
+      tesseract
+      zbar
+      jq
+      wl-screenrec
+      python3
+      python3Packages.pygobject3
+      hyprpicker
+      translate-shell
+      gifski
+
+      # Wallcards
+      mpvpaper
+    ];
   };
 }

@@ -6,6 +6,9 @@
       inherit inputs;
 
       src = ./.;
+      overlays = with inputs; [
+        niri.overlays.niri
+      ];
       channels-config = {
         allowUnfree = true;
       };
@@ -90,6 +93,17 @@
     # Caelestia Shell
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
+    };
+
+    # Noctalia Shell
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Niri Flake
+    niri = {
+      url = "github:sodiboo/niri-flake";
     };
 
     # Wakatime-ls
