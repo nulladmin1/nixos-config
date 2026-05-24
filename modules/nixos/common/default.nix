@@ -17,10 +17,6 @@ in {
       greetd.enable = true;
       gnome-keyring.enable = true;
       hardware.enable = true;
-      hyprland = {
-        enable = true;
-        setup = "default";
-      };
       kde.enable = true;
       kdeconnect.enable = true;
       locales.enable = true;
