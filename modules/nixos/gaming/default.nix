@@ -33,11 +33,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       # Gaming
-      bottles
-      heroic
-      lutris
       ferium
-      xonotic
       protonup-ng
       (prismlauncher.override {
         gamemodeSupport = true;

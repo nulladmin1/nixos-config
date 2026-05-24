@@ -65,9 +65,6 @@ in {
         map (pkg: pkg.packages.${pkgs.system}.default) [
           # My custom Nixvim configuration
           nixvim
-
-          # getflake
-          getflake
         ]);
   };
 }

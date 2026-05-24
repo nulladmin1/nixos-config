@@ -22,13 +22,12 @@ in {
       (with pkgs;
         [
           anki
-          blueman
           calibre
           chromium
           #ciscoPacketTracer8
           discord
-          foliate
-          slack
+          errands
+          papers
           pavucontrol
           #  jetbrains-toolbox
           simple-completion-language-server
@@ -45,22 +44,25 @@ in {
         ++ (lib.lists.optional config.programs.yazi.enable ueberzugpp))
       ++ (with pkgs-stable;
         [
-          blender
           gimp3-with-plugins
-          inkscape
-          krita
           libreoffice-qt6-still
-          obs-studio
-          obs-studio-plugins.wlrobs
         ]
-        # ++ (with jetbrains; [
-        #   idea-ultimate
-        #   clion
-        #   rust-rover
-        # ])
+        ++ (with jetbrains; [
+          idea-ultimate
+          #   clion
+          #   rust-rover
+        ])
         ++ (with kdePackages; [
-          kdenlive
           kolourpaint
         ]));
+    programs.obs-studio = {
+      enable = true;
+      package = pkgs.obs-studio.override {
+        cudaSupport = true;
+      };
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+      ];
+    };
   };
 }
