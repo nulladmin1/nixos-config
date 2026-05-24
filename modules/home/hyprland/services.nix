@@ -8,7 +8,7 @@
   setup = cfg.setup;
 in {
   services = {
-    swaync = {
+    swaync = lib.mkIf (cfg.enable) {
       enable = setup == "default";
     };
 
