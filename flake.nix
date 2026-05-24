@@ -49,10 +49,10 @@
     };
 
     # Lanzaboote for a secure boot implementation
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #    lanzaboote = {
+    #      url = "github:nix-community/lanzaboote/v0.4.1";
+    #      inputs.nixpkgs.follows = "nixpkgs";
+    #    };
 
     # Catppuccin for theming
     catppuccin.url = "github:catppuccin/nix";
@@ -80,9 +80,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # NixOS WSL
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     # Catppuccin theme for Helix
     catppuccin-helix = {
@@ -116,12 +113,6 @@
     # My Custom Nixvim Configuration
     nixvim = {
       url = "github:nulladmin1/nixvim";
-    };
-
-    # My custom Nix-flake-template fetcher
-    getflake = {
-      url = "github:nulladmin1/getflake";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }
