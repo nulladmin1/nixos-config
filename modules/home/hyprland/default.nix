@@ -239,7 +239,7 @@ in {
           }
 
           #waybar > box {
-            margin: 10px ${builtins.toString windows_space_gap}px 0px;
+            margin: 10px ${toString windows_space_gap}px 0px;
             background-color: @base;
             border: 2px solid @mauve;
           }
