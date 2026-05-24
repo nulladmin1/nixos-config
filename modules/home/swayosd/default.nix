@@ -12,12 +12,11 @@ in {
 
   config = lib.mkIf config.custom.${moduleName}.enable {
     services.swayosd = {
-      inherit (config.wayland.windowManager.hyprland) enable;
+      enable = true;
     };
 
-    # Make SwayOSD only run when Hyprland runs (hyprland-session.target)
     systemd.user.services.swayosd = let
-      target = lib.singleton "hyprland-session.target";
+      target = ["hyprland-session.target" "niri.service"];
     in {
       Unit = {
         PartOf = target;
