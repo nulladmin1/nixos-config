@@ -28,13 +28,19 @@
       enable = true;
     };
 
+    programs.brave = {
+      enable = true;
+      nativeMessagingHosts = with pkgs; [
+        bitwarden-desktop
+      ];
+    };
+
     home = {
       stateVersion = "24.05";
       homeDirectory = "/home/shreyd";
 
       sessionVariables = {
         EDITOR = "hx";
-        GTK_USE_PORTAL = "1";
       };
     };
   };

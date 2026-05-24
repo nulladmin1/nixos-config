@@ -16,8 +16,8 @@ in {
       [
         # Core stuff
         bat # Better cat
-        brave # My browser of choice
         bitwarden-cli # Password manager
+        bitwarden-desktop # Bitwarden Desktop
         fzf # Fuzzy finder
         feh # Image viewer
         git # Everyone knows what git is
