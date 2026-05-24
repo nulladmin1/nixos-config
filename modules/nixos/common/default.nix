@@ -36,5 +36,7 @@ in {
       verbose = true;
       backupFileExtension = "bak";
     };
+
+    documentation.enable = false;
   };
 }
