@@ -34,5 +34,8 @@ in {
 
     # usbmuxd for IOS
     services.usbmuxd.enable = true;
+
+    # Flatpak
+    services.flatpak.enable = true;
   };
 }
