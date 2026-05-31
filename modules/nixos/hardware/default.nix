@@ -14,7 +14,6 @@ in {
     zramSwap.enable = true;
     boot = {
       supportedFilesystems = ["exfat" "ntfs"];
-      loader.efi.canTouchEfiVariables = true;
       tmp.cleanOnBoot = true;
     };
     security.polkit.enable = true;
