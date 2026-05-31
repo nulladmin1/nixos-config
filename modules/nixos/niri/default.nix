@@ -22,8 +22,11 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      xwayland-satellite
+      xwayland-satellite-unstable
       libsecret
     ];
+
+    # Use Soteria polkit instead of KDE Polkit
+    systemd.user.services.niri-flake-polkit.serviceConfig.ExecStart = lib.mkForce "${pkgs.soteria}/bin/soteria";
   };
 }
