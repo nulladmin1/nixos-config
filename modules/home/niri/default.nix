@@ -200,6 +200,8 @@ in {
         NIXOS_OZONE_WL = "1";
 
         GTK_USE_PORTAL = null;
+
+        QT_QPA_PLATFORMTHEME = "qtct";
       };
 
       # Window rules.
@@ -280,12 +282,12 @@ in {
           action.spawn = "alacritty";
         };
 
-        "Mod+Shift+R" = {
+        "Mod+R" = {
           hotkey-overlay = {title = "Run Vicinae";};
           action.spawn = ["vicinae" "toggle"];
         };
 
-        "Mod+R" = {
+        "Mod+Shift+R" = {
           hotkey-overlay = {title = "Run Noctalia Launcher";};
           action.spawn = ["sh" "-c" "noctalia-shell ipc call launcher toggle"];
         };
