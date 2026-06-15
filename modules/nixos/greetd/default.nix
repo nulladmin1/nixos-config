@@ -10,11 +10,15 @@ in {
   };
 
   config = lib.mkIf config.custom.${moduleName}.enable {
-    services.greetd = {
-      enable = true;
-    };
+    # services.greetd = {
+    #   enable = true;
+    # };
 
-    programs.regreet = {
+    # programs.regreet = {
+    #   enable = true;
+    # };
+
+    services.displayManager.plasma-login-manager = {
       enable = true;
     };
   };
