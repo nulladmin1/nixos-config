@@ -25,6 +25,7 @@
 
   # Network configuration
   networking = {
+    dhcpcd.enable = false;
     hostName = "neo16";
     interfaces = {
       enp109s0.useDHCP = true;
