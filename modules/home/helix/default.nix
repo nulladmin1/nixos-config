@@ -60,7 +60,7 @@ in {
             lib.importTOML "${inputs.catppuccin-helix}/themes/default/catppuccin_${flavor}.toml";
 
           patchedTheme =
-            (builtins.removeAttrs theme ["ui.background"])
+            (removeAttrs theme ["ui.background"])
             // {
               ui.background = {};
             };
@@ -78,19 +78,17 @@ in {
         ruff # Python
         gopls # Go
         vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
-        hyprls # Hyprland Config
         taplo # Toml
-        zls # Zig
         nixd # Nix
-        kdePackages.qtdeclarative # qmlls for QML
         inputs.wakatime-ls.packages.${pkgs.system}.default # Wakatime integration
+        lua-language-server # Lua
 
         simple-completion-language-server # Snippets and stuff
 
         # Formatters
         alejandra # Nix
         prettier # Web stuff
-        zig # Zig
+        kdlfmt # KDL
       ];
 
       # Language configuration
@@ -169,6 +167,10 @@ in {
           {
             name = "java";
             language-servers = ["jdtls"] ++ commonLsp;
+          }
+          {
+            name = "lua";
+            language-servers = ["lua-language-server"] ++ commonLsp;
           }
         ];
         language-server = {
