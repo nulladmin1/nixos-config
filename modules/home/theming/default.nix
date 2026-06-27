@@ -20,7 +20,7 @@ in {
       };
       targets = {
         gnome.enable = true;
-        gtk.enable = !osConfig.services.desktopManager.plasma6.enable;
+        gtk.enable = true;
       };
     };
     catppuccin = {
