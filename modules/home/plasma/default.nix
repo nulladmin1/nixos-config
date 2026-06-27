@@ -12,12 +12,9 @@ in {
   ];
 
   config = lib.mkIf osConfig.custom.${moduleName}.enable {
-    programs.plasma = let
-      wallpaper = config.stylix.image;
-    in {
+    programs.plasma = {
       enable = true;
       workspace = {
-        inherit wallpaper;
         lookAndFeel = "Catppuccin-Mocha-Mauve";
         colorScheme = "CatppuccinMochaMauve";
         iconTheme = config.stylix.iconTheme.dark;
@@ -77,12 +74,6 @@ in {
       krunner = {
         shortcuts.launch = "Meta+R";
         position = "center";
-      };
-
-      kscreenlocker = {
-        appearance = {
-          inherit wallpaper;
-        };
       };
 
       kwin = {

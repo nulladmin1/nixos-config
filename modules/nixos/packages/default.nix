@@ -27,6 +27,7 @@ in {
         adwaita-icon-theme # For some GTK icons
         ifuse # Filesystem support for iOS
         libimobiledevice # To mount iPhone
+        os-prober
 
         # Other
         (nemo-with-extensions.override {
@@ -60,11 +61,6 @@ in {
       ]
       ++ (with kdePackages; [
         skanpage # Scanning utility
-      ])
-      ++ (with inputs;
-        map (pkg: pkg.packages.${pkgs.system}.default) [
-          # My custom Nixvim configuration
-          nixvim
-        ]);
+      ]);
   };
 }

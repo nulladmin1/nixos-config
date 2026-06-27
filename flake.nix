@@ -116,17 +116,5 @@
     vicinae = {
       url = "github:vicinaehq/vicinae";
     };
-
-    # ------------------------ MY CUSTOM STUFF -------------------------------
-    # My Custom Wallpapers package
-    wallpapers = {
-      url = "github:nulladmin1/wallpapers";
-      flake = false;
-    };
-
-    # My Custom Nixvim Configuration
-    nixvim = {
-      url = "github:nulladmin1/nixvim";
-    };
   };
 }

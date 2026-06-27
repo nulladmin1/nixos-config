@@ -67,9 +67,6 @@ in {
         services = {
           useTwelveHourClock = false;
         };
-        paths = {
-          wallpaperDir = "${inputs.wallpapers}";
-        };
       };
 
       cli.enable = true;
