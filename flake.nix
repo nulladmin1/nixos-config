@@ -19,7 +19,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     # Nixpkgs stable
-    nixpkgs-stable.url = "nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-26.05";
 
     # Snowfall lib
     snowfall-lib = {
