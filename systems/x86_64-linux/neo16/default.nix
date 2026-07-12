@@ -34,6 +34,7 @@
     resolvconf.enable = false;
     networkmanager = {
       insertNameservers = ["1.1.1.1" "1.0.0.1"];
+      wifi.powersave = false;
     };
   };
 
