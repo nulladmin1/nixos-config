@@ -60,7 +60,7 @@ in {
 
     programs.zellij = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = false;
       settings = {
         show_startup_tips = false;
       };
