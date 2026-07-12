@@ -9,6 +9,7 @@
       apps.enable = true;
       awww.enable = true;
       ghostwriter.enable = true;
+      ghostty.enable = true;
       git.enable = true;
       helix.enable = true;
       launcher.enable = true;
