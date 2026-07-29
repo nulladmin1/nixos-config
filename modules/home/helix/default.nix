@@ -73,15 +73,11 @@ in {
         bash-language-server # Bash
         cmake-language-server # Cmake
         emmet-ls # Emmet Language Server
-        libclang # Clangd
         marksman # Markdown
-        ruff # Python
-        gopls # Go
         vscode-langservers-extracted # Html, CSS, Eslint, JSON, and Markdown LSPs (not all used)
         taplo # Toml
         nixd # Nix
         inputs.wakatime-ls.packages.${pkgs.system}.default # Wakatime integration
-        lua-language-server # Lua
 
         simple-completion-language-server # Snippets and stuff
 
@@ -168,10 +164,6 @@ in {
             name = "java";
             language-servers = ["jdtls"] ++ commonLsp;
           }
-          {
-            name = "lua";
-            language-servers = ["lua-language-server"] ++ commonLsp;
-          }
         ];
         language-server = {
           rust-analyzer = {
@@ -196,6 +188,11 @@ in {
               RUST_LOG = "info,simple-completion-language-server=info";
               LOG_FILE = "/tmp/completion.log";
             };
+          };
+
+          clangd = {
+            command = "clangd";
+            args = ["--query-driver=/nix/store/*/bin/clang*"];
           };
 
           wakatime = {
