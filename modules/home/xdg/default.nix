@@ -12,12 +12,7 @@ in {
   config = lib.mkIf config.custom.${moduleName}.enable {
     xdg = {
       enable = true;
-      mimeApps = {
-        enable = true;
-        defaultApplications = {
-          "application/pdf" = "org.gnome.Papers.desktop";
-        };
-      };
+
       userDirs = {
         enable = true;
         createDirectories = true;
