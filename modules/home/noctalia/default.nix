@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   inputs,
   ...
@@ -16,28 +15,9 @@ in {
   ];
 
   config = lib.mkIf config.custom.${moduleName}.enable {
-    programs.noctalia-shell = {
+    programs.noctalia = {
       enable = true;
+      systemd.enable = true;
     };
-
-    home.packages = with pkgs; [
-      imagemagick
-
-      # Screen Toolkit
-      grim
-      slurp
-      tesseract
-      zbar
-      jq
-      wl-screenrec
-      python3
-      python3Packages.pygobject3
-      hyprpicker
-      translate-shell
-      gifski
-
-      # Wallcards
-      mpvpaper
-    ];
   };
 }

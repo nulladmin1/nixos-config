@@ -55,7 +55,7 @@ in {
       layer-rules = [
         {
           matches = [
-            {namespace = "^noctalia-overview*";}
+            {namespace = "^noctalia-backdrop";}
           ];
 
           place-within-backdrop = true;
@@ -156,9 +156,6 @@ in {
       # Running Niri as a session also supports xdg-desktop-autostart.
       spawn-at-startup = [
         {argv = ["alacritty"];}
-        {argv = ["swayosd-server"];}
-        {argv = ["wlsunset" "-S" "5:30" "-s" "18:30"];}
-        {argv = ["noctalia-shell"];}
         {argv = ["bitwarden"];}
       ];
 
@@ -228,17 +225,11 @@ in {
           open-focused = true;
         }
 
-        # TODO: Alacritty blur.
-        #{
-        #  matches = [
-        #    {
-        #      app-id = "^Alacritty$";
-        #    }
-        #  ];
 
-        #  background-effect = {
-        #    blur = true;
-        #  };
+        # TODO: Alacritty blur (background-effect not yet supported in niri module).
+        # {
+        #   matches = [{app-id = "^Alacritty$";}];
+        #   background-effect.blur = true;
         # }
 
         # Enable rounded corners for all windows.
@@ -271,7 +262,22 @@ in {
         #   # but hidden from third-party screen sharing tools.
         #   # block-out-from = "screencast";
         # }
+
+        # Floating Noctalia settings window.
+        {
+          matches = [
+            {app-id = "dev.noctalia.Noctalia";}
+          ];
+
+          open-floating = true;
+          default-column-width = {fixed = 1080;};
+          default-window-height = {fixed = 920;};
+        }
       ];
+
+      debug = {
+        honor-xdg-activation-with-invalid-serial = true;
+      };
 
       binds = {
         # Mod-Shift-/, usually the same as Mod-?, shows the hotkey overlay.
@@ -289,29 +295,29 @@ in {
 
         "Mod+Shift+R" = {
           hotkey-overlay = {title = "Run Noctalia Launcher";};
-          action.spawn = ["sh" "-c" "noctalia-shell ipc call launcher toggle"];
+          action.spawn = ["sh" "-c" "noctalia msg panel-toggle launcher"];
         };
 
         # Lock screen using Noctalia.
         "Mod+L" = {
           hotkey-overlay = {title = "Lock Screen";};
-          action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
+          action.spawn = ["noctalia" "msg" "session" "lock"];
         };
 
         # Volume using Noctalia.
         "XF86AudioRaiseVolume" = {
           allow-when-locked = true;
-          action.spawn = ["noctalia-shell" "ipc" "call" "volume" "increase"];
+          action.spawn = ["noctalia" "msg" "volume-up"];
         };
 
         "XF86AudioLowerVolume" = {
           allow-when-locked = true;
-          action.spawn = ["noctalia-shell" "ipc" "call" "volume" "decrease"];
+          action.spawn = ["noctalia" "msg" "volume-down"];
         };
 
         "XF86AudioMute" = {
           allow-when-locked = true;
-          action.spawn = ["noctalia-shell" "ipc" "call" "volume" "muteOutput"];
+          action.spawn = ["noctalia" "msg" "volume-mute"];
         };
 
         "XF86AudioMicMute" = {
@@ -344,12 +350,12 @@ in {
         # Brightness using Noctalia.
         "XF86MonBrightnessUp" = {
           allow-when-locked = true;
-          action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "increase"];
+          action.spawn = ["noctalia" "msg" "brightness-up"];
         };
 
         "XF86MonBrightnessDown" = {
           allow-when-locked = true;
-          action.spawn = ["noctalia-shell" "ipc" "call" "brightness" "decrease"];
+          action.spawn = ["noctalia" "msg" "brightness-down"];
         };
 
         # Open/close overview.
