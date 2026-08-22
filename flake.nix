@@ -101,9 +101,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Niri Flake
+    # Niri Flake (until sodiboo merges libdisplay-info fix)
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:bugeats/niri-flake/update-libdisplay-info";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Wakatime-ls
